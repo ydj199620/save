@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <select id="one">
+        <option value="">选择数字</option>
+    </select>
+    <select id="two">
+        <option value="">选择第二个数</option>
+    </select>
+</body>
+</html>
+<script>
+    var one = document.getElementById('one')
+    var two = document.getElementById('two')
+    var arr =[]
+    arr['1']=[1,2,3]
+    arr['2']=[4,5,6]
+    arr['3']=[7,8,9]
+    for(var i in arr){
+        one.add(new Option(i,i))//arr的下标i就是['1']，把索引0123改成了字符串‘1’，‘2’，‘3’
+    }
+    one.onchange=function(){
+        two.innerHTML = '<option>选择第二个数</option>'
+        var a = one.value;
+        console.log(a)
+        for(var j in arr){
+            if(a==j){
+                for(var k in arr[j]){
+                    two.add(new Option(arr[j][k],arr[j][k]))
+                }
+            }
+        }
+    }
+</script>

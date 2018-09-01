@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+				list-style: none;
+			}
+			#box1{
+				width: 730px;
+				height: 454px;
+				margin: 0 auto;
+				position: relative;
+			}
+			#box1 img{
+				position: absolute;
+			}
+			#box1 img:first-child{
+				z-index: 2;
+			}
+			#box2{
+				width: 730px;
+				height: 21px;
+				margin: 0 auto;
+				text-align: center;
+				position: relative;
+				top: -50px;
+			}
+			#box2 ul li{
+				display: inline-block;
+				width: 21px;
+				height: 21px;
+				border-radius: 10.5px;
+				color: white;
+				background: black;
+				cursor: pointer;
+				position: relative;
+				z-index: 2;
+			}
+			#box2 ul li:first-child{
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box1">
+			<img src="img/0.jpg"/>
+			<img src="img/1.jpg"/>
+			<img src="img/2.jpg"/>
+			<img src="img/3.jpg"/>
+			<img src="img/4.jpg"/>
+			<img src="img/5.jpg"/>
+		</div>
+		<div id="box2">
+			<ul id="box3">
+				<!--<li>2</li>-->
+			</ul>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var a = document.getElementsByTagName('img');
+	var c = document.getElementById('box3');
+	var zz = null;
+	var f= 0;
+	for(var i =0;i<a.length;i++){
+		var b = document.createElement('li');
+		b.innerHTML = Number(i)+1;
+		c.appendChild(b);
+	}
+	var lis = document.getElementsByTagName('li');
+	console.log(lis);
+	for(j in lis){
+		/*li[j].aa = j;*/
+		lis[j].aa = j;
+		lis[j].onmouseover=function(){
+			clearInterval(zz);
+			for(var k= 0;k<lis.length;k++){
+				lis[k].style.background = 'black';
+				a[k].style.display = 'none';
+			}
+			lis[this.aa].style.background = 'red';
+			/*li[this.aa].style.background = 'red';*/
+			a[this.aa].style.display = 'block';
+			f=this.aa;
+		}
+		lis[j].onmouseout=function(){
+			setInterval(bb,1000);
+		}
+	}
+	var bb = function(){
+		f++;
+		if(f>=a.length){
+			f=0;
+		}
+			for(var l= 0;l<a.length;l++){
+				lis[l].style.background = 'black';
+				a[l].style.display = 'none';
+				console.log(l);
+			}
+			lis[f].style.background = 'red';
+			a[f].style.display = 'block';
+			/*console.log(d)*/
+	}
+	zz = setInterval(bb,1000);
+</script>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#top{
+				font-size: 200px;
+				color: red;
+			}
+		</style>
+	</head>
+	<body style="text-align: center;">
+		<div id="top"></div>
+	</body>
+</html>
+<script type="text/javascript">
+	var a = '王信欠我钱';
+	var body1 = document.getElementById('top'); 
+	setInterval(function b(){
+		body1.innerHTML = a;
+	},1000)
+	var c = '王信大傻子';
+	setInterval(function b(){
+		body1.innerHTML = c;
+	},2000)
+	/*var d = '王信快还钱';
+	setInterval(function b(){
+		body1.innerHTML = d;
+	},3000)*/
+	/*setTimeout(function c(){
+		document.write("王信欠我的钱，一辈子都换不清")
+	},1000)*/
+</script>

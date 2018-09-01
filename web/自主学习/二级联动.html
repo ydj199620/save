@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <select id="sf">
+        <option value="">请选择省份</option>
+    </select>
+    <select id="cs">
+        <option value="">请选择城市</option>
+    </select>
+</body>
+</html>
+<script>
+    var sf = document.getElementById('sf');
+    var cs = document.getElementById('cs');
+    var arr = [];
+    arr['江苏省']=['南京市','无锡市','苏州市']
+    arr['浙江省']=['杭州市','宁波市','义乌市']
+    arr['广东省']=['广州市','深圳市','东菀市']
+    for(var i in arr){
+        sf.add(new Option(i,i))
+    }
+    sf.onchange=function(){
+        cs.innerHTML= '<option value="">请选择城市</option>';
+        var sf1 = sf.value;
+        for(var j in arr){
+            if(j==sf1){
+                for(var k in arr[j]){
+                    cs.add(new Option(arr[j][k],arr[j][k]))
+                }
+            }
+        }
+    }
+</script>

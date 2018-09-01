@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+				list-style: none;
+			}
+			body,html,div{
+				width: 100%;
+				height: 100%;
+				font-size: 100px;
+				color: white;
+			}
+			ul{
+				position: fixed;
+				top: 50px;
+				left: 200px;
+			}
+			ul li{
+				width: 100px;
+				height: 100px;
+				font-size: 50px;
+				line-height: 100px;
+				text-align: center;
+				margin-bottom: 20px;
+				color: white;
+				border: 2px black solid;
+			}
+			#one,.one{
+				background: red;
+			}
+			#two,.two{
+				background: orangered;
+			}
+			#three,.three{
+				background: greenyellow;
+			}
+			#four,.four{
+				background: dodgerblue;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="one">1</div>
+		<div id="two">2</div>
+		<div id="three">3</div>
+		<div id="four">4</div>
+		<ul>
+			<li class="one">1</li>
+			<li class="two">2</li>
+			<li class="three">3</li>
+			<li class="four">4</li>
+		</ul>
+	</body>
+</html>
+<script type="text/javascript">
+	var lis = document.getElementsByTagName('li');
+	var div = document.getElementById('one')
+	var b;
+	var width1 = one.offsetHeight;
+	for(var i = 0;i<lis.length;i++){
+		lis[i].a =i;
+		lis[i].onclick = function(){
+			zz(width1*this.a)
+		}
+	}
+	
+	function scroll(){
+		return  obj = {
+			'top':window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0,
+			'left':window.pageXOffset ||document.documentElement.scrollLeft || document.body.scrollLeft ||0
+		}
+	}
+	
+	function zz(target){
+		clearInterval(b);
+		b = setInterval(function(){
+			var leader = window.scroll().top;
+			var step = 0;
+			if(target>leader){
+				step=Math.ceil((target-leader)/10)
+			}
+			if(target<leader){
+				step=Math.floor((target-leader)/10)
+			}
+			if(target!=leader){
+				leader = leader +step;
+				window.scrollTo(0,leader)
+			}else{
+				clearInterval(b);
+			}
+		},20)
+	}
+</script>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        #box{
+            width: 480px;
+            height: 320px;
+            position: relative;
+            margin: 0 auto;
+            
+        }
+        img{
+            float: left;
+            position: absolute;
+            display: none;
+        }
+        img:first-child{
+            z-index: 3;
+            display: block;
+        }
+        ul{
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            z-index: 4;
+        }
+        li{
+            float: left;
+            width: 21px;
+            height: 21px;
+            text-align: center;
+            line-height: 21px;
+            background: skyblue;
+            border: 1px solid white;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div>
+        	<img src="image/image/1.jpg" alt="">
+	        <img src="image/image/2.jpg" alt="">
+	        <img src="image/image/3.jpg" alt="">
+	        <img src="image/image/4.jpg" alt="">
+        </div>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+    </div>
+</body>
+</html>
+<script>
+    $(function(){
+        /*for(var i=0;i<$('li').length;i++){
+            $('li').eq(i).click(function(){
+               	var index = $(this).index();
+               	$('img').fadeOut(300).eq(index).fadeIn(300);
+				$('li').css('background','skyblue').eq(index).css('background','red')               
+            })
+        }*/
+        var index =0;
+        setInterval(aa,1000)
+        function aa(){
+            index++;
+            if(index>3){
+                index=0;
+            }
+            $('img:eq('+index+')').fadeIn(300).siblings().fadeOut(300);
+       		$('li:eq('+index+')').css('background','red').siblings().css('background','skyblue');
+        }
+       $('li').click(function(){
+       		index = $(this).index();
+       		$('img:eq('+index+')').fadeIn(300).siblings().fadeOut(300);
+       		$('li:eq('+index+')').css('background','red').siblings().css('background','skyblue');
+       })
+    })
+</script>

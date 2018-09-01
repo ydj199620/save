@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+		/*	var a = [3,23,3231,454,67,985,321,4,66];
+			var b = 0;
+			for(var i = 0;i<a.length;i++){
+				for(var j = 0;j<a.length-i-1;j++){
+					if(a[j]>a[j+1]){
+						b = a[j];
+						a[j] = a[j+1];
+						a[j+1] = b;
+					}
+				}
+			}console.log(a);*/
+			var a = [1,1,2,3,45,67,65,45,67];
+			var b = [];
+			b[0]=a[0];
+			for(var i = 0;i<a.length;i++){
+				var c =true;
+				for(var j =0;j<b.length;j++){
+					if(a[i] == b[j]){
+						c=false;
+						break;
+					}
+				}if(c){
+					b.push(a[i]);
+				}
+			}console.log(b)
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

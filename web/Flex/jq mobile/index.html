@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <!-- <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/> -->
+    <!-- 引入 jQuery Mobile 样式 -->
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <!-- 引入 jQuery 库 -->
+    <script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!-- 引入 jQuery Mobile 库 -->
+    <script src="http://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
+<script>
+    $('div').on('tap',function(){
+        alert('点击触发');
+    })
+    $('div').on('taphold',function(){
+        alert('缓慢点击触发');
+    })
+    $('div').on('swipe',function(){
+        alert('水平拖动')
+    })
+    $('div').on('swipeleft',function(){
+        alert('水平向右拖动')
+    })
+    $('div').on('swiperight',function(){
+        alert('水平向左拖动')
+    })
+   /*  $(document).on('scrollstart',function(){
+        alert('开始滚动触发')
+    })
+    $(document).on('scrollstop',function(){
+        alert('停止滚动触发')
+    }) */
+</script>

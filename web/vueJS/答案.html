@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        ul {
+            list-style: none;
+            width: 100%;
+        }
+        
+        ul li {
+            margin-top: 10px;
+            font-size: 20px;
+            height: 34px;
+            line-height: 34px;
+            border-radius: 4px;
+            padding-left: 10px;
+        }
+        
+        ul li input {
+            border: none;
+            height: 30px;
+            border-radius: 4px;
+            padding-left: 10px;
+            outline: none;
+            background: rgb(79, 203, 235);
+			width: 500px;
+        }
+        
+        ul li div {
+            /* width: 50%; */
+            float: left;
+        }
+        
+        .btn-success {
+            margin-top: 10px;
+        }
+        
+        .bg {
+            background-color: #dcdcdc;
+        }
+        
+        .bghover {
+            background: #2793eb;
+        }
+        
+        ul li .btn {
+            float: right;
+            margin-left: 20px;
+            margin-top: 0;
+        }
+    </style>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="container">
+            <h1>留言版</h1>
+
+            <!--添加用户信息-->
+            <form v-on:submit="addUser" class="form-group">
+                <label for="exampleInputEmail1">Enter Message</label>
+                <textarea class="form-control" id="exampleInputEmail1" v-model="newUser.message" placeholder="Enter message" value="">
+                </textarea>
+
+                <input type="submit" value="留言" class=" btn btn-success">
+            </form>
+            <hr>
+            <ul>
+                <li v-for="(user,index) in users" v-show="user.message" v-bind:class="{'bg':index%2==0?true:false,'bghover':user.isif}" @mouseover="over(index)" @mouseout="out(index)"><!-- 用属性绑定class名。如果索引取余等于0则变色 -->
+                    <div v-show="!user.inputShow">
+                        {{user.message}}
+                    </div>
+                    <div v-show="user.inputShow">
+                        <input type="text" v-model="user.message">
+                    </div>
+                    <button v-on:click="deleteUser(index)" class="btn btn-primary">删除</button>
+                    <button @click="edit(index)" class="btn btn-danger" v-show="!user.btnShow">编辑</button>
+                    <button @click="save(index)" class="btn btn-success" v-show="user.btnShow">保存</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            newUser: {
+
+            },
+            users: [{
+                message: "幸福其实真的很简单：有人爱；有事做；有所期待！！",
+                inputShow: false,
+                btnShow: false,
+                isif: false
+            },{
+                message: "青春就是疯狂的奔跑，然后华丽的跌倒！！",
+                inputShow: false,
+                btnShow: false,
+                isif: false
+            },{
+                message: "最好的朋友，就是世界上知道你最多秘密的人！！",
+                inputShow: false,
+                btnShow: false,
+                isif: false
+            }]
+
+        },
+        methods: {
+            addUser: function(e) {
+                if (this.newUser.message) {
+                    this.users.unshift({
+                        message: this.newUser.message,
+                        inputShow: false,
+                        btnShow: false,
+                        isif: false
+                    });
+
+                    this.newUser.message = "";
+                    //
+
+                } else {
+                    alert("请输入消息")
+                }
+
+                e.preventDefault();
+
+
+            },
+
+            deleteUser: function(index) {
+                //                console.log(index);
+                this.users.splice(index, 1)
+
+            },
+
+            edit: function(index) {
+                this.users[index].inputShow = true;
+                this.users[index].btnShow = true;
+            },
+
+            save: function(index) {
+                this.users[index].inputShow = false;
+                this.users[index].btnShow = false;
+            },
+            out: function(index) {
+                this.users[index].isif = false;
+            },
+            over: function(index) {
+                this.users[index].isif = true;
+            }
+        }
+    })
+</script>
+
+</html>

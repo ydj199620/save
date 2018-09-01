@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #box,#box3{
+            margin-left: 20px;
+            margin-top: 20px;
+            float: left;
+        }
+        #box2,#box4{
+            width: 300px;
+            height: 300px;
+            background: #ccc;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #bigbox2,#bigbox4{
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            overflow: hidden;
+            position: relative;
+        }
+        #srk,#srk1{
+            width: 214px;
+            height: 30px;
+        }
+        #btn,#btn1{
+            width: 70px;
+            height: 35px;
+            border: 0;
+            background: skyblue;
+            margin-left: 10px;
+            margin-top: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <h1>用户1</h1>
+        <div id="bigbox2"><div id="box2"></div></div>
+        <input type="text" id="srk" placeholder="请输入留言内容">
+        <input type="button" value="提交" id="btn">
+    </div>
+    <div id="box3">
+        <h1>用户2</h1>
+        <div id="bigbox4"><div id="box4"></div></div>
+        <input type="text" id="srk1" placeholder="请输入留言内容">
+        <input type="button" value="提交" id="btn1">
+    </div>
+</body>
+</html>
+<script>
+    var box2 = document.getElementById('box2');
+    var btn = document.getElementById('btn');
+    var srk = document.getElementById('srk');
+    var box4 =document.getElementById('box4');
+    var btn1 = document.getElementById('btn1');
+    var srk1 = document.getElementById('srk1');
+    var bigbox2 =document.getElementById('bigbox2');
+    var bigbox4 =document.getElementById('bigbox4');
+    btn.onclick = function(){
+        var a = srk.value;
+        if(a!=''){
+            srk.value = '';
+            var aa = new Date();
+            var bb = aa.toLocaleString();//获取当前时间
+			/* var bb = aa.getFullYear();
+			var cc = aa.getMonth();
+			var dd = aa.getDate();
+			var ee = aa.getHours();
+			var ff = aa.getMinutes(); */
+            var b = document.createElement('p');
+            var c = document.createElement('p')
+            b.innerHTML = "<p>"+/* bb+'/'+cc+'/'+dd+'  '+ee+':'+ff */bb+"我</p>"+a;
+            c.innerHTML = "<p>"+bb/* +'/'+cc+'/'+dd+'  '+ee+':'+ff */+"</p>"+a;
+            b.style.width='100%';
+            c.style.width='100%';
+            c.style.textAlign = 'left';
+            b.style.textAlign = 'right';
+            c.style.color = 'blue';
+            b.style.color = '#999';
+            box2.appendChild(b);
+            box4.appendChild(c);
+        }else{
+            srk.value = '';
+        }
+        if(box2.scrollHeight>box2.offsetHeight){
+            box2.style.height = box2.scrollHeight+'px';
+            var cha = box2.scrollHeight-bigbox2.offsetHeight;
+            aa1(box2,{'top':-cha},function(){
+
+            });
+        }
+        if(box4.scrollHeight>box4.offsetHeight){
+            box4.style.height = box4.scrollHeight+'px';
+            var cha = box4.scrollHeight-bigbox4.offsetHeight;
+            aa1(box4,{'top':-cha},function(){
+
+            });
+        }
+    }
+    btn1.onclick = function(){
+        var a = srk1.value;
+        if(a!=''){
+            srk1.value = '';
+            var aa = new Date();
+            var bb = aa.toLocaleString();
+			/* var bb = aa.getFullYear();
+			var cc = aa.getMonth();
+			var dd = aa.getDate();
+			var ee = aa.getHours();
+			var ff = aa.getMinutes(); */
+            var b = document.createElement('p');
+            var c = document.createElement('p')
+            b.innerHTML = "<p>"+/* bb+'/'+cc+'/'+dd+'  '+ee+':'+ff */bb+"我</p>"+a;
+            c.innerHTML = "<p>"+/* bb+'/'+cc+'/'+dd+'  '+ee+':'+ff */bb+"</p>"+a;
+            c.style.textAlign = 'left';
+            b.style.textAlign = 'right';
+            b.style.width='100%';
+            c.style.width='100%';
+            c.style.color = 'blue';
+            b.style.color = '#999';
+            box4.appendChild(b)
+            box2.appendChild(c);
+        }else{
+            srk1.value = '';
+        }
+        if(box2.scrollHeight>box2.offsetHeight){
+            box2.style.height = box2.scrollHeight+'px';
+            var cha = box2.scrollHeight-bigbox2.offsetHeight;
+            aa1(box2,{'top':-cha},function(){
+
+            });
+        }
+        if(box4.scrollHeight>box4.offsetHeight){
+            box4.style.height = box4.scrollHeight+'px';
+            var cha = box4.scrollHeight-bigbox4.offsetHeight;
+            aa1(box4,{'top':-cha},function(){
+
+            });
+        }
+    }
+    //把执行的内容拿出来封装函数，但是要写个判断，执行左边代码时候为true，内容靠右并且加个我，然后再执行右边的函数；这时候判断为false；
+    //执行完函数，在吧内容为空，否则第二次效果的内容直接为空
+    function aa1(obj,json2,fun){
+		clearInterval(obj.timer);
+		obj.timer = setInterval(function(){
+			var flag = true;
+			for(var k in json2){
+				if(k=='opacity'){
+					var leader = parseFloat(bb(obj,null,k));//k是属性；
+					var target = json2[k];//json1[k]是获取值；
+					var step = ((target-leader)/10)*1000;
+					(target-leader)>0?step=Math.ceil(step):step=Math.floor(step);
+					leader = leader+step/1000;
+					obj.style[k] = leader;
+				}else if(k=='zIndex'){
+					obj.style[k] = json2[k];//z-index只能直接改变
+				}else{
+					var leader = parseInt(bb(obj,null,k));//k是属性；
+					var target = json2[k];//json1[k]是获取值；
+					console.log(k);
+					console.log(json2[k]);
+					var step = (target-leader)/10;
+					(target-leader)>0?step=Math.ceil(step):step=Math.floor(step);
+					console.log(leader+'--'+step);
+						leader = leader+step;
+						obj.style[k] = leader + 'px';
+				}
+				if(leader!=target){
+					flag =false;
+				}
+			}
+			if(flag){
+				clearInterval(obj.timer);
+				fun&&fun();//回调函数
+					//另一种回调函数方法
+					/*if(fun){
+					 * 	fun();
+					 * }*/
+			}
+		},50)
+	}
+	function bb(obj,obj1,obj2){
+		if(window.getComputedStyle){
+			return window.getComputedStyle(obj,obj1)[obj2];
+		}else{
+			return obj.currentStyle[obj2];
+		}
+	}
+</script>

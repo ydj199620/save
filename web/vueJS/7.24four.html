@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="box">
+        {{met}}
+        <lol @kk='b'></lol>
+    </div>
+
+
+    <template id="one">
+        <div>
+            {{msg}}
+            <button @click='a()'>点击</button>
+        </div>
+    </template>
+</body>
+</html>
+<script>
+    new Vue({
+        el:'#box',
+        data:{
+            met:''
+        },
+        methods:{
+            b:function(c){
+                this.met=c
+            }
+        },
+        components:{
+            'lol':{
+                template:'#one',
+                data(){
+                    return{
+                        msg:'徐磊是煞笔'
+                    }
+                },
+                methods:{
+                    a:function(){
+                        this.$emit('kk',this.msg)
+                    }
+                }
+            }
+        }
+    })
+</script>

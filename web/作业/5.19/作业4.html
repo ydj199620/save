@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#bigbox{
+				width: 1180px;
+				height: 450px;
+				margin: 100px auto;
+				position: relative;
+				overflow: hidden;
+			}
+			#bigbox>div{
+				width: 1300px;
+				height: 450px;
+			}
+			.one{
+				width: 240px;
+				height: 450px;
+				overflow: hidden;
+				float: left;
+			}
+			.two{
+				width:1200px;
+				height: 450px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="bigbox">
+			<div>
+				<div class="one"><img src="img/1.jpg" class="two"/></div>
+				<div class="one"><img src="img/2.jpg" class="two"/></div>
+				<div class="one"><img src="img/3.jpg" class="two"/></div>
+				<div class="one"><img src="img/4.jpg" class="two"/></div>
+				<div class="one"><img src="img/5.jpg" class="two"/></div>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var a = document.getElementsByClassName('one');
+	var b = document.getElementsByClassName('two');
+	var timer;
+	for(var i = 0;i<a.length;i++){
+		a[i].item = i;
+		a[i].onmouseover =function(){
+			for(var j = 0;j<a.length;j++){
+				aa(a[j],{'width':50});
+			}
+			aa(this,{'width':1000});
+			b[this.item].style.width = "1000px";
+		}
+		a[i].onmouseout =function(){
+			for(var k = 0;k<a.length;k++){
+				aa(a[k],{'width':240});
+				b[this.item].style.width = "1200px";
+			}
+		}
+	}
+	function aa(obj,json2){
+		clearInterval(obj.timer);
+		obj.timer = setInterval(function(){
+			var flag = true;
+			for(var k in json2){
+				var leader = parseInt(bb(obj,null,k));//k是属性；
+				var target = json2[k];//json1[k]是获取值；
+				console.log(k);
+				console.log(json2[k])
+				var step = (target-leader)/10;
+				(target-leader)>0?step=Math.ceil(step):step=Math.floor(step);
+				console.log(leader+'--'+step);
+				if(leader!=target){
+					leader = leader+step;
+					obj.style[k] = leader + 'px';
+					flag =false;
+				}
+			}
+			if(flag){
+				clearInterval(obj.timer);
+			}
+		},10)
+	}
+	function bb(obj,obj1,obj2){
+		if(window.getComputedStyle){
+			return window.getComputedStyle(obj,obj1)[obj2];
+		}else{
+			return obj.currentStyle[obj2];
+		}
+	}
+</script>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#one{
+				width: 360px;
+				height: 431px;
+				margin: 70px auto;
+				border: 1px solid red;
+			}
+			#two{
+				height: 360px;
+				background: url(img/01big.jpg);
+				background-size: 100%;
+			}
+			#three{
+				border-top: 1px solid red;
+			}
+			#three div{
+				height: 70px;
+				float: left;
+				width: 70px;
+				margin-left: 1.5px;
+				border-left: 1px solid red;
+			}
+			#three div:hover{
+				cursor: pointer;
+			}
+			#three div#four{
+				margin-left: 0px;
+				border-left: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="one">
+			<div id="two"></div>
+			<div id="three">
+				<div id="four"><img src="img/01.jpg" width="100%"/></div>
+				<div id="five"><img src="img/02.jpg" width="100%"/></div>
+				<div id="six"><img src="img/03.jpg" width="100%"/></div>
+				<div id="seven"><img src="img/04.jpg" width="100%"/></div>
+				<div id="nine"><img src="img/05.jpg" width="100%"/></div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var a = document.getElementById('two');
+			var f = document.getElementById('two');
+			var a = document.getElementById('four');
+			var b = document.getElementById('five');
+			var c = document.getElementById('six');
+			var d = document.getElementById('seven');
+			var e = document.getElementById('nine');
+			a.onmouseover = function(){
+				f.style.background = 'url(img/01big.jpg)';
+				a.style.backgroundSize = '100%';
+			}
+			b.onmouseover = function(){
+				f.style.background = 'url(img/02big.jpg)';
+				a.style.backgroundSize = '100%';
+			}
+			c.onmouseover = function(){
+				f.style.background = 'url(img/03big.jpg)';
+				a.style.backgroundSize = '100%';
+			}
+			d.onmouseover = function(){
+				f.style.background = 'url(img/04big.jpg)';
+				a.style.backgroundSize = '100%';
+			}
+			e.onmouseover = function(){
+				f.style.background = 'url(img/05big.jpg)';
+				a.style.backgroundSize = '100%';
+			}
+		</script>
+	</body>
+</html>

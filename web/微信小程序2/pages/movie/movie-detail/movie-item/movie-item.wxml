@@ -1,0 +1,12 @@
+<!--pages/movie/movie-detail/movie-item/movie-item.wxml-->
+<template name='listitem'>
+    <view class='movieBox'>
+      <image src='{{images.medium}}'></image>
+      <text class='movie-title'>{{title}}</text>
+      <view class='pingfen'>
+        <image src='/pages/images/star.png' wx:for="{{rating.average/2-1}}" wx:key="key"></image>
+        <image src='/pages/images/chat.png' wx:for="{{5-rating.average/2}}" wx:key="key"></image>
+        <text>{{rating.average}}</text>
+      </view>
+    </view>
+</template>

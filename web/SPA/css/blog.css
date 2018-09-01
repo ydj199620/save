@@ -1,0 +1,198 @@
+#headerContant .header-wrap{
+    height: 300px;
+   /*  overflow: hidden; */
+}
+#headerContant .title{
+    display: none;
+}
+#headerContant .zhezhaoF{
+    top: -100%;
+}
+#headerContant .zhezhaoC{
+    top: 0;
+}
+.main1{
+    margin-top: 80px;
+}
+.main-left>h1{
+    color:rgb(110,161,68);
+}
+.main-left>h2{
+    color:#c0c0c0;
+    cursor: pointer;
+}
+.main-left>h2:hover{
+    color:black;
+}
+.main-left>p{
+    color: #999;
+    font-size: 16px;
+    line-height: 30px;
+}
+.main-left>div.img-wrap{
+    padding: 5px;
+    border: 1px solid #c0c0c0;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.biaoqian,.biaoqian>li{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.biaoqian>li{
+    float: left;
+    margin: 5% 0;
+    font-size: 16px;
+    color: #c0c0c0;
+    margin-right: 8%;
+    cursor: pointer;
+}
+.biaoqian>li:hover{
+    color: black;
+}
+.main-left>div.button-wrap{
+    position: relative;
+    width: 100%;
+    clear: both;
+}
+.main-left>div>button{
+    padding: 0px 30px;
+    height: 35px;
+    background: rgb(110,161,68);
+    border: rgb(110,161,68);
+    color: white;
+    border: 0;
+    line-height: 40px;
+    outline:none;
+    margin-bottom: 10%;
+}
+.main-left>div>button:hover{
+    color: rgb(110,161,68);
+    background: white;
+    transition: all 0.3s linear;
+}
+.main-right>h1{
+    color: rgb(110,161,68);
+    margin-bottom: 30px;
+}
+.main-right>div>input::-webkit-input-placeholder{
+    color:#999;
+}
+.main-right>div.search1>input{
+    outline: none;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5%;
+}
+.main-right>div.check{
+    width: 60%;
+    display: inline-block;
+}
+.main-right>div.check>p>input[type='checkbox']{
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    -webkit-appearance:none;/* 去掉按钮样式 */
+    border: 1px solid #c9c9c9;
+    border-radius: 2px;
+    outline: none;
+    margin-right: 10px;
+    position: relative;
+    top: 5px;
+}
+.btn4{
+    width: 39%;
+    display: inline-block;
+    text-align: right;
+    position: relative;
+    vertical-align: top;
+    margin-top: 5%;
+}
+.btn4>button{
+    padding: 0px 30px;
+    height: 35px;
+    background: rgb(110,161,68);
+    border: rgb(110,161,68);
+    color: white;
+    border: 0;
+    line-height: 40px;
+    outline:none;
+}
+
+.btn4>button:hover{
+    color: rgb(110,161,68);
+    background: #d0d0d0;
+    transition: all 0.3s linear;
+}
+.food{
+    min-height: 175px;
+    margin-bottom: 6%;
+}
+.food>img{
+    float: left;
+}
+.food>div{
+    display: inline-block;
+    width: 60%;
+    margin-left: 5%;
+    margin-top: 3%;
+    clear: both;
+}
+.food>div>h5{
+    color: rgb(110,161,68);
+    text-transform: uppercase;
+}
+.food>div>button{
+    padding: 0px 30px;
+    height: 35px;
+    background: rgb(51,123,182);
+    border: rgb(110,161,68);
+    color: white;
+    border: 0;
+    line-height: 40px;
+    outline:none;
+    border-radius: 5px;
+}
+.food>div>button:hover{
+    background:blue;
+}
+.check input[type=checkbox]:checked{
+    background: url("../img/tick-mark.png")no-repeat center;
+ }
+.jieshao>img{
+     width: 110px;
+     float: left;
+}
+.jieshao>div{
+    margin-left: 5%;
+    display: inline-block;
+    height: 114px;
+}
+.jieshao>div>p{
+    margin-top: 30%;
+}
+.jieshao>div>h5{
+    color: rgb(110,161,68);
+}
+.jieshao>p{
+    margin-top: 5%;
+    clear: both;
+    margin-bottom: 30px;
+}
+.nav1>nav>ul>li>a,.nav1>nav>ul>li>a>span{
+    font-family: 'Courier New', Courier, monospace !important;
+}
+@media only screen and (max-width:400px){
+    .nav1>nav>ul>li>a{
+        padding: 5px 8px !important;
+    }
+}
+@media only screen and (max-width:995px){
+    #headerContant .zhezhaoF{
+        height: 0;
+    }
+    #headerContant .zhezhaoC{
+        height: 100%;
+    }
+}

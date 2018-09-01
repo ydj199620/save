@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script src="javascripts/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+    <input type="button" value="get" id="get">
+    <input type="button" value="post" id="post">
+    <p></p>
+</body>
+</html>
+<script>
+    $(function(){
+        //VueHandler/AdminHandler?action=delete//删除管理员
+        $('#get').click(function(){
+            $.ajax({
+                type:'get',
+                url:'/VueHandler/AdminHandler',
+                async:true,
+                data:{
+                    action:'delete',
+                    tokenId:2
+                },
+                error:function(result){
+                    $('p').html(result)
+                },
+                success:function(result){
+                    $('p').html(result+'成功')
+                }
+            })
+        })
+        $('#post').click(function(){
+            $.ajax({
+                type:'post',
+                url:'/VueHandler/AdminLoginAndRegHandler?action=add',
+                async:true,
+                data:{
+                    'userName':'admin100',
+                    'trueName':'徐傻吊',
+                    'password':'123456',
+                    'phone':'11111111111',
+                    'power':'脑残'
+                },
+                error:function(result){
+                    $('p').html(result)
+                },
+                success:function(result){
+                    $('p').html(result)
+                }
+            })
+        })
+    })
+</script>

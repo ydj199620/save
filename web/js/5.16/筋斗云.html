@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				padding:0;
+				margin: 0;
+				list-style: none;
+			}
+			body{
+				background: #333;
+			}
+			#box{
+				width: 800px;
+				height: 42px;
+				margin: 0 auto;
+				background: white;
+				margin-top: 100px;
+				border-radius: 10px;
+				background-image: url(img/rss.png);
+				background-repeat: no-repeat;
+				background-position:center right;
+				position: relative;
+			}
+			#box ul{
+				position: relative;
+				z-index: 3;
+			}
+			#box ul li{
+				float: left;
+				width: 83px;
+				height: 42px;
+				line-height: 42px;
+				text-align: center;
+				cursor: pointer;
+			}
+			#cloud{
+				position: absolute;
+				width: 83px;
+				height: 42px;
+			
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="cloud">
+				<img src="img/cloud.gif" />
+			</div>
+			<ul id="ulBox">
+				<li>北京校区</li>
+				<li>北京校区</li>
+				<li>北京校区</li>
+				<li>北京校区</li>
+				<li>北京校区</li>
+				<li>北京校区</li>
+				<li>北京校区</li>
+				<li>北京校区</li>
+			</ul>
+		</div>
+	</body>
+</html>
+<script>
+	var ulbox = document.getElementById('ulBox');
+	var width1 = ulbox.firstElementChild.offsetWidth;
+	console.log(width1)
+	var cloud = document.getElementById('cloud');
+	var ulli = ulbox.children;
+	var e;
+	var f = cloud.offsetLeft;//用来保存点击时图片左边距离，初始值为0
+	for(var i =0;i<ulli.length;i++){
+		ulli[i].item = i;
+		clearInterval(e);
+		ulli[i].onmouseover = function(){
+			aa(cloud,width1*this.item)
+		}
+		ulli[i].onclick = function(){
+			f = width1*this.item;//点击时，保存点击位置图片的左边距离
+			console.log(f)
+		}
+		ulli[i].onmouseout = function(){
+			aa(cloud,f);//执行函数，把点击时保存的距离f带入
+		}
+	}
+	function aa(obj,target){
+		var leader = obj.offsetLeft;
+		var step = 0;
+		clearInterval(e);
+	 	e = setInterval(function(){
+			if(leader<target){
+				step = Math.ceil((target-leader)/10);//缓慢向右移动
+			}
+			if(leader>target){
+				step = Math.floor((target-leader)/10);//缓慢向左移动
+			}
+			if(leader!=target){
+				leader = leader+step;
+				obj.style.left = leader+'px'
+			}else{
+				clearInterval(e);	
+			}
+			/*console.log(leader)*/
+		},50)
+	}
+</script>

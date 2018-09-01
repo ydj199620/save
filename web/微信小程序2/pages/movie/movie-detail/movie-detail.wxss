@@ -1,0 +1,25 @@
+@import 'movie-item/movie-item.wxss';
+.film{
+  margin: 0 25rpx 0;
+  padding-top: 20rpx;
+  clear: both;
+}
+.film-title{
+  font-size: 30rpx;
+  font-weight: 700;
+}
+.film-more{
+  float: right;
+  font-size: 40rpx;
+  font-weight: 500;
+}
+.film-item{
+  display: flex;
+  flex-direction: row;
+}
+.film-img{
+  width: 20rpx;
+  height: 20rpx;
+  float: right;
+  margin-top: 20rpx;
+}

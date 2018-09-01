@@ -1,0 +1,28 @@
+*{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	text-decoration: none;
+}
+body{
+	background: url(../img/timg.jpg);
+	background-size: 100%;
+}
+#top{
+	width: 750px;
+	margin: 250px auto;
+	height: 40px;
+}
+#top>div{
+	float: left;
+	margin-right: 50px;
+	font-size: 50px;
+	font-weight: 900;
+}
+#top>div>a{
+	color: orangered;
+	opacity: 0.9;
+}
+#top>div:last-child{
+	margin-right: 0;
+}

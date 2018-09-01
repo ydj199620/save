@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div>div{
+				width: 30px;
+				height: 20px;
+				font-size: 10px;
+				border: 1px inset black;
+				float: left;
+				margin-right: 10px;
+				text-align: center;
+				line-height: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="checkbox" id="one"/>
+		<input type="checkbox" id="one"/>
+		<input type="checkbox" id="one"/>
+		<input type="checkbox" id="one"/>
+		<input type="checkbox" id="one"/>
+		<input type="checkbox" id="one"/>
+		<input type="checkbox" id="one"/>
+		<input type="checkbox" id="one"/>
+		<input type="checkbox" id="one"/>
+		<input type="checkbox" id="one"/>
+		<input type="checkbox" id="one"/>
+		<div>
+			<input type="button" value="全选" onclick="b()"/>
+			<input type="button" value="取消" onclick="c()"/>
+			<input type="button" value="反选" onclick="d()"/>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var a = document.all('one');
+	function b(){
+		for(i in a){
+			a[i].checked = true;
+		}
+	}
+	function c(){
+		for(e in a){
+			a[e].checked = false;
+		}
+	}
+	function d(){
+		for(j in a){
+			a[j].checked = !a[j].checked;
+		}
+	}
+</script>

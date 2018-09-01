@@ -1,0 +1,254 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: '楷体';
+}
+#top{
+    width: 100%;
+    height: 120px;
+    background: url(../img/header_bg.jpg) no-repeat;
+}
+#box{
+    width: 1100px;
+    height: 120px;
+    margin: 0 auto;
+    line-height: 120px;
+}
+#boximg{
+    margin-top: 9px;
+    margin-left: 25px; 
+}
+#boxul{
+    float: right;
+}
+#boxul>li{
+    float: left;
+    margin-right: 25px;
+}
+#boxul>li>a{
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    opacity: 0.8;
+}
+#boxul>li>img{
+    position: relative;
+    top: 6px;
+    left: 5px;
+}
+#main{
+    background: #f1f2f6;
+    height: 1870px;
+    width: 100%;
+    overflow: hidden;
+}
+#box2{
+    text-align: center;
+    width: 1100px;
+    margin: 0 auto;
+    margin-top: 112px;
+}
+#main-title{
+    font-size: 54px;
+    color: #311759;
+    font-weight: bold;
+}
+#main-title2{
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #311759;
+    font-weight: bold;
+}
+#box2ul{
+    width: 39px;
+    margin: 0 auto;
+    margin-top: 20px;
+    height: 8px;
+}
+#box2ul>li{
+   width: 8px;
+    height: 8px;
+    float: left;
+    margin-right: 5px;
+}
+#box2ul-li1{
+    background: url(../img/three_points01.png) 0 0 no-repeat;
+}
+#box2ul-li2{
+    background: url(../img/three_points01.png) -15px 0 no-repeat;
+}
+#box2ul-li3{
+    background: url(../img/three_points01.png) -29px 0 no-repeat;
+}
+#box2Nav{
+    background: url(../img/pen.png) no-repeat;
+    background-position: right;
+    height: 54px;
+    margin-top: 18px;
+    margin-bottom: 40px;
+}
+#box2Nav>span{
+    float: left;
+    margin-left: 30px;
+    font-size: 30px;
+    color: #311759;
+    height: 34px;
+    font-weight: 700;
+}
+#box2Nav>img{
+    margin-left: -38px;
+    margin-top: 18px;
+    clear: both;
+}
+#main-main{
+    width: 1100px;
+    margin: 0 auto;
+}
+.box3{
+	margin-bottom: 40px;
+	height: 240px;
+}
+.box3One{
+    padding: 38px 25px 34px 20px;
+    background: white;
+    width: 490px;
+    height: 168px;
+    overflow: hidden;
+    float: left;
+}
+.box3img{
+    float: left;
+    width: 260px;
+}
+.box3span{
+    float: left;
+    width: 220px;
+    margin-left: 10px;
+    font-weight: 700;
+    margin-top: 19px;
+}
+.box3-span1{
+    font-size: 20px;
+    color: #454548;
+    margin-bottom: 10px;
+}
+.box3-span2{
+    color: #6b6a6f;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.box3-span3{
+    color: #838284;
+    font-size: 13px;
+    line-height: 26px;
+}
+.box3Two{
+    padding: 38px 25px 34px 20px;
+    background: white;
+    width: 490px;
+    height: 168px;
+    overflow: hidden;
+    float: right;
+}
+/*#more{
+	width: 104px;
+	height: 21px;
+	margin: 0 auto;
+	color: black;
+	font-weight: 600;
+	font-size: 16px;
+	border-bottom: 1px solid #311759;
+	opacity: 0.4;
+	text-align: center;
+	margin-top: 80px;
+	margin-bottom: 20px;
+}*/
+#mouse{
+	width: 107px;
+	height: 175px;
+	margin:  0 auto;
+	margin-top: 80px;
+	margin-bottom: 20px;
+}
+#select1{
+	width: 58px;
+	height: 58px;
+	margin: 0 auto;
+	background: url(../img/lis_more_btn_bg.png) 0 -58px no-repeat;
+}
+.bottom{
+	width: 100%;
+	height: 373px;
+	background: url(../img/mokuai02_bg.jpg) no-repeat;
+	overflow: hidden;
+}
+.bigbox{
+	width: 1187px;
+	margin:  0 auto;
+}
+.box4{
+	float: left;
+}
+#miusicBox{
+	width: 1100px;
+	height: 300px;
+	margin:  0 auto;
+	border-bottom: 2px dashed white;
+	overflow: hidden;
+	position: relative;
+}
+#miusicBoxUl{
+	width: 588px;
+	height: 57px;
+	margin: 0 auto;
+	margin-top: 121.5px;
+}
+#miusicBoxUl>li{
+	float: left;
+	margin-right: 27px;
+	width: 57px;
+	height: 57px;
+}
+.bottom-bottom{
+	width: 1100px;
+	height: 73px;
+	line-height: 73px;
+	font-size: 17.41px;
+	color: white;
+	font-weight: 700;
+	text-align: center;
+	opacity: 0.7;
+	filter: alpha(opacity=70);
+}
+.box5{
+	float: left;
+	width: 87px;
+	height: 161px;
+	margin-top:62px;
+}
+#stick{
+	width: 50px;
+	height: 50px;
+	margin-left: 18.5px;
+	background: url(../img/scroll_top_bg.png) 0 0 no-repeat;
+}
+#stick:hover{
+	background: url(../img/scroll_top_bg.png) 0 -50px no-repeat;
+}
+#imgEmail{
+	margin-top: 27px;
+	width: 87px;
+	height: 87px;
+	background: url(../img/fixed_contactus.png) -148px 0 no-repeat;
+}
+#imgTell{
+	position: absolute;
+	right: 0;
+	top: 140px;
+	display: none;
+	width: 148px;
+	height: 87px;
+	background: url(../img/fixed_contactus.png) 0 0 no-repeat;
+}

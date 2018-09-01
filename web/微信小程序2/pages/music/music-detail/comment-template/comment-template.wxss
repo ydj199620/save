@@ -1,0 +1,38 @@
+.line{
+    width: 100%;
+    height: 1px;
+    background-color: #e5e5e5;
+    vertical-align: middle;
+    position: relative;
+    top: 30rpx;
+    margin: 0 auto;
+}
+
+.comment-user{
+    flex-direction: column;
+}
+
+.comment-user-info{
+    flex-direction: row;
+    margin-top: 50rpx;
+}
+
+.comment-user-info image{
+    height: 64rpx;
+    width: 64rpx;
+    vertical-align: middle;
+}
+
+.comment-user-info text{
+    font-size: 25rpx;
+    font-weight: 700;
+    margin-left: 20rpx;
+    vertical-align: middle;
+    color: #999;
+}
+
+.comment-text{
+    font-size: 20rpx;
+    color: #666;
+    vertical-align: middle;
+}

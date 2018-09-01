@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        #bigbox>div{
+            height: 50px;
+            width: 100%;
+            padding: 10px 0;
+            background: #ccc;
+            margin-top: 10px;
+        }
+        img{
+            width: 50px;
+            float: left;
+            margin: 10px;
+            margin-top: 0;
+        }
+        ul{
+            float: left;
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button>获取</button>
+    <div id="bigbox"></div>
+</body>
+</html>
+<script>
+    var btn = document.getElementsByTagName('button')[0];
+    var bigbox = document.getElementById('bigbox');
+    var arr = [];
+    var index = 0;
+    var rptArr;
+    var a;
+    btn.onclick = function(){
+        var xhr = new XMLHttpRequest();
+        xhr.open('get','https://api.github.com/users',true);
+        xhr.send(null);
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState ==4 &&xhr.status ==200){
+                var rpt = xhr.responseText;
+                rptArr = JSON.parse(rpt);
+                for(var i = 0;i<rptArr.length;i++){
+                    a = new Image();
+                    a.src = rptArr[i].avatar_url;
+                    arr.push(a);
+                    a.onload = function(){
+                        index++;
+                        aa(index);
+                    }
+                   
+                }
+            }
+        }
+    }
+    function aa(obj){
+        if(obj == arr.length){
+            for(var j = 0;j<arr.length;j++){
+                var div1 = document.createElement('div');
+                var ul = document.createElement('ul');
+                ul.innerHTML = '<li>ID:'+rptArr[j].id+'</li>'+'<li>Login:'+rptArr[j].login+'</li>'
+                div1.appendChild(arr[j]);
+                div1.appendChild(ul);
+                bigbox.appendChild(div1);
+            }
+        }
+    }
+</script>

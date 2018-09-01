@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#box{
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				top: 100px;
+				background: red;
+			}
+			#btn{
+				width: 100px;
+				height: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<button id="btn">点击</button>
+		<div id="box"></div>
+	</body>
+</html>
+<script type="text/javascript">
+	var a = document.getElementById('btn');
+	var b = document.getElementById('box');
+	var json1 = {
+		'width':300,
+		'height':700,
+		'left':600
+	}
+	a.onclick =function(){
+		aa(b,json1)
+	}
+	function aa(obj,json2){
+		clearInterval(obj.timer);
+		obj.timer = setInterval(function(){
+			var flag = true;
+			for(var k in json2){
+				var leader = parseInt(bb(obj,null,k));//k是属性；
+				var target = json2[k];//json1[k]是获取值；
+				console.log(k);
+				console.log(json2[k])
+				var step = (target-leader)/10;
+				(target-leader)>0?step=Math.ceil(step):step=Math.floor(step);
+				console.log(leader+'--'+step);
+				if(leader!=target){
+					leader = leader+step;
+					obj.style[k] = leader + 'px';
+					flag =false;
+				}
+			}
+			if(flag){
+				clearInterval(obj.timer);
+			}
+		},50)
+	}
+	function bb(obj,obj1,obj2){
+		if(window.getComputedStyle){
+			return window.getComputedStyle(obj,obj1)[obj2];
+		}else{
+			return obj.currentStyle[obj2];
+		}
+	}
+</script>

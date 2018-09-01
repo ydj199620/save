@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				text-align: center;
+				background: url(img/000.jpg);
+				background-size: 100%;
+			}
+			span{
+				margin-right: 20px;
+				cursor: pointer;
+			}
+			span:hover{
+				color: #FF6700;
+			}
+		</style>
+	</head>
+	<body id="box">
+		<span>春</span>
+		<span>夏</span>
+		<span>秋</span>
+		<span>冬</span>
+	</body>
+</html>
+<script type="text/javascript">
+	var a = document.getElementsByTagName('span');
+	var b = document.getElementById('box')
+	for(var i =0;i<a.length;i++){
+		a[i].c = i;
+		a[i].onclick = function(){
+			b.style.background = 'url(img/00'+this.c+'.jpg)';
+			b.style.backgroundSize = '100%';
+		}
+	}
+</script>

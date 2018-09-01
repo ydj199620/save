@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			#box{
+				width: 490px;
+				height: 170px;
+				margin: 0 auto;
+				border: 3px solid saddlebrown;
+				position: relative;
+				overflow: hidden;
+			}
+			#box2{
+				width: 2940px;
+				height: 170px;
+				position: relative;
+			}
+			#box2 li{
+				float: left;
+				width: 490px;
+				height: 170px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<ul id="box2">
+				<li><img src="img/01.jpg"/></li>
+				<li><img src="img/02.jpg"/></li>
+				<li><img src="img/03.jpg"/></li>
+				<li><img src="img/04.jpg"/></li>
+				<li><img src="img/05.jpg"/></li>
+				<li><img src="img/01.jpg"/></li>
+				<!--伪造第一个图片-->
+			</ul>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var a = document.getElementById('box2');
+	var f = document.getElementById('box')
+	var b = a.children;
+	var c = b[0].offsetWidth;
+	var d;
+	var leader = a.offsetLeft;
+	var step = -10;
+	aa();
+	function aa(){
+		clearInterval(d);
+		d = setInterval(function(){
+			if(leader!=(-c*(b.length-1))){//当前位置不等于目标位置（图片大小乘图片索引长度-1）
+				leader = leader +step;
+				a.style.left = leader+'px';
+			}else{
+				/*a.style.left = '0px';*/
+				leader = 0;
+			}
+		},10)
+	}
+	f.onmouseover= function(){
+		clearInterval(d);
+	}
+	f.onmouseout = function(){
+		aa();
+	}
+	/*for(var e = 0;e<b.length;e++){
+			aa(a,-c*e)
+	}
+	function aa(obj,target){
+		var leader= obj.offsetLeft;
+		var step = -10;
+		leader>target?step=step:step=-step;
+		clearInterval(d);
+		d = setInterval(function(){
+			if(leader!=target){
+				leader = leader +step;
+				obj.style.left = leader+'px';
+			}else{
+				leader = 0;
+			}
+		},50)
+	}*/
+</script>

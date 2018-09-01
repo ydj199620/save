@@ -1,0 +1,156 @@
+*{
+	padding: 0;
+	list-style: none;
+	margin: 0;
+}
+.head{
+	width: 980px;
+	margin: 0 auto;
+	padding-top: 30px;
+	height: 60px;
+	border-bottom: 1px #ecf0f3 solid;
+}
+.logo-left{
+	float: left;
+}
+.logo-left span{
+	font-size: 20px;
+	color: #878889;
+}
+.logo-right{
+	float: right;
+	margin-top: 15px;
+}
+.logo-right span{
+	font-size: 10px;
+	color: #878889;
+}
+.logo-right input{
+	width: 62px;
+	height: 30px;
+	border: 1px #878889 solid;
+}
+.main{
+	width: 980px;
+	margin: 58px auto;
+}
+.main-left{
+    color: #666;
+    font-size: 14px;
+    width: 420px;
+    float: left;
+}
+.main-left div{
+	margin-bottom:22px ;
+}
+.main-left-one input{
+	padding: 11px 10px;
+	width: 328px;
+	height: 16px;
+}
+.main-left-two input{
+	padding: 11px 10px;
+	width: 328px;
+	height: 16px;
+	margin-left: 14px;
+}
+.main-left-three input{
+	padding: 11px 10px;
+	width: 156px;
+	height: 16px;
+}
+.main-left-three input:last-child{
+	width: 160px;
+	height: 42px;
+	border: 1px #878889 solid;
+	background: white;
+	margin-left: 8px;
+	position: relative;
+	top: 1px;
+	color: #666666;
+}
+.main-left-four{
+	font-size: 10px;
+	text-align: center;
+}
+.main-left-four input{
+	position: relative;
+	top: 2px;
+}
+.main-left-four a{
+	text-decoration: none;
+	color: #1a67c8;
+}
+.main-left-five{
+	text-align: center;
+}
+.main-left-five input{
+	width: 350px;
+	height: 50px;
+	border: 0px;
+	color: white;
+	background: #3e89eb;
+	font-size: 16px;
+}
+.main-right{
+	width: 238px;
+	height: 386px;
+	border: 1px #d1edff solid;
+	background: #f5fbff;
+	float: right;
+	padding: 11px;
+}
+.main-right-one{
+	border-bottom: 1px #ecf0f3 solid;
+}
+.main-right-one span{
+	position: relative;
+	top: -10px;
+	color: #666666;
+	font-size: 14px;
+}
+.main-right-two{
+	margin: 20px 0px;
+	color: #666666;
+}
+.main-right-two span:first-child{
+	font-size: 12px;
+	margin-bottom: 10px;
+}
+.main-right-two span:last-child{
+	font-size: 14px;
+	color: #f18300;
+	font-weight: 700;
+}
+.main-right-three .span-one{
+	font-size: 12px;
+	margin-bottom: 10px;
+	color: #666666;
+}
+.main-right-three .span-one{
+	margin-bottom: 0px;
+}
+.span-two{
+	font-size: 14px;
+	color: #f18300;
+	font-weight: 700;
+}
+.main-right-four{
+	text-align: center;
+	margin-top: 25px;
+}
+.main-right-four span{
+	font-size: 12px;
+	color: #666666;
+	position: relative;
+	top: -10px;
+}
+.top{
+	width: 980px;
+	margin: 0 auto;
+	text-align: center;
+	clear: both;
+	color: #7a77c8;
+	font-size: 12px;
+    padding: 50px;
+}

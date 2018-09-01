@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#box{
+				width: 322px;
+				height: 345px;
+				position: absolute;
+				bottom: 0px;
+				right: 0;
+				overflow: hidden;
+			}
+			#click{
+				position: relative;
+				color: white;
+				width: 21px;
+				left: 297px;
+   		 		bottom: 353px;
+			}
+			#img2{
+				position: relative;
+				top: -4px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<img src="img/t.jpg" id="img1"/>
+			<img src="img/b.jpg" id="img2"/>
+			<div id="click">X</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var a = document.getElementById('click');
+	var b = document.getElementById('box');
+	var c = {
+		'height':0,
+		'opacity':0
+	}
+	a.onclick=function(){
+		aa(b,c)
+	}
+	function aa(obj,json2,fun){
+		clearInterval(obj.timer);
+		obj.timer = setInterval(function(){
+			var flag = true;
+			for(var k in json2){
+				if(k=='opacity'){
+					var leader = parseFloat(bb(obj,null,k));//k是属性；
+					var target = json2[k];//json1[k]是获取值；
+					var step = ((target-leader)/10)*1000;
+					(target-leader)>0?step=Math.ceil(step):step=Math.floor(step);
+					leader = leader+step/1000;
+					obj.style[k] = leader;
+				}else if(k=='zIndex'){
+					obj.style[k] = json2[k];//z-index只能直接改变
+				}else{
+					var leader = parseInt(bb(obj,null,k));//k是属性；
+					var target = json2[k];//json1[k]是获取值；
+					console.log(k);
+					console.log(json2[k]);
+					var step = (target-leader)/10;
+					(target-leader)>0?step=Math.ceil(step):step=Math.floor(step);
+					console.log(leader+'--'+step);
+						leader = leader+step;
+						obj.style[k] = leader + 'px';
+				}
+				if(leader!=target){
+					flag =false;
+				}
+			}
+			if(flag){
+				clearInterval(obj.timer);
+				fun&&fun();//回调函数
+					//另一种回调函数方法
+					/*if(fun){
+					 * 	fun();
+					 * }*/
+			}
+		},50)
+	}
+	function bb(obj,obj1,obj2){
+		if(window.getComputedStyle){
+			return window.getComputedStyle(obj,obj1)[obj2];
+		}else{
+			return obj.currentStyle[obj2];
+		}
+	}
+</script>

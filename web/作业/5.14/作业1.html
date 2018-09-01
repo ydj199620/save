@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			#box{
+				width: 490px;
+				height: 170px;
+				margin: 0 auto;
+				border: 3px solid saddlebrown;
+				position: relative;
+				overflow: hidden;
+			}
+			#box2{
+				width: 2450px;
+				height: 170px;
+				position: relative;
+			}
+			#box2 li{
+				float: left;
+				width: 490px;
+				height: 170px;
+			}
+			#left{
+				position: absolute;
+				width: 30px;
+				height: 34px;
+				background: rgba(0,0,0,0.5);
+				top: 55px;
+				left: 0;
+				color: white;
+				text-align: center;
+				line-height: 30px;
+				font-size: 30px;
+			}
+			#right{
+				position: absolute;
+				width: 30px;
+				height: 34px;
+				background: rgba(0,0,0,0.5);
+				top: 55px;
+				right: 0;
+				color: white;
+				text-align: center;
+				line-height: 30px;
+				font-size: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<ul id="box2">
+				<li><img src="img/01.jpg"/></li>
+				<li><img src="img/02.jpg"/></li>
+				<li><img src="img/03.jpg"/></li>
+				<li><img src="img/04.jpg"/></li>
+				<li><img src="img/05.jpg"/></li>
+			</ul>
+			<div id="left">&lt;</div>
+			<div id="right">&gt;</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var a = document.getElementById('box2');
+	var b = a.children;
+	var c = b[0].offsetWidth;
+	var d;
+	var left = document.getElementById('left');
+	var right = document.getElementById('right');
+	var e = 0 ;
+	right.onclick = function(){
+		if(e<b.length-1){
+			e++
+			aa(a,-c*e)
+		}
+	}
+	left.onclick = function(){
+		if(e>0){
+			e--;
+			aa(a,-c*e)
+		}
+	}
+	/*function aa(obj,target){
+		var leader = obj.offsetLeft;
+		var step = -10;
+		leader>target?step=step:step = -step;
+		clearInterval(d);
+		d = setInterval(function(){
+			if(leader!=target){
+				leader = leader +step;
+				obj.style.left = leader+'px';
+			}else{
+				clearInterval(d)
+			}
+		},50)
+	}*/
+	function aa(obj,target){
+		var leader = obj.offsetLeft;
+		var step = -3;
+		leader>target?step=step:step = -step;
+		clearInterval(d);
+		d = setInterval(function(){
+			if(Math.abs(target-leader)>Math.abs(step)){
+				leader = leader +step;
+				obj.style.left = leader+'px';
+			}else{
+				obj.style.left = target+'px';
+				clearInterval(d);
+			}
+		},5)
+	}
+</script>

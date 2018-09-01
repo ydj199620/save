@@ -1,0 +1,84 @@
+#wrapContent{
+	min-height: 2000px;
+    background: url(../img/bg_875d09c.jpg) no-repeat center;
+}
+#fanhui{
+    position: fixed;
+    right: 0;
+    bottom: 10%;
+    cursor: pointer;
+    display: none;
+    width: 100px;
+    height: 141.44px;
+}
+#mainContent{
+	width: 1100px;
+    min-height: 400px;
+    margin: 0 auto;
+    text-align: center;
+    clear: both;
+    
+}
+#mainContent>p{
+	font-size: 80px;
+	color: #352549;
+	font-weight: 800;
+	text-shadow: 0 0 5px yellow;
+}
+#mainContent>span{
+	margin-top: 40px;
+	margin-bottom: 20px;
+	display: block;
+	width: 248px;
+	height: 78px;
+	background: url(../img/img_one/index_z_6c2092c.png.png) -356px -1311px no-repeat;
+}
+#mainContent>em{
+	display: block;
+	width: 100%;
+	height: 2px;
+	background: url(../img/img_one/pen_line_long.png);
+	background-size: 100%;
+	margin-bottom: 30px;
+}
+.first{
+	width: 498px;
+	height: 169px;
+	padding: 30px 20px;
+	background: white;
+	border:1px solid white;
+	position: relative;
+	transition: all 0.5s linear 0s;
+	top: 0;
+	float: left;
+	margin-top: 20px;
+	cursor: pointer;
+}
+.marginR{
+	margin-right: 20px;
+}
+.first>img{
+	float: left;
+	margin-right: 20px;
+}
+.first>div{
+	width: 378px;
+	float: left;
+	text-align: left;
+}
+.first>div>p{
+	line-height: 20px;
+}
+.first:hover{
+	border-color:#311759;
+	top: -10px;
+}
+#more{
+	clear: both;
+	width: 1100px;
+	margin: 0 auto;
+	text-align: center;
+}
+.first-wrap{
+	display: none;
+}

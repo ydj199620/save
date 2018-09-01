@@ -1,0 +1,10 @@
+/* pages/music/music.wxss */
+@import 'article-item-template/article-item-template.wxss';
+.container{
+  width: 100%;
+  background-color: #f1f1f1;
+}
+.slide-image{
+  width: 100%;
+}
+/* 文章列表 */

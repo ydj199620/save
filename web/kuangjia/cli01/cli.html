@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script src="vue.js"></script>
+    <script src="vue-router.js"></script>
+</head>
+<body>
+    <div id="box">
+        <router-view></router-view>
+        <router-link to='/two'>点击</router-link>
+    </div>
+</body>
+</html>
+<script>
+    var one = {
+        template:'<div>123</div>',
+        data(){
+            return{
+
+            }
+        }
+    }
+    var two = {
+        template:'<div>456</div>',
+        data(){
+            return{
+                
+            }
+        }
+    }
+    var three = {
+        template:'<div>789</div>',
+        data(){
+            return{
+                
+            }
+        }
+    }
+    var routes =[
+        {path:'/',component:one},
+        {path:'/two',component:two},
+        {path:'/three',component:three}
+    ]
+    var router3=new VueRouter({
+        routes
+    })
+    new Vue({
+        el:'#box',
+        router:router3
+    })
+</script>

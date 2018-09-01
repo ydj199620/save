@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="loading"></div>
+		<div id="box"></div>
+	</body>
+</html>
+<script type="text/javascript">
+	/*1.遍历需要预加载的图片网址,动态生成image对象
+	2.创建一个数组,用来保存动态生成的image对象
+	3.使用onload来对预加载完成后的对象进行处理
+	4.用一个计数器保存预加载完成的次数
+	5.判断计数器的值和图片的长度是否相等
+	6.如果相等,则把数组中的image对象添加到box中
+	7.动态的显示图片加载的百分比
+*/
+	var box = document.getElementById('box');
+	var loading = document.getElementById('loading');
+	var index = 0;//用一个计数器保存预加载完成的次数
+	var arr = [];//创建个数组用来保存创建的img
+	var imgArr=[
+				"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1526981782836&di=2cb93310b5390a85cd35cf9cd5e18aeb&imgtype=0&src=http%3A%2F%2Fpic32.photophoto.cn%2F20140924%2F0005018385539517_b.jpg",
+				"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1526981684215&di=57ab94d92a79c52356321085773e4893&imgtype=0&src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F4d086e061d950a7b11d073210cd162d9f3d3c969.jpg",
+				"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1526981782836&di=2cb93310b5390a85cd35cf9cd5e18aeb&imgtype=0&src=http%3A%2F%2Fpic32.photophoto.cn%2F20140924%2F0005018385539517_b.jpg"
+			];
+	for(var i = 0;i<imgArr.length;i++){//循环创建img对象
+		var a = new Image();//穿件img对象
+		//console.log(a);
+		a.src = imgArr[i];//循环一次加载完成后使img的src属性变成imgarr数组中的图片地址
+		arr.push(a);//把每次循环的img的加入到arr数组中
+		a.onload = function(){//img加载后事件
+			index++;//计数器加1
+			aa(index);
+		}
+	}
+	function aa(obj){//用来判断加载完成后图片显示出来
+		if(obj==imgArr.length){//如果计时器的值和arr数字的长度一样时
+			//console.log(arr)
+			for(var j = 0;j<arr.length;j++){//遍历arr数组中每个img
+				box.appendChild(arr[j]);//把每个img放入到box的下面
+			}
+		}
+		loading.innerHTML = Math.floor(obj/imgArr.length*100) +'%';//动态的显示图片加载的百分比
+	}
+</script>	

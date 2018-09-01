@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <style>
+        img{
+            width: 192px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <img src="img/P_004.jpg">
+</body>
+</html>
+<script>
+    var img = document.getElementsByTagName('img')[0];
+    var scrollFunc = function(){
+        var event = event ||window.event;
+        if(event.wheelDelta){//非火狐
+            if(event.wheelDelta>0){
+                //alert('上')
+                if(img.offsetWidth<400){
+                    img.style.width = img.offsetWidth + 1+'px';
+                }else{
+                    img.style.width = '400px';
+                }
+            }
+            if(event.wheelDelta<0){
+                //alert('下')
+                if(img.offsetWidth>50){
+                    img.style.width = img.offsetWidth - 1+'px';
+                }else{
+                    img.style.width = '50px';
+                }
+            }
+        }
+        if(event.detail){//火狐
+            if(event.detail>0){//滚轮滑动的距离
+                //alert('下')
+                if(img.offsetWidth<400){
+                    img.style.width = img.offsetWidth + 1+'px';
+                }else{
+                    img.style.width = '400px';
+                }
+            }
+            if(event.detail<0){
+                //alert('上')
+                if(img.offsetWidth>50){
+                    img.style.width = img.offsetWidth - 1+'px';
+                }else{
+                    img.style.width = '50px';
+                }
+            }
+        }
+    }
+     //添加事件监听
+    /*注册事件*/
+    if(document.addEventListener){
+         document.addEventListener('DOMMouseScroll',scrollFunc,false);//火狐
+     }//W3C
+     window.onmousewheel=document.onmousewheel=scrollFunc;//IE/Opera/Chrome/Safari
+
+</script>

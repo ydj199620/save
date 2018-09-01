@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script src="vue.js"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #box{
+            width:800px;
+            margin: 0 auto;
+        }
+        textarea{
+            padding-top: 10px;
+            text-indent: 10px;
+        }
+        .box1>div{
+            width: 100%;
+            margin-top: 20px;
+            height: 26px;
+        }
+        .box3:hover{
+            background: blue !important;
+        }
+        .btn,.btn2{
+            float: right;
+            margin-right: 10px;
+            margin-top: 2px;
+        }
+        input{
+            background: none;
+            border: 0;
+        }
+        .bg{
+            background: #999999 !important;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <h1>留言板</h1>
+        <textarea placeholder="Enter message" cols="100" rows="5" id="txt"></textarea>
+        <div><button @click='b()'>留言</button></div>
+        <div class="box1" v-for='(v,i) in msg'>
+            <div class="box3" :class="{'bg':i%2==0?true:false}"><!-- onmouseover="this.style.background='blue'" -->
+                <input :value="v.value" disabled="disabled"/>
+                <button class='btn' @click='a(i)'>删除</button>
+                <button class='btn2' @click='c(v,i)'>编辑</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    var k = 0;
+    var j=0;
+    new Vue({
+        el:'#box',
+        data:{
+            msg:[{
+              /* color:'#999999', */
+              value:'one'  
+            },
+            {
+              /* color:'#ffffff', */
+              value:'two'  
+            },
+            {
+              /* color:'#999999', */
+              value:'three'  
+            }
+            ],
+            msg1:'blue'
+        },
+        methods:{
+            a:function(j){
+                this.msg.splice(j,1)
+            },
+            b:function(){
+                k++;
+                var v =document.getElementById('txt')
+                var json={
+                    value:v.value,
+                   /*  color:'' */
+                }
+                /* k%2==0?json.color ='#999999':json.color ='#ffffff'; */
+               /*  if(k%2==0){
+                    json.color ='#999999'
+                }else{
+                    json.color ='#ffffff'
+                } */
+                if(json.value==''||JSON.stringify(json)=='{}'){//JSON中stringify方法把对象转换成字符串
+                    alert('请输入完整信息')
+                }else{
+                    this.msg.push(json);
+                    v.value="";
+                }
+            },
+            c:function(v,i){
+                var btn =document.getElementsByClassName('btn2')[i]
+                var inp = document.getElementsByTagName('input')[i]
+                j++;
+                if(j>0){
+                    inp.removeAttribute('disabled')
+                    btn.innerHTML = '保存'
+                    j=-1;
+                }else if(j==0){
+                    inp.setAttribute('disabled','disabled')
+                    btn.innerHTML = '编辑'
+                }
+            }
+        }
+    })
+   /*  var box3 =document.getElementsByClassName('box3');
+    for(i in box3){
+        if(i%2==0){
+            box3[i].style.backgroundColor = '#999999'
+        }else{
+            box3[i].style.backgroundColor = '#ffffff'
+        }
+    } */
+</script>

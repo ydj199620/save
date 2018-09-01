@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 100px;
+				height: 100px;
+				border-radius: 50px;
+				background: red;
+				cursor: move;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+	</body>
+</html>
+<script type="text/javascript">
+	/*在拖动区域按下鼠标后，在文档中移动鼠标，盒子跟着鼠标坐标走。
+	鼠标在文档中弹起后，将事件清空。
+	盒子的位置要进行调整，当鼠标按下时，记录鼠标在盒子中的位置，鼠标移动计算盒子位置的时候减去。*/
+	var box = document.getElementById('box');
+	//box.onmousemove = null;//使鼠标弹起时鼠标移动的效果为空
+	box.onmousedown = function(){//鼠标按下时
+		box.onmousemove =function(){//鼠标移动时
+			var event1 = event||window.event;
+			console.log(event1);
+			box.style.left = (getPage(event1).pageX-box.offsetWidth/2) +'px';
+			//box的左边距等于鼠标移动的以文档左上角为基点的距离的x左边距离-盒子宽度一半的距离，使鼠标点击后再图片中间移动图片
+			box.style.top = (getPage(event1).pageY-box.offsetHeight/2) +'px';
+			//box的左边距等于鼠标移动的以文档左上角为基点的距离的y上边距离-盒子高度一半的距离，使鼠标点击后再图片中间移动图片
+		}
+	}
+	box.onmouseup =function(){//鼠标在文档中弹起后，将事件清空。
+		box.onmousemove = null;//使鼠标弹起时鼠标移动的效果为空
+	}
+	function getPage(event2){
+		return event2 = {
+			'pageX':event.pageX||event.clientX+document.documentElement.scrollLeft,
+			'pageY':event.pageY||event.clientY+document.documentElement.scrollTop
+		}
+	}
+</script>

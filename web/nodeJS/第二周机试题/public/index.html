@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+</head>
+<body>
+    <form action="/register?action=add" method="POST">
+        账号：<input type="text" name="userName"><br />
+        密码：<input type="password" name="password"><br />
+        真实姓名：<input type="text" name="turename"><br />
+        性别：<input type="text" name="sex"><br />
+        年龄：<input type="text" name="age"><br />
+        手机号：<input type="text" name="phone" maxlength="11"><br />
+        <input type="submit" value="注册">
+    </form>
+    <form action="/login?action=login" method="POST">
+        姓名：<input type="text" name="turename">
+        <input type="submit" value="查询">
+    </form>
+</body>
+</html>

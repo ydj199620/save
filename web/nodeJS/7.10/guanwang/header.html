@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Page Title</title>
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<script src="js/move.js"></script>
+	<link rel="stylesheet" href="css/header.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<script src="js/wow.min.js"></script>
+</head>
+<body>
+	<div class="header_wrap">
+		<div class="background_one"></div>
+		<div class="header_main">
+			<div class="nav_1">
+				<a href="index.html">首页</a>
+			</div>
+			<div class="nav">
+				<a href="#xinwen">最新资讯</a>
+				<ul>
+					<li onclick="javascript:alert('敬请期待！')">新闻资讯</li>
+					<li onclick="javascript:alert('敬请期待！')">最新公告</li>
+					<li onclick="javascript:alert('敬请期待！')">热门活动</li>
+				</ul>
+			</div>
+			<div class="nav_3 nav">
+				<a href="">游戏设定</a>
+				<ul>
+					<li onclick="javascript:window.open('article.html?companyCulture')">世界官方观小说</li>
+					<li onclick="javascript:window.open('article.html?companyEnvironment')">少女皇帝</li>
+					<li onclick="javascript:window.open('article.html?talents')">使魔群集</li>
+					<li onclick="javascript:window.open('article.html?team')">圣冠系统</li>
+					<li onclick="javascript:window.open('article.html?joinUs')">宝石系统</li>
+				</ul>
+			</div>
+			<div class="nav_3 nav">
+				<a href="about.html">同人作品</a>
+				<ul>
+					<li onclick="javascript:window.open('about.html#0')">MMD作品</li>
+					<li onclick="javascript:window.open('about.html#1')">CV剧作品</li>
+					<li onclick="javascript:window.open('about.html#2')">漫画作品</li>
+					<li onclick="javascript:window.open('about.html#3')">表情包下载</li>
+				</ul>
+			</div>
+			<div><img src="img/logo_b6e3a91.png" alt=""></div>
+			<div class="nav">
+				<a href="list.html">攻略资料</a>
+				<ul>
+					<li onclick="javascript:window.open('list.html')">新手专区</li>
+					<li onclick="javascript:window.open('list.html')">游戏攻略</li>
+					<li onclick="javascript:window.open('list.html')">KFZ有约</li>
+				</ul>
+			</div>
+			<div class="nav">
+				<a href="#tiaozhuan">音画专区</a>
+				<ul>
+					<li onclick="javascript:alert('敬请期待！')">宣传视频</li>
+					<li onclick="javascript:alert('敬请期待！')">作战实录</li>
+					<li onclick="javascript:alert('敬请期待！')">精美壁纸</li>
+					<li onclick="javascript:alert('敬请期待！')">游戏截图</li>
+				</ul>
+			</div>
+			<div class="nav_1"><a href="article.html?telUs">论坛</a></div>
+			<div class="nav_2">
+				<a href="">公众号</a>
+				<div><img src="img/qrCode_8cd5dc0.jpg" alt=""></div>
+			</div>
+		</div>
+		<div class="header_top_wrap"><div class="header_top"><a href=""><img src="img/slogan_0fbda3d.png" alt=""></a></div></div>
+	</div>
+</body>
+</html>
+<script src="js/header.js"></script>
+<script>
+	$(function(){
+		$('.header_top').addClass('wow animated fadeInUp').attr('data-wow-offset','300');
+	})
+</script>
+<script>
+	new WOW().init();
+</script>

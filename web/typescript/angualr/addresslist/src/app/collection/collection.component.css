@@ -1,0 +1,11 @@
+.collection>ul>li{
+	margin: 20px 20px 0;
+	padding-bottom: 5px;
+	border-bottom: 1px solid rgb(233,233,233);
+}
+.collection>ul>li>span{
+	margin-left: 10px;
+}
+.collection>ul>li>span:last-child{
+	margin-left: 3rem;
+}

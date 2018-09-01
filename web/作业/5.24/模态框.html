@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+			margin: 0;
+			padding: 0;
+			}
+			#box{
+			position: fixed;
+			background: rgba(0,0,0,0.5);
+			width: 100%;
+			height: 100%;
+			display: none;
+			}
+			#two{
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			background: white;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			margin: auto;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="two">
+				<div id="click">X</div>
+			</div>
+		</div>
+		<div id="dianji">登陆</div>
+	</body>
+</html>
+<script>
+	var close=document.getElementById('dianji');
+	var box=document.getElementById('box');
+	var click =document.getElementById('click');
+	var two = document.getElementById('two')
+	close.onclick=function(){
+		box.style.display='block';
+		two.style.display='block';
+	}
+	click.onclick=function(){
+	    two.style.display="none";
+		if(event.stopPropagation){//非IE低版本的
+	                event.stopPropagation();
+	         }else{//IE低版本
+	                event.cancelBubble = true;
+	         }  
+		}
+	two.onclick=function(){
+		two.style.display="none";
+		if(event.stopPropagation){//非IE低版本的
+	                event.stopPropagation();
+	         }else{//IE低版本
+	                event.cancelBubble = true;
+	         }  
+		}
+	box.onclick=function(){
+	    box.style.display="none";
+		if(event.stopPropagation){//非IE低版本的
+	                event.stopPropagation();
+	         }else{//IE低版本
+	                event.cancelBubble = true;
+	         }  
+		}
+//	function stopBubble(e) {  
+//  //如果提供了事件对象，则这是一个非IE浏览器  
+//  if(e && e.stopPropagation) {  
+//　　//因此它支持W3C的stopPropagation()方法  
+//　　e.stopPropagation();   
+//  } else {  
+//　　//否则，我们需要使用IE的方式来取消事件冒泡   
+//　　window.event.cancelBubble = true;  
+//  }  
+//  return false;   
+//}  
+</script>
+ 

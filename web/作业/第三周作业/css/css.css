@@ -1,0 +1,139 @@
+li{
+	list-style: none;
+	display: inline-block;
+	margin-left: 20px;
+	line-height: 24px;
+}
+a{
+	color: #333;
+	font-size: 13px;
+	font-weight: 700;
+}
+#header{
+	text-align: right;
+}
+#cp{
+	background:#38f;
+    padding: 5px; 
+	margin-left: 19px;
+	margin-right: 2px;
+}
+#gd{
+	color: white;
+	text-decoration: none;
+}
+.logo{
+	height: 129px;
+	width: 270px;
+    margin: 0px auto;
+ 	background:url(../img/abc.gif) no-repeat;
+	background-size: 100%;
+	display: block;
+}
+#main{
+	margin: 22px auto;
+	width: 650px;
+}
+#camera{
+	display: inline-block;
+	background: url(../img/f.png) 0 0;
+	width: 18px;
+	height: 16px;
+    margin-left: -40px;
+    margin-bottom: -3px;
+}
+#camera:hover{
+	display: inline-block;
+	background: url(../img/f.png) 0px -20px;
+	width: 18px;
+	height: 16px;
+    margin-left: -40px;
+    margin-bottom: -3px;
+}
+#text{
+	width: 500px;
+	height: 22px;
+    display: inline-block;
+    padding: 6px 33px 6px 6px;
+    border: #b6b6b6 solid 1px;
+    border-right: 0px;
+}
+#button{
+	color: white;
+	font-size: 15px;
+	background: #3385ff;
+	border: 0px;
+	width: 100px;
+	height: 36px;
+	border-bottom: 3px solid #3385FF;
+	margin-left: 13px;
+}
+#a{
+	width: 100%;
+	text-align: center;
+	line-height: 23px;
+}
+#baidu{
+	margin: 0px auto; 
+	width: 60px;
+	height: 60px;
+	background-image: url(../img/zbios_efde696.png);
+}
+#wz{
+	font-weight: 700;
+	color: #666;
+	font-size: 12px;
+}
+.b{
+	font-weight: 700;
+	color: #666;
+	font-size: 12px;
+	text-decoration: underline;
+	margin-left: 25px;
+}
+.wb{
+	text-align: center;
+}
+.c{
+	font-weight: 700;
+	color: #666;
+	font-size: 12px;
+	margin-left: 25px;
+}
+#bq{
+	width: 14px;
+	height: 17px;
+	background: url(../img/icons_5859e57.png) -599px -95px;
+	display: inline-block;
+	margin-bottom: -4px;
+}
+#jw{
+	line-height: 40px;
+}
+#bq2{
+	width: 14px;
+	height: 17px;
+	background: url(../img/icons_5859e57.png) -623px -97px;
+	display: inline-block;
+	margin-bottom: -4px;
+}
+.q{
+	font-size: 13px;
+	color: #666666;
+}
+.q:hover{
+	font-size: 13px;
+	color: #666666;
+	text-decoration: underline;
+}
+.qwer{
+	list-style: none;
+	line-height: 34px;
+	margin-left: 13px;
+}
+.abcd{
+	display: none;
+}
+#cp:hover .abcd{
+	display: block !important;
+}

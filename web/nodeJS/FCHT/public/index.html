@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+</head>
+<body>
+    <!-- /VueHandler/AdminLoginAndRegHandler?action=checkVerification -->
+    <form action="/VueHandler/AdminLoginAndRegHandler" method="GET">
+        <input type="text" name="action" value="checkVerification" style="display: none">
+        验证码：<input type="text" name="veri"><span style="cursor: pointer;" id="btn"></span><br />
+        <input type="submit">
+    </form>
+</body>
+</html>
+<script>
+    var btn = document.getElementById('btn');
+    axaj1();
+    btn.onclick =function(){
+        axaj1();
+    }
+    function axaj1(){
+        var xml = new XMLHttpRequest();
+        xml.open('get','/VueHandler/AdminLoginAndRegHandler?action=verification',true);
+        xml.send();
+        xml.onreadystatechange=function(){
+            if(xml.readyState==4&&xml.status==200){
+                btn.innerHTML = xml.responseText;
+            }else{
+                btn.innerHTML = '获取数据错误'
+            }
+        }
+    }
+</script>

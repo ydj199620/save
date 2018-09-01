@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box1{
+				display: none;
+				border: 1px #FFA500 solid;
+				width: 120px;
+				margin-top: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="file" id="file1" />
+		<div id="box1">请上传正确格式</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var a = document.getElementById('file1');
+	var d = document.getElementById('box1');
+	a.onchange = function(){
+		var b = a.value;
+		var c = b.slice(b.lastIndexOf('.'));
+		if(c=='.jpg'||c=='.gif'||c=='.png'||c=='.jpeg'){
+			alert('上传成功')
+			d.style.display = 'none';
+		}else{
+			d.style.display = 'block';
+		}
+	}
+</script>

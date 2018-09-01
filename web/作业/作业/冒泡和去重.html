@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			//冒泡
+			/*var a = [123,321,12,43,5456,76,8,89,99,565,98];
+			var b =0;
+			for(var i = 0;i<a.length;i++){
+				for(var j=0;j<a.length-i-1;j++){
+					if(a[j]>a[j+1]){
+						b = a[j];
+						a[j] = a[j+1];
+						a[j+1] = b;
+					}
+				}
+			}console.log(a);*/
+			//去重
+			var a = [123,565,12,43,123,76,8,89,12,565,98];
+			var c = [];
+			c[0]=a[0];
+			for(var i = 0;i<a.length;i++){
+				var b = true;
+				for(var j = 0;j<c.length;j++){
+					if(a[i]==c[j]){
+						b=false;
+					 	break;
+					}
+				}
+				if(b){
+					c.push(a[i]);
+				}
+			}console.log(c);
+			console.log(a);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

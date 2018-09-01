@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script src="js.js/touch.min.js"></script>
+</head>
+<body>
+    <img src="img/timg.jpg" alt="" width="300px">
+</body>
+</html>
+<script>
+    //旋转
+   /*  touch.on('img','touchstart',function(e){
+        e.startRotate();//启动旋转方法
+        e.preventDefault();//阻止触摸式执行的方法
+    })
+    touch.on('img','rotate',function(e){
+        var a =e.rotation;//获取旋转角度
+        this.style.webkitTransform = 'rotate('+a+'deg)';
+    }) */
+    //移动
+   /*  var a = document.getElementsByTagName('img')[0];
+    a.style.webkitTransition='all ease 0.5s';
+    var b =document.body.offsetWidth;
+    var c = a.offsetLeft;
+    var rt = b-c-a.offsetWidth;
+    touch.on(a,'touchstart',function(e){
+        e.preventDefault();//阻止触摸式执行的方法
+    })
+    touch.on(a,'swipeleft',function(e){
+        this.style.webkitTransform = 'translate3d(-'+this.offsetLeft+'px,0,0)';
+    })
+    touch.on(a,'swiperight',function(e){
+        this.style.webkitTransform = 'translate3d('+rt+'px,0,0)';
+    }) */
+    //拖拽
+    var a = document.getElementsByTagName('img')[0];
+    var dx=0,dy=0;
+    touch.on(a,'touchstart',function(e){
+        e.preventDefault();//阻止触摸式执行的方法
+    })
+    touch.on(a,'drag',function(e){
+        var lx = dx+e.x+'px';
+        var ly = dy+e.y+'px';
+        this.style.webkitTransform = 'translate3d('+lx+','+ly+',0)';
+    })
+    touch.on(a,'dragend',function(e){
+        dx+=e.x;//获取停下时x值
+        dy+=e.y;//获取停下时y值
+        this.style.webkitTransform = 'translate3d('+dx+','+dy+',0)';
+    })
+</script>

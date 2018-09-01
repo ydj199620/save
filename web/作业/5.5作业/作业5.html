@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				height: 30px;
+				margin-top: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</body>
+</html>
+<script type="text/javascript">
+	var a = document.getElementsByTagName('div')
+	for(i in a){
+		if(i%2==0){
+			a[i].style.background = 'red';
+		}else{
+			a[i].style.background = 'pink';
+		}
+		a[i].b= a[i].style.background;
+		a[i].c= i;
+		a[i].onmouseover = function(){
+			a[this.c].style.background = 'yellow';
+		}
+		a[i].onmouseout =function(){
+			a[this.c].style.background = this.b;
+		}
+	}
+	/*//第二种
+	 * 	var d = 0；//设置空白的保存背景图
+		a[i].onmouseover = function(){
+			d = this.style.background;//保存背景颜色
+			this.style.background = 'yellow';
+		}
+		a[i].onmouseout =function(){
+			this.style.background = d;
+		}
+	}
+	 */
+</script>

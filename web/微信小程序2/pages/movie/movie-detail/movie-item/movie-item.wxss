@@ -1,0 +1,30 @@
+/* pages/movie/movie-detail/movie-item/movie-item.wxss */
+.movieBox{
+  display: flex;
+  flex-direction: column;
+}
+.movieBox>image{
+  width: 210rpx;
+  height: 260rpx;
+  margin: 0 20rpx;
+  margin-top: 30rpx;
+}
+.movie-title{
+  font-size: 30rpx;
+  margin: 25rpx 20rpx;
+  width: 180rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.pingfen{
+  font-size: 35rpx;
+  margin: 0 10rpx 40rpx;
+}
+.pingfen>text{
+  margin-right: 20rpx;
+}
+.pingfen>image{
+  width: 30rpx;
+  height: 30rpx;
+}

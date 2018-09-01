@@ -1,0 +1,33 @@
+.deit{
+	display: flex;
+	flex-direction: column;
+}
+.deit>div{
+	display: flex;
+	flex-direction: row;
+	padding: 0 15px;
+	margin-top: 20px;
+}
+.deit>div>input{
+	outline: none;
+	border: 0;
+	border-bottom: 1px solid rgb(233,233,233);
+	width: 80%;
+}
+.deit>div>span{
+	display: inline-block;
+	width: 5px;
+	height: 21px;
+	background: red;
+}
+.deit>div:last-child{
+	padding: 0 0 15px;
+	border-bottom: 1px solid rgb(233,233,233);
+}
+.deit>div>button{
+	border: 1px solid rgb(233,233,233);
+	width: 35%;
+	height: 35px;
+	background: white;
+	margin-left: 10%;
+}

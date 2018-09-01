@@ -1,0 +1,14 @@
+<view class='container'>
+  <image class="logo" src="../images/logo.png"></image>
+  <text class="username">hello,Lion</text>
+  <view class="btn fenxiang" bindtap='goview'>
+    <text>和音乐一起分享时光</text>
+  </view>
+  <view class="btn weizhi">
+    <text>查看当前位置</text>
+  </view>
+  <view class="btn tellus">
+    <text>联系我们</text>
+  </view>
+
+</view>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				height: 30px;
+				margin-top: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</body>
+</html>
+<script type="text/javascript">
+	var a = document.getElementsByTagName('div');
+	for(var i=0;i<a.length;i++){
+		if(i%2==0){
+			a[i].style.background = 'pink';
+		}else{
+			a[i].style.background = 'red';
+		}
+		a[i].e = a[i].style.background;
+		a[i].c = i;
+		a[i].onmouseover = function(){
+			/*for(var j =0;j<a.length;j++){
+				a[i].style.background = ;
+			}*/
+			a[this.c].style.background = 'yellow';
+		}
+		a[i].onmouseout = function(){
+			a[this.c].style.background = this.e;
+		}
+	}
+</script>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="box">
+        <lo-L></lo-L>
+    </div>
+</body>
+</html>
+<script>
+    var a={
+        template:`<div>
+            <input type='text' />
+            <h1 @click='b()'>{{msg}}</h1>
+            </div>`,
+        data(){
+            return{
+                msg:'9999'
+            }
+        },
+        methods:{
+            b:function(){
+                alert('1')
+            }
+        }
+    }
+    Vue.component('loL',a)
+    new Vue({
+        el:'#box'
+    })
+</script>

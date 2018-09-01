@@ -1,0 +1,248 @@
+#headerContant .header-wrap{
+    height: 300px;
+   /*  overflow: hidden; */
+}
+#headerContant .title{
+    display: none;
+}
+.main1{
+    margin-top: 80px;
+}
+.main-left>h1{
+    color:rgb(110,161,68);
+}
+.main-left>p{
+    color: #999;
+    font-size: 16px;
+    line-height: 30px;
+}
+.main-left>div.img-wrap{
+    padding: 5px;
+    border: 1px solid #c0c0c0;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.biaoqian,.biaoqian>li{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.biaoqian>li{
+    float: left;
+    margin: 5% 0;
+    font-size: 16px;
+    color: #c0c0c0;
+    margin-right: 8%;
+    cursor: pointer;
+}
+.biaoqian>li:hover{
+    color: black;
+}
+.main-main{
+    padding: 5%;
+    border: 1px solid rgb(200,200,200);
+    clear: both;
+}
+.main-main>h3{
+    color: rgb(110,161,68);
+    margin-top: 0 !important;
+}
+.main-main>img{
+    width: 10%;
+}
+.main-main>p.p1{
+    font-size: 15px;
+    float: right;
+    width: 85%;
+    color: rgb(200,200,200);
+}
+.main-main>p.p2{
+    font-size: 15px;
+    width: 85%;
+    clear: both;
+    padding-left: 15%;
+}
+.main-main>p.p2>span{
+    color: rgb(200,200,200);
+}
+.main-right>h1{
+    color: rgb(110,161,68);
+    margin-bottom: 30px;
+}
+.marginTop{
+    margin-top: 65px;
+}
+.mainM{
+    margin-top: 40px;
+}
+.mainM>img{
+    width: 10%;
+}
+.mainM>p.p3{
+    font-size: 15px;
+    float: right;
+    width: 85%;
+    color: rgb(200,200,200);
+}
+.mainM>p.p4{
+    clear: both;
+    width: 100%;
+}
+.mainM>p.p4>big,.mainM>p.p4>span>big{
+    color: rgb(110,161,68);
+}
+.mainM>p.p4>span{
+    float: right;
+}
+.paddingLeft{
+    padding-left: 15%;
+}
+.picture{
+    text-align: center;
+}
+.picture>div{
+    padding: 5px;
+    border: 1px solid rgb(200,200,200);
+}
+.picture>p{
+    margin-top: 10px;
+}
+.main-left>input{
+    outline: none;
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 5%;
+}
+.main-left>textarea{
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    resize: none;
+    height: 150px;
+}
+.main-left>textarea::-webkit-input-placeholder{
+    color: #999;
+}
+.main-left>input::-webkit-input-placeholder{
+    color:#999;
+}
+.main-left>button{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    background: rgb(110,161,68);
+    color: white;
+    cursor: pointer;
+    border: 1px solid rgb(110,161,68);
+    margin-top: 5%;
+    margin-bottom: 10%;
+    outline: none;
+}
+.main-left>button:hover{
+    background: white;
+    color: rgb(110,161,68);
+    transition: all 0.3s linear;
+}
+.main-right>div>input::-webkit-input-placeholder{
+    color:#999;
+}
+.main-right>div.search1>input{
+    outline: none;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5%;
+}
+.main-right>div.check{
+    width: 60%;
+    display: inline-block;
+}
+.main-right>div.check>p>input[type='checkbox']{
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    -webkit-appearance:none;/* 去掉按钮样式 */
+    border: 1px solid #c9c9c9;
+    border-radius: 2px;
+    outline: none;
+    margin-right: 10px;
+    position: relative;
+    top: 5px;
+}
+.btn4{
+    width: 39%;
+    display: inline-block;
+    text-align: right;
+    position: relative;
+    vertical-align: top;
+    margin-top: 5%;
+}
+.btn4>button{
+    padding: 0px 30px;
+    height: 35px;
+    background: rgb(110,161,68);
+    border: rgb(110,161,68);
+    color: white;
+    border: 0;
+    line-height: 40px;
+    outline:none;
+}
+.btn4>button:hover{
+    color: rgb(110,161,68);
+    background: #d0d0d0;
+    transition: all 0.3s linear;
+}
+.food{
+    min-height: 175px;
+    margin-bottom: 6%;
+}
+.food>img{
+    float: left;
+}
+.food>div{
+    display: inline-block;
+    width: 60%;
+    margin-left: 5%;
+    margin-top: 3%;
+    clear: both;
+}
+.food>div>h5{
+    color: rgb(110,161,68);
+    text-transform: uppercase;
+}
+.food>div>button{
+    padding: 0px 30px;
+    height: 35px;
+    background: rgb(51,123,182);
+    border: rgb(110,161,68);
+    color: white;
+    border: 0;
+    line-height: 40px;
+    outline:none;
+    border-radius: 5px;
+}
+.food>div>button:hover{
+    background:blue;
+}
+.check input[type=checkbox]:checked{
+    background: url("../img/tick-mark.png")no-repeat center;
+ }
+.jieshao>img{
+     width: 110px;
+     float: left;
+}
+.jieshao>div{
+    margin-left: 5%;
+    display: inline-block;
+    height: 114px;
+}
+.jieshao>div>p{
+    margin-top: 30%;
+}
+.jieshao>div>h5{
+    color: rgb(110,161,68);
+}
+.jieshao>p{
+    margin-top: 5%;
+    clear: both;
+    margin-bottom: 30px;
+}

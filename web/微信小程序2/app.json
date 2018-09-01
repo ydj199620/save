@@ -1,0 +1,32 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/movie/movie",
+    "pages/music/music",
+    "pages/music/music-detail/music-detail",
+    "pages/movie/movie-list/movie-list",
+    "pages/movie/movie-xq/movie-xq"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "enablePullDownRefresh":true
+  },
+  "tabBar": {
+    "color":"#000000",
+    "selectedColor":"#109d59",
+    "list": [
+      {
+        "pagePath": "pages/music/music",
+        "text": "音文",
+        "iconPath":"pages/images/music.png",
+        "selectedIconPath":"pages/images/music-1.png"
+      },
+      {
+        "pagePath": "pages/movie/movie",
+        "text": "电影",
+        "iconPath": "pages/images/move.png",
+        "selectedIconPath": "pages/images/move-1.png"
+      }
+    ]
+  }
+}

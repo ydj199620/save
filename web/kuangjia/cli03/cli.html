@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script src="vue.js"></script>
+    <script src="vue-router.js"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        #box{
+            width: 402px;
+            margin: 0 auto;
+        }
+        #box1{
+            width: 400px;
+            height: 400px;
+            background: red;
+            border: 1px solid black;
+            border-bottom: 0;
+        }
+        #box2{
+            width: 400px;
+            border: 1px solid black;
+        }
+        #box2>ul>li{
+            width: 24%;
+            text-align: center;
+            display: inline-block;
+            padding: 30px 0;
+        }
+        .router-link-active{
+            font-size:20px;
+			color:dodgerblue !important;
+        }
+        .box3{
+            height: 61px;
+            width: 100%;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+        .box3 span{
+            padding:0 20px;
+            background: white;
+            height: 61px;
+            line-height: 61px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="box1">
+            <router-view></router-view>
+        </div>
+        <div id="box2">
+            <ul>
+                <li><router-link to='/home'>首页</router-link></li>
+                <li><router-link to='/fenye'>分页</router-link></li>
+                <li><router-link to='/fenye2'>分页2</router-link></li>
+                <li>分页3</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    const a ={
+        template:`
+            <div>
+                <img src='bg2.jpg' style="width:400px"/>
+            </div>
+        `
+    }
+    const b ={
+        template:`
+        <div>
+            <div class='box3'>
+                <span><router-link to='/fenye/H5'>H5</router-link></span>
+                <span><router-link to='/fenye/NodeJS'>NodeJS</router-link></span>
+            </div>
+            <router-view></router-view>
+        </div>
+        `
+    }
+    var c ={
+        template:`
+            <div>
+                <h1>{{$route.params.one}}</h1>
+            </div>
+        `
+    }
+    var d ={
+       template:`
+        <div>
+            <div class='box4' v-for='(v,i) in msg'>
+                <img src='bg2.jpg' style="width:50px"/>
+                <span><router-link :to='v.b'>{{v.a}}</router-link></span>
+            </div>
+            <router-view></router-view>
+        </div>
+       `,
+       data(){
+          return{
+            msg:[
+                {a:'Vue',b:'/fenye2/Vue/0'},
+                {a:'VueJS',b:'/fenye2/VueJS/1'}
+            ]
+          }
+       }
+    }
+    var e ={
+        template:`
+            <div>
+                <h1>{{$route.params.two}}</h1>
+                <h1>{{msg1[$route.params.three]}}</h1>
+            </div>
+        `,
+        data(){
+            return{
+                msg1:[
+                    '徐磊傻吊',
+                    '徐磊死gay'
+                ]
+            }
+        }
+    }
+    var routes = [
+        {path:'/home',component:a},
+        {path:'/fenye',component:b,
+            children:[{
+                path:':one',component:c
+            }]
+        },
+        {path:'/fenye2',component:d,
+            children:[{
+                path:':two/:three',component:e
+            }]
+        }
+    ]
+    var router = new VueRouter({
+        routes
+    })
+    new Vue({
+        el:'#box',
+        router
+    })
+</script>

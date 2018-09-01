@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #box img{
+            width: 240px;
+            height: 160px;
+            float: left;
+            margin-right: 50px;
+        }
+        #box2 img{
+            display: none;
+            position: absolute;
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <img src="img/1.jpg" alt="">
+        <img src="img/2.jpg" alt="">
+        <img src="img/3.jpg" alt="">
+        <img src="img/4.jpg" alt="">
+    </div>
+    <div id="box2">
+        <img src="img/1.jpg" alt="">
+        <img src="img/2.jpg" alt="">
+        <img src="img/3.jpg" alt="">
+        <img src="img/4.jpg" alt="">
+    </div>
+</body>
+</html>
+<script>
+    $(function(){
+        var index;
+        $('#box').children('img').mouseover(function(){
+            index = $(this).index();
+            $('#box2').children('img').eq(index).show(300);
+            console.log(event.pageX+'--'+event.pageY);
+        }/* ,function(){
+            $('#box2').children('img').stop().hide(300);
+        } */).mousemove(function(){
+            $('#box2').children('img').eq(index).css({'left':(event.pageX+10)+'px','top':(event.pageY+10)+'px'});
+        })
+        $('#box').children('img').mouseout(function(){
+            $('#box2').children('img').stop().hide();
+        })
+    })
+</script>

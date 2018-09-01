@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" id="button" value="点击" />
+	</body>
+</html>
+<script type="text/javascript">
+	var btn = document.getElementById('button')
+	btn.onclick = function(){
+		//window.close()
+		window.open('http://www.baidu.com?#name=ydj','_self','height=600,width=600,top=300,left=400')
+	}
+	console.log(window.location)
+	console.log(window.navigator)
+	console.log(window.screen)
+	console.log(window.history)
+</script>

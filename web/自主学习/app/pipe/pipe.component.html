@@ -1,0 +1,16 @@
+<div class="panel panel-primary">
+	<div class="panel-heading">管道-内置的过滤数据的规则</div>
+	<div class="panel-body">
+		<p>转化为大写：{{'zhangsan' | uppercase}}</p>
+		<p>转化为小写：{{'LILI' | lowercase}}</p>
+		<p>日期格式化：{{today |  date}}</p>
+		<p>日期格式化：{{today |  date:'y-MM-dd'}}</p>
+		<p>日期格式化：{{today |  date:'shortTime'}}</p>
+		<p>数字格式化number:'最小整数格式:最小小数位数-最大小数位数'：{{'3.1415926' |  number:'1.2-4'}}</p>
+		<p>百分比管道：{{0.12345 | percent}}</p>
+		<p>百分比管道：'最小整数格式.最小小数位数-最大小数位数'：{{0.12345 | percent :'1.2-4'}}</p>
+		<p>裁切字符串2-4：{{'abcdef'| slice:2:4}}</p>
+		
+		<pre>json格式化:{{jsonObject | json}}</pre>
+	</div>
+</div>

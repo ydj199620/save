@@ -1,0 +1,61 @@
+#headerContant .header-wrap{
+    height: 300px;
+   /*  overflow: hidden; */
+}
+#headerContant .title{
+    display: none;
+}
+#headerContant .zhezhaoF{
+    top: -100%;
+}
+#headerContant .zhezhaoB{
+    top: 0;
+}
+.marginTop{
+    margin-top: 80px;
+}
+.marginBootom{
+    margin-bottom: 80px;
+}
+.yangshi>div>h1{
+    color: #6ea145;
+    margin-top: 20%;
+    text-align: center;
+}
+.yangshi>div>p{
+    font-size: 20px;
+    color: #999;
+    text-align: center;
+}
+.yc{
+    display: none;
+}
+@media only screen and (max-width:767px){
+    .yc{
+        display: inline-block;
+    }
+    .yc2{
+        display: none;
+    }
+}
+@media only screen and (min-width:992px) and (max-width:1199px){
+    .yangshi>div>p{
+        font-size: 18px !important;
+    }
+}
+@media only screen and (min-width:768px) and (max-width:991px){
+    .yangshi>div>p{
+        font-size: 12px !important;
+    }
+    .yangshi>div>h1{
+        margin-top: 16%;
+    }
+}
+@media only screen and (max-width:995px){
+    #headerContant .zhezhaoF{
+        height: 0;
+    }
+    #headerContant .zhezhaoB{
+        height: 100%;
+    }
+}

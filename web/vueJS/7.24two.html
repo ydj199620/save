@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="box">
+        <input type="checkbox" v-model='one'>
+        <lol :m='one'></lol>
+    </div>
+</body>
+</html>
+<script>
+    new Vue({
+        el:'#box',
+        data:{
+            one:false
+        },
+        components:{
+            'lol':{
+                template:`<div><h1 v-if='m'>11</h1></div>`,
+                props:['m']
+            }
+        }
+    })
+</script>

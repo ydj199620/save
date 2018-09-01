@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script src="vue.js"></script>
+
+</head>
+<body>
+    <div id="box">
+        <button @click='a()'>显示</button>
+        <lol :m='msg' @kk='c'></lol>
+    </div>
+    <template id="one">
+        <div>
+            <div :style='css1' v-if='m' @click='b()'>隐藏</div>
+        </div>
+    </template>
+</body>
+</html>
+<script>
+    new Vue({
+        el:'#box',
+        data:{
+            msg:false
+        },
+        methods:{
+            a:function(){
+                this.msg =!this.msg
+            },
+            c:function(d){
+                this.msg=d
+            }
+        },
+        components:{
+            'lol':{
+                template:'#one',
+                data(){
+                    return{
+                        css1:{
+                            'height':window.innerHeight+'px',
+                            'width':window.innerWidth+'px',
+                            'background':'rgba(255,255,0,0.5)',
+                            'position':'absolute',
+                            'top':0,
+                            'left':0
+                        }
+                    }
+                },
+                props:['m'],
+                methods:{
+                    b:function(){
+                        this.m=!this.m
+                        this.$emit('kk',this.m)
+                    }
+                }
+            }
+        }
+    })
+</script>

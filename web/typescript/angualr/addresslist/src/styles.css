@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./assets/bootstrap/dist/css/bootstrap.min.css";
+*{
+    padding: 0;
+    margin: 0;
+}
+ul li{
+    list-style: none;
+}
+a,a:active,a:hover,a:visited,a:link{
+    text-decoration: none;
+}

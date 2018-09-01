@@ -1,0 +1,42 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo{
+  width: 392rpx;
+  height: 96rpx;
+  margin-top: 160rpx;
+}
+
+.username{
+  margin-top: 100rpx;
+  font-size: 32rpx;
+  font-weight: 700;
+  color: #109d59
+}
+.btn{
+  border:1px solid #109d59;
+  border-radius: 5px;
+  width: 250rpx;
+  height: 80rpx;
+  text-align: center;
+}
+
+.btn text{
+  font-size: 22rpx;
+  font-weight: 700;
+  line-height: 80rpx;
+  color: #109d59
+}
+
+.fenxiang{
+  margin-top: 100rpx;
+}
+.weizhi{
+  margin-top: 50rpx;
+}
+.tellus{
+  margin-top: 50rpx;
+}

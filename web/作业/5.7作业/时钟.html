@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.box1{
+				width: 900px;
+				height: 300px;
+				background: white;
+				margin: 0 auto;
+				text-align: center;
+			}
+			.box1>div{
+				float: left;
+			}
+			.box{
+				width: 200px;
+				height: 200px;
+				background: url(img/clock.jpg) no-repeat;
+				background-size: 100%;
+				position: relative;
+			}
+			#hours{
+				width: 10px;
+				height: 200px;
+				background: url(img/hour.png) no-repeat;
+				background-size: 100%;
+				position: absolute;
+				left: 95px;
+			}
+			#minutes{
+				width: 10px;
+				height: 200px;
+				background: url(img/minute.png) no-repeat;
+				background-size: 100%;
+				position: absolute;
+				left: 95px;
+			}
+			#seconds{
+				width: 10px;
+				height: 200px;
+				background: url(img/second.png) no-repeat;
+				background-size: 100%;
+				position: absolute;
+				left: 95px;
+			}
+			#right{
+				font-size: 100px;
+				height: 200px;
+				line-height: 200px;
+				margin: 0px 50px;
+			}
+			#day{
+				font-size: 50px;
+				height: 100px;
+				line-height: 100px;
+			}
+			#bottom{
+				font-size: 25px;
+				height: 100px;
+				line-height: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1">
+			<div class="box">
+				<div id="hours"></div>
+				<div id="minutes"></div>
+				<div id="seconds"></div>
+			</div>
+			<div id="right"></div>
+			<div>
+				<div id="day"></div>
+				<div id="bottom"></div>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	setInterval(function aa(){
+		var a = document.getElementById('hours'),
+			b = document.getElementById('minutes'),
+			c = document.getElementById('seconds');//获取div
+		var d = new Date();
+		var z = d.getMilliseconds()/1000,
+			g = d.getSeconds(),
+			f = d.getMinutes()+g/60,
+			e = d.getHours()+f/60;
+			console.log(z);
+			//获取时间
+		a.style.transform = 'rotate('+e*30+'deg)';
+		b.style.transform = 'rotate('+f*6+'deg)';
+		c.style.transform = 'rotate('+(g+z)*6+'deg)';//秒钟时间加上毫秒换算成秒的时间乘以6度，按照1毫秒的速度运动
+	},1);//按照1毫秒执行一次
+	var i = document.getElementById('right');
+	
+	setInterval(function bb(){
+		var j = new Date();
+		var h = fun(j.getHours()),
+		    k = fun(j.getMinutes()),
+		    l = fun(j.getSeconds());
+		/*if(h<10){
+			h = '0'+h
+		}else{
+			h=h;
+		}
+		if(k<10){
+			k = '0'+k
+		}else{
+			k=k;
+		} 
+		if(l<10){
+			l = '0'+l
+		}else{
+			l=l;
+		}*/
+		i.innerHTML = h+':'+k+':'+l;
+	},1000)
+	function fun(dd){
+		if(dd<10){
+			return '0'+dd;
+		}else{
+			return dd;
+		}
+	}
+	setInterval(function cc(){
+		var m = document.getElementById('day');
+		var n = document.getElementById('bottom');
+		console.log(n);
+		var o = new Date();
+		var p = o.getDay();
+		switch(p){
+			case 1:
+			p = '一';
+			break;
+			case 2:
+			p = '二';
+			break;
+			case 3:
+			p = '三';
+			break;
+			case 4:
+			p = '四';
+			break;
+			case 5:
+			p = '五';
+			break;
+			case 6:
+			p = '六';
+			break;
+			default:
+			p = '日';
+			break;
+		}
+		m.innerHTML = '星期'+p;
+		n.innerHTML = o.getFullYear()+'年'+(o.getMonth()+1)+'月'+o.getDate()+'日';
+	},1000)
+</script>

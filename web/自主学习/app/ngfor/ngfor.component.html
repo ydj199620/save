@@ -1,0 +1,22 @@
+<div class="panel panel-primary">
+	<div class="panel-heading">循环-水果列表</div>
+	<div class="panel-body">
+		<ul>
+			<li *ngFor="let item of list  let i=index  let isFirst=first ">{{i}}--是否是第一个{{isFirst}}--{{item}}</li>
+		</ul>
+	</div>
+</div>
+<div class="panel panel-primary">
+	<div class="panel-heading">ngI和ngFor展示用户资料</div>
+	<div class="panel-body">
+		<h2>大家好,我是{{name}}</h2>
+		<p>我来自:{{address.province}}省,{{address.city}}市</p>
+		<div *ngIf="showSkills;else elseBlock">
+			<h3>我的的技能:</h3>
+			<ul>
+				<li *ngFor = "let s of skills let i=index let isFirst=first">{{i}}-{{s}}--是否是第一个个:{{isFirst}}</li>
+			</ul>
+		</div>
+		<ng-template #elseBlock>不显示技能！</ng-template>
+	</div>
+</div>

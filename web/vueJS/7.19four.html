@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="box">
+        姓名：<input type="text" id="xm" v-model='meg1.name'>
+        性别：<input type="text" id="sex" v-model='meg1.sex'>
+        年龄：<input type="text" id="age" v-model='meg1.age'>
+        <input type="button" value="添加" v-on:click='insert2()'>
+        <table>
+            <tr>
+                <td>姓名</td>
+                <td>性别</td>
+                <td>年龄</td>
+            </tr>
+            <tr v-for='(n,j) in meg'>
+                <td>{{n.name}}</td>
+                <td>{{n.sex}}</td>
+                <td>{{n.age}}</td>
+                <td><input type="button" value="删除" v-on:click='delete1(j)'></td>
+            </tr>
+        </table>
+        <!-- <input type="button" value="排序" v-on:click='paixu2'> -->
+    </div>
+</body>
+</html>
+<script>
+    /* var arr=[];
+    var arr1=[]; */
+    var vm = new Vue({
+        el:'#box',
+        data:{
+            meg1:{
+                name:'',
+                sex:'',
+                age:''
+            },
+            meg:[{
+                name:'徐磊',
+                sex:'女',
+                age:'18',
+                },
+                {
+                name:'马健',
+                sex:'不明',
+                age:'19',
+                },
+                {
+                name:'张泰山',
+                sex:'中',
+                age:'20',
+                }
+            ]
+        },
+        methods:{
+            delete1:function(j){
+                this.meg.splice(j,1);
+            },
+            insert1:function(){
+                var json={
+                    name:document.getElementById('xm').value,
+                    sex:document.getElementById('sex').value,
+                    age:document.getElementById('age').value
+                }
+                this.meg.push(json);
+            },
+            insert2:function(){
+                if(this.meg1.name==''||this.meg1.sex==''||this.meg1.age==''||JSON.stringify(this.meg1)=='{}'){//JSON中stringify方法把对象转换成字符串
+                    alert('请输入完整信息')
+                }else{
+                    this.meg.push(this.meg1);
+                    this.meg1={};
+                }
+            }
+        }
+    })
+</script>

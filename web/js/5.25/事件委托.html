@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        #box{
+           margin-top: 50px;
+            height: 50px;
+        }
+        #box>ul>li{
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            float: left;
+            background: red;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ul>
+    </div>
+    <div id="box2"></div>
+    <input type="button" value="移除" id="btn">
+</body>
+</html>
+<script>
+    var box = document.getElementById('box');
+    var box2 = document.getElementById('box2');
+    var btn = document.getElementById('btn');
+    box.onclick = function(){
+        var e = event||window.event;
+        var target = event.target||event.srcElement;
+        if(target.nodeName =='LI'){//target下的nodename，下一个节点
+            box2.innerHTML += target.innerHTML+'<br />';
+        }
+    }
+    btn.onclick = function(){
+        /* box.onclick=function(){
+                var event = event||window.event;
+            if(event.preventDefault){//非IE的主流游览器的方式
+            event.preventDefault();
+            }else{//IE游览器的方式
+                event.returnValue = false
+            }
+        } */
+        box.onclick = null;
+    }
+</script>

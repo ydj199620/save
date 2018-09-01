@@ -1,0 +1,17 @@
+ul{
+	font-family: "楷体";
+	font-size: 15px;
+	list-style: none;
+	font-weight: bold;
+}
+#c{
+	letter-spacing: 5px;
+	text-decoration: underline;
+}
+.d{
+	font-size: 20px;
+	color: red;
+}
+li{
+	line-height: 40px;
+}

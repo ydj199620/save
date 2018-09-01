@@ -1,0 +1,5 @@
+<input type="text" [(ngModel)]='name'>
+姓名：{{name}}
+<button (click)='child.getoff(name)'>查找</button>
+<p>父组件接受的数据：{{user1 | json }}</p>
+<app-child [user]='name' #child (child1)='jieshou($event)'></app-child>

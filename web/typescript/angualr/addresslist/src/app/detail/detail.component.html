@@ -1,0 +1,36 @@
+<div class="detail">
+	<div class="header">
+		<i (click)='goback()'></i>
+		<span>所有联系人</span>
+		<span (click)='goedit(user.id)'>编辑</span>
+	</div>
+	<div class="top">
+		<img src="../../assets/images/Iverson.jpg"/>
+		<div>
+			<span>{{user.name}}</span>
+			<img src="../../assets/images/collect.png"/>
+		</div>
+	</div>
+	<ul>
+		<li class="main">
+			<div>电话号码：</div>
+			<div>{{user.phone}}</div>
+		</li>
+		<li class="main">
+			<div>邮箱：</div>
+			<div>{{user.email}}</div>
+		</li>
+		<li class="main">
+			<div>生日：</div>
+			<div>1990-01-01</div>
+		</li>
+		<li class="main">
+			<div>住址：</div>
+			<div>{{user.address.city}}</div>
+		</li>
+		<li class="main">
+			<div>简介：</div>
+			<div>生活态度好,热爱运动</div>
+		</li>
+	</ul>
+</div>

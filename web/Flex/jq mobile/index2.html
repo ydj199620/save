@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <!-- 引入 jQuery 库 -->
+    <script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!-- 引入 jQuery Mobile 库 -->
+    <script src="http://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+    <div id="one" data-role="page">
+        <p>页面1</p>
+        <a href="#two">跳转到2</a>
+    </div>
+    <div id="two" data-role="page">
+        <p>页面2</p>
+        <a href="#one">跳转到1</a>
+    </div>
+</body>
+</html>
+<script>
+    $(document).on('pagebeforeshow','#two',function(){
+        alert('去的开始之前')
+    })
+    $(document).on('pageshow','#two',function(){
+        alert('去的开始后')
+    })
+    $(document).on('pagebeforehide','#two',function(){
+        alert('来的开始之前')
+    })
+    $(document).on('pagehide','#two',function(){
+        alert('来的开始后')
+    })
+</script>

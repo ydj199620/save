@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>List</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/list.css">
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/move.js"></script>
+    <script src="js/listData.js"></script>
+    <script src="js/list.js"></script>
+    <script src="js/snowfall.jquery.js"></script>
+</head>
+<body>
+	<div id="wrapContent">
+        <div id="headerContent"></div>
+        <div id="mainContent">
+            <p>攻略资料</p>
+            <span></span>
+            <em></em>
+        </div>
+        <div id="more">
+            <img src="img/img_one/more.png" width="100px"/>
+        </div>
+        <div id="fanhui">
+            <img src="img/fanhui.png" alt="" width="100px">
+        </div>
+    </div>
+    <!-- 魔板 -->
+    <div class="first-wrap">
+        <div class="first" fasong='$lujing$'>
+            <img src="$img$" width="100px"/>
+            <div>
+                <p>$title$</p>
+                <p>$time$</p>
+                <p>$des$</p>
+                <p>$p1$</p>
+                <p>$p2$</p>
+            </div>
+        </div>
+    </div>
+    <!-- 底部 -->
+    <div id="footerContent"></div>
+</body>
+</html>
+<script type="text/javascript">
+    $(document).snowfall('clear');
+    $(document).snowfall({
+        image: "images/fengye.png",
+        flakeCount:30,
+        minSize: 5,
+        maxSize: 22
+    });
+</script>

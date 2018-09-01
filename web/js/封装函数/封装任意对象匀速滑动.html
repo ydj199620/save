@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	function aa(obj,target){
+		var leader = obj.offsetLeft;
+		var step = 10;
+		step = target>leader?10:-10;
+		clearInterval(obj.timer);
+		obj.timer = setInterval(function(){
+			if(leader!=target){
+				leader = leader+step;
+				obj.style.left = leader + 'px';
+			}else{
+				clearInterval(obj.timer);
+			}
+		},50)
+	}
+</script>

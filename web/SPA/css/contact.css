@@ -1,0 +1,82 @@
+#headerContant .header-wrap{
+    height: 300px;
+   /*  overflow: hidden; */
+}
+#headerContant .title{
+    display: none;
+}
+#headerContant .zhezhaoF{
+    top: -100%;
+}
+#headerContant .zhezhaoD{
+    top: 0;
+}
+#allmap{
+    height: 400px;
+}
+.main-biaodan{
+    margin-bottom: 80px;
+}
+.title-wap{
+    font-size: 40px;
+    color: rgb(111,165,107);
+    margin-top: 80px;
+    margin-bottom: 50px;
+}
+.title-main{
+    margin-top: 60px;
+}
+.title-main>h2{
+    color: rgb(111,165,107);
+}
+.title-main{
+    color: rgb(161,153,150);
+}
+.input1{
+    width: 31%;
+    padding-left: 5px;
+    margin-right: 10px;
+    height: 40px;
+}
+.input2{
+    width: 98%;
+    padding-left: 5px;
+    padding-top: 10px;
+    height: 150px;
+    resize: none;
+    margin-top: 15px;
+}
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { 
+    /* WebKit browsers */ 
+   color: #999; 
+}
+.btn1{
+    margin-top: 30px;
+    width: 160px;
+    height: 45px;
+    background: #6ea145;
+    line-height: 50px;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}
+.btn1:hover{
+    background: #d0d0d0;
+    transition: all 0.3s linear;
+}
+@media only screen and (max-width:770px){
+    .input1{
+        width: 100%;
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+}
+@media only screen and (max-width:995px){
+    #headerContant .zhezhaoF{
+        height: 0;
+    }
+    #headerContant .zhezhaoD{
+        height: 100%;
+    }
+}

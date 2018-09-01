@@ -1,0 +1,9 @@
+<h1 (click)='flag=!flag' *ngIf="flag;else a">现实</h1>
+<ng-template #a>1234</ng-template>
+<ul [ngSwitch]="week">
+    <li *ngSwitchCase='0'>0</li>
+    <li *ngSwitchCase='1'>1</li>
+    <li *ngSwitchCase='2'>2</li>
+    <li *ngSwitchCase='3'>3</li>
+    <li *ngSwitchDefault>4</li>
+</ul>

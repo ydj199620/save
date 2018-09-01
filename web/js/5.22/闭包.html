@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+				list-style: none;
+			}
+			li{
+				height: 50px;
+				width: 50px;
+				line-height: 50px;
+				background: red;
+				margin-left: 50px;
+				text-align: center;
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+	</body>
+</html>
+<script type="text/javascript">
+	var a = document.getElementsByTagName('li');
+	for(var i = 0;i<a.length;i++){
+		a[i].onclick =(function(index){
+			return function(){
+				console.log(index+1);
+			}
+		})(i)
+	}
+</script>

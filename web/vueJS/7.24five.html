@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="box">
+        <one></one>
+    </div>
+
+
+    <template id="three">
+        <div>
+            <two @kk='b'></two>
+            {{msg1}}
+        </div>
+    </template>
+    <template id="four">
+        <div>
+            <ul>
+                <li v-for='(v,i) in msg' @click='a(v)'>{{v}}</li>
+            </ul>
+        </div>
+    </template>
+</body>
+</html>
+<script>
+    new Vue({
+        el:'#box',
+        components:{
+            'one':{
+                template:'#three',
+                data(){
+                    return{
+                        msg1:''
+                    }
+                },
+                methods:{
+                    b:function(c){
+                        this.msg1=c
+                    }
+                },
+                components:{
+                    'two':{
+                        template:'#four',
+                        data(){
+                            return{
+                                msg:['apple','banana','orange']
+                            }
+                        },
+                        methods:{
+                            a:function(v){
+                                this.$emit('kk',v)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    })
+</script>

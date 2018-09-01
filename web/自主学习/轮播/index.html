@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        border: 0;
+    }
+
+    .all {
+        width: 500px;
+        height: 200px;
+        padding: 7px 0px;
+        border: 1px solid #ccc;
+        margin: 50px auto;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .screen {
+        width: 500px;
+        height: 200px;
+        /*overflow: hidden;*/
+        position: relative;
+    }
+
+    .screen li {
+        width: 500px;
+        height: 200px;
+        overflow: hidden;
+        float: left;
+    }
+
+    .screen ul {
+        position: absolute;
+        left: 0;
+        top: 0px;
+        width: 3000px;
+    }
+
+    .screen ul li {
+        width: 500px;
+        height: 200px;
+    }
+
+    .all ol {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        line-height: 20px;
+        text-align: center;
+    }
+
+    .all ol li {
+        float: left;
+        width: 20px;
+        height: 20px;
+        background: #fff;
+        border: 1px solid #ccc;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+
+    .all ol li.current {
+        background: yellow;
+    }
+
+    #arr {
+        display: none;
+    }
+
+    #arr span {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        left: 5px;
+        top: 50%;
+        margin-top: -20px;
+        background: #000;
+        cursor: pointer;
+        line-height: 40px;
+        text-align: center;
+        font-weight: bold;
+        font-family: '黑体';
+        font-size: 30px;
+        color: #fff;
+        opacity: 0.3;
+        border: 1px solid #fff;
+    }
+
+    #arr #right {
+        right: 5px;
+        left: auto;
+    }
+</style>
+
+<body>
+    <div class="all" id='box'>
+        <div class="screen">
+            <ul id="imgBox">
+                <li>
+                    <img src="img/1.jpg" />
+                </li>
+                <li>
+                    <img src="img/2.jpg" />
+                </li>
+                <li>
+                    <img src="img/3.jpg" />
+                </li>
+                <li>
+                    <img src="img/4.jpg" />
+                </li>
+                <li>
+                    <img src="img/5.jpg" />
+                </li>
+            </ul>
+            <ol id="olList">
+            </ol>
+        </div>
+        <div id="arr">
+            <span id="left">&lt;</span>
+            <span id="right">&gt;</span>
+        </div>
+    </div>
+</body>
+<script>
+    var arr = document.getElementById('arr');
+    var box = document.getElementById('box');
+    var imgbox = document.getElementById('imgBox');
+    var imgli = imgbox.children;
+    var olList = document.getElementById('olList');
+    var left = document.getElementById('left')
+    var right = document.getElementById('right')
+    var width1 = imgbox.firstElementChild.offsetWidth;
+    var b;
+    var d;
+    var jsq=0;
+    var jsq2=0;
+    abc();
+    box.onmouseover=function(){
+        arr.style.display = 'block';
+        clearInterval(d)
+    }
+    box.onmouseout=function(){
+        arr.style.display = 'none'
+        abc();
+    }
+    for(var i = 0;i<imgli.length;i++){
+        var a = document.createElement('li');
+        a.innerHTML = i+1;
+        olList.appendChild(a);
+    }
+    var olli = olList.children;
+    olli[0].className = 'current';
+    for(var j = 0;j<olli.length;j++){
+        olli[j].item = j;
+        olli[j].onclick=function(){
+            for(var k =0;k<olli.length;k++){
+                olli[k].className='';
+            }
+            this.className='current';
+            jsq = this.item;
+            jsq2 = this.item;
+        }
+    }
+    var newimg = imgbox.firstElementChild.cloneNode(true)
+    imgbox.appendChild(newimg);
+    right.onclick=function(){
+        clearInterval(b);
+        cc();
+    }
+    left.onclick=function(){
+        clearInterval(b)
+        if(jsq==0){
+            jsq= imgli.length-1;
+            imgbox.style.left=-width1*(imgli.length-1)+'px'
+        }
+        jsq--;
+        if(jsq2==0){
+            jsq2=imgli.length-1;
+        }
+        jsq2--;
+        for(var f = 0;f<olli.length;f++){
+            olli[f].className='';
+        }
+        // olli[jsq2].className = 'current';
+        zz(imgbox,-width1*jsq);
+    }
+   
+    function zz(obj,target){
+        var leader = obj.offsetLeft;
+        var step= ((target-leader)/10)*1000;
+        target-leader>0?step=Math.ceil(step):step=Math.floor(step);
+        // var step = -10;
+		// leader>target?step=step:step=-step;
+        b=setInterval(function(){
+            if(Math.abs(target-leader)>=Math.abs(step/1000)){
+                leader = leader+step/1000;
+                console.log(leader)
+                obj.style.left=leader +'px'
+            }else{
+                obj.style.left = target+'px';
+                clearInterval(b)
+            }
+        },100)
+    }
+    function cc(){
+        if(jsq==imgli.length-1){
+            jsq=0;
+            imgbox.style.left='0px';
+        }
+        jsq++;
+        jsq2++;
+        for(var f =0;f<olli.length;f++){
+            olli[f].className = '';
+        }
+        if(jsq2==imgli.length-1){
+            jsq2=0
+        }
+        olli[jsq2].className = 'current';
+        zz(imgbox,-width1*jsq)
+    }
+    function abc(){
+        d=setInterval(function(){
+            cc();
+        },2000)
+    }
+</script>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	var a = [123,321,12,43,5456,76,8,89,99,565,98];
+	var b = 0;
+	for(i in a){
+		for(var j= 0;j<a.length-i-1;j++){
+			if(a[j]>a[j+1]){
+				b = a[j];
+				a[j] = a[j+1];
+				a[j+1] = b;
+			}
+		}
+	}console.log(a);
+</script>

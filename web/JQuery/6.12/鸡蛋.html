@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <style>
+        .div1{
+            width: 100px;
+            height: 140px;
+            background: burlywood;
+            border: 1px solid black;
+            border-radius: 25px 0px;
+        }
+        .div2{
+            width: 140px;
+            height: 140px;
+            background:radial-gradient(red,green,blue);
+            border-radius: 50%;
+        }
+        .div2:hover{
+            animation: aa 2s ease;
+        }
+        @keyframes aa{
+            0%{
+                transform: rotate(72deg)
+            }
+            25%{
+                transform: rotate(144deg)
+            }
+            50%{
+                transform: rotate(216deg)
+            }
+            75%{
+                transform: rotate(288deg)
+            }
+            100%{
+                transform: rotate(360deg)
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="div1"></div>
+    <div class="div2">3</div>
+</body>
+</html>

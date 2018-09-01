@@ -1,0 +1,221 @@
+#headerContant .header-wrap{
+    height: 300px;
+   /*  overflow: hidden; */
+}
+#headerContant .title{
+    display: none;
+}
+#headerContant .zhezhaoF{
+    top: -100%;
+}
+#headerContant .zhezhaoA{
+    top: 0;
+}
+.main{
+    margin-top: 80px;
+    margin-bottom: 70px;
+}
+.main>h2{
+    color: rgb(110,161,68);
+}
+.mainTop-first{
+    text-align: center;
+    margin-top: 30px;
+}
+.mainTop-first>.img-wrap>img{
+    margin: 0 auto;
+}
+.mainTop-first>h3{
+    color: rgb(110,161,68);
+}
+.mainTop-first>p{
+    color: #999;
+}
+.mainTop-first>button{
+    padding: 0px 30px;
+    height: 35px;
+    background: rgb(110,161,68);
+    border: rgb(110,161,68);
+    color: white;
+    border: 0;
+    line-height: 40px;
+    outline:none;
+    margin-top: 5%;
+}
+.mainTop-first>button:hover{
+    color: rgb(110,161,68);
+    background: white;
+    transition: all 0.3s linear;
+}
+.img-wrap{
+    position: relative;
+}
+.zhezhao1{
+    background: rgba(110,161,68,0.5);
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    color: white;
+    text-align: center;
+    display: none;
+}
+.zhezhao1>h2{
+    margin-top: 25%;
+}
+.zhezhao1>p{
+    width: 80%;
+    margin: 0 auto;
+}
+.mainTop-first:hover .zhezhao1{
+    display: block;
+}
+.bgContant{
+    background: url(../img/5.jpg) no-repeat;
+    background-size: cover;
+    width: 100%;
+    margin-bottom: 80px;
+}
+.Bgwhite{
+    color: white;
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10% 0;
+}
+.Bgwhite>div{
+    display: none;
+}
+.Bgwhite>div.yincang{
+    display: inline-block;
+}
+.Bgwhite>em{
+    display: block;
+    margin-top:7%;
+}
+.Bgwhite>em>span{
+    display: inline-block;
+    width: 30px;
+    height: 10px;
+    background: white;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.Bgwhite>em>span.yincang2{
+    background: rgb(110,161,68);
+}
+.bottom>h2{
+    color: rgb(110,161,68);
+}
+.main-main>div{
+    float: left;
+}
+.main-main>div:last-child>h3{
+    margin-top: 0;
+}
+.main-main>div:last-child{
+    width: 75%;
+    margin-left: 10%;
+    color: rgb(198,197,192);
+}
+.fontS{
+    font-size: 45px;
+    color: rgb(198,197,192);
+}
+.mainTop1{
+    margin-top: 35px;
+}
+.mainBotton1{
+    margin-top: 20px;
+    margin-bottom: 110px;
+}
+
+@media only screen and (max-width:991px) and (min-width:768px){
+    .zhezhao1{
+        width: 80%;
+        border-radius: 125px;
+    }
+    .zhezhao1>h2{
+        margin-top: 15%;
+    }
+}
+@media only screen and (max-width:767px) and (min-width:641px){
+    .zhezhao1{
+        width: 80%;
+        height: 100%;
+        border-radius: 50%;
+    }
+    .zhezhao1>h2{
+        margin-top: 25%;
+    }
+    .mainTop-first>h3{
+        font-size: 18px;
+    }
+    .mainTop-first>p{
+        font-size: 14px;
+    }
+    .Bgwhite>div>h1{
+        font-size: 30px;
+    }
+}
+@media only screen and (max-width:640px) and (min-width:460px){
+    .zhezhao1{
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+    .zhezhao1>h2{
+        margin-top: 25%;
+        font-size: 16px;
+    }
+    .zhezhao1>p{
+        font-size: 12px;
+        width: 100%;
+    }
+    .mainTop-first>h3{
+        font-size: 16px;
+    }
+    .mainTop-first>p{
+        font-size: 12px;
+    }
+    .Bgwhite>div>h1{
+        font-size: 25px;
+    }
+}
+@media only screen and (max-width:459px){
+    .mainTop-first{
+        width: 100% !important;
+    }
+    .zhezhao1{
+        width: 250px;
+        height: 100%;
+        border-radius: 50%;
+    }
+    .zhezhao1>h2{
+        margin-top: 25%;
+    }
+    .Bgwhite>div>h1{
+        font-size: 20px;
+    }
+}
+@media only screen and (max-width:767px){
+    .main-main{
+        margin-top: 20px !important;
+    }
+    .mainBotton1{
+        margin-top:0;
+        margin-bottom: 110px;
+    }
+}
+@media only screen and (max-width:995px){
+    #headerContant .zhezhaoF{
+        height: 0;
+    }
+    #headerContant .zhezhaoA{
+        height: 100%;
+    }
+}

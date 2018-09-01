@@ -1,0 +1,10 @@
+<div class="panel panel-primary">
+	<div class="panel-heading">ngSwith:判断变量值</div>
+	<div class="panel-body">
+		<div [ngSwitch]="animal">
+			<div *ngSwitchCase="'dog'">汪汪</div>
+			<div *ngSwitchCase="'cat'">喵喵</div>
+			<div *ngSwitchDefault>哼哼</div>
+		</div>
+	</div>
+</div>

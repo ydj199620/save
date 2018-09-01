@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box1{
+				width: 600px;
+				height: 500px;
+				border: 1px solid black;
+				margin: 0 auto;
+			}
+			#box2{
+				width: 300px;
+				margin: 0 auto;
+			}
+			#text1{
+				width: 208px;
+				height: 50px;
+				position: relative;
+				top: 22px;
+			}
+			#input1{
+				height: 45px;
+				width: 80px;
+				background: orange;
+				color: white;
+				border: 0;
+			}
+			#box3{
+				width: 400px;
+				height: 400px;
+				margin: 0 auto;
+				border: 1px solid black;
+				margin-top: 10px;
+				overflow: hidden;
+			}
+			#box3 p input{
+				float: right;
+			}
+			#box3 p span{
+				margin-left: 20px;
+				font-size: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box1">
+			<div id="box2">
+				<textarea id="text1"></textarea>
+				<input type="button" id="input1" value="发表" />
+			</div>
+			<div id="box3"></div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var a = document.getElementById('input1');
+	var b = document.getElementById('text1');
+	var c = document.getElementById('box3');
+	a.onclick = function(){
+		var d = b.value;
+		if(d!=''){
+			b.value = '';
+			var aa = new Date();
+			var bb = aa.getFullYear();
+			var cc = aa.getMonth();
+			var dd = aa.getDate();
+			var ee = aa.getHours();
+			var ff = aa.getMinutes();
+	 		var e = document.createElement('p');
+			e.innerHTML = d+"<span>"+bb+'/'+cc+'/'+dd+'  '+ee+':'+ff+"</span>"+'<input type="button" value="删除"/>'
+			c.insertBefore(e,c.firstElementChild);
+			var f = e.lastElementChild;
+			f.onclick = function(){
+				e.parentNode.removeChild(e);
+			}
+		}else{
+			b.value = '';
+		}
+	}
+</script>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="box">
+        <a1></a1>
+        <a3></a3>
+        <a2></a2>
+    </div>
+
+    <template id="one">
+        <div>
+            <h1>123</h1>
+            <h2 @click='a()'>{{msg}}</h2>
+        </div>
+    </template>
+
+    <template id="two">
+        <div>
+            <h1>456</h1>
+            <h2>A1:{{msg1}}</h2>
+            <h2>A2:{{msg3}}</h2>
+        </div>
+    </template>
+
+    <template id="three">
+        <div>
+            <h1>123</h1>
+            <h2 @click='c()'>{{msg2}}</h2>
+        </div>
+    </template>
+</body>
+</html>
+<script>
+    var vm = new Vue({})//创建个空实例
+    new Vue({
+        el:'#box',
+        components:{
+            'a1':{
+                template:'#one',
+                data(){
+                    return{
+                        msg:'one two'
+                    }
+                },
+                methods:{
+                    a:function(){
+                        vm.$emit('k',this.msg)
+                    }
+                }
+            },
+            'a3':{
+                template:'#three',
+                data(){
+                    return{
+                        msg2:'three four'
+                    }
+                },
+                methods:{
+                    c:function(){
+                        vm.$emit('m',this.msg2)
+                    }
+                }
+            },
+            'a2':{
+                template:'#two',
+                data(){
+                    return{
+                        msg1:'',
+                        msg3:''
+                    }
+                },
+                //mounetd 实例挂载后    --》 html vue实例渲染完成后
+                mounted:function(){//自动加载
+					var that = this;//提前保存this的指向
+					vm.$on('k',function(a){// a就是help事件身上的数据
+						that.msg1 = a;
+						//console.log(this);
+						//在方法内this指向的是vm这个空的vue是俩
+					})
+                    vm.$on('m',function(l){// a就是help事件身上的数据
+						that.msg3 = l;
+						//console.log(this);
+						//在方法内this指向的是vm这个空的vue是俩
+					})
+				}
+            }
+        }
+    })
+</script>

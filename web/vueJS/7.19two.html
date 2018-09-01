@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="box">
+        <!-- <input type="checkbox" v-model='msg'> -->
+        <!-- v-if='只接受布尔类型的值true/false -->
+       <!--  <h3 v-if='msg'>{{msg2}}</h3>
+        <input v-else type="text" v-model='msg2'> -->
+        <h3 v-if='msg3>18'>徐磊这个傻吊</h3>
+        <h3 v-else-if='msg3==18'>徐磊这个傻逼</h3>
+        <h3 v-else-if='msg3==""'>徐磊这个脑子不好</h3>
+        <h3 v-else>徐磊这个弱智</h3>
+        <input type="text" v-model='msg3'>
+    </div>
+</body>
+</html>
+<script>
+    var vm = new Vue({
+        el:'#box',
+        data:{
+            msg:'',
+            msg2:'',
+            msg3:''
+        }
+    })
+</script>

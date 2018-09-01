@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-1.12.4.min.js"></script>
+	</head>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+		#box{
+			width: 478px;
+			height: 320px;
+			margin: 50px auto;
+			overflow: hidden;
+		}
+		#box1{
+			width: 750px;
+			height: 320px;
+		}
+		#box1>div{
+			float: left;
+			width: 60px;
+			height: 320px;
+			overflow: hidden;
+		}
+		#box1>div>img{
+			width: 480px;
+			height: 320px;
+		}
+	</style>
+	<body>
+		<div id="box">
+			<div id="box1">
+				<div><img src="img/pic1.jpg"/></div>
+				<div><img src="img/pic2.jpg"/></div>
+				<div><img src="img/pic3.jpg"/></div>
+				<div><img src="img/pic4.jpg"/></div>
+				<div><img src="img/pic5.jpg"/></div>
+				<div><img src="img/pic6.jpg"/></div>
+				<div><img src="img/pic7.jpg"/></div>
+				<div><img src="img/pic8.jpg"/></div>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		var json = {
+			'width':'270px'
+		}
+		var json1 = {
+			'width':'30px'
+		}
+		var json2 = { 
+			'width':'60px'
+		}
+		$('#box1').children('div').hover(function(){
+			$(this).stop().animate(json,300).siblings().stop().animate(json1,300);
+		},function(){
+			$('#box1').children('div').stop().animate(json2,500);
+		})
+	})
+</script>

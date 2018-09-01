@@ -1,0 +1,18 @@
+<app-header [title]='title'></app-header>
+<div class="list">
+  <ul >
+    <li class="list-item" (click)='godetail(user.id)' *ngFor="let user of users">
+      <div>
+        <img src="../../assets/images/Iverson.jpg" alt="">
+      </div>
+      <div>
+        <div>{{user.name}}</div>
+        <div>{{user.phone}}</div>
+      </div>
+      <div>
+        <img src="../../assets/images/tel.png" alt="">
+      </div>
+    </li>
+  </ul>
+</div>
+<app-footer></app-footer>

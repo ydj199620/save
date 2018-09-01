@@ -1,0 +1,13 @@
+<view class='container'>
+  <image class='logo' src='../images/logo.png'></image>
+  <text class='title'>hello,Loin</text>
+  <view class='btn' bindtap='goview'>
+    <text class='music_btn'>和音乐一起分享时光</text>
+  </view>
+  <view class='btn btn2' catchtap='getuserlocation'>
+    <text class='music_btn'>查看当前位置</text>
+  </view>
+  <view class='btn btn2' catchtap='phone'>
+    <text class='music_btn'>练习我们</text>
+  </view>
+</view>

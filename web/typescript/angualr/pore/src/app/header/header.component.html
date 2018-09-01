@@ -1,0 +1,17 @@
+<style>
+    .a{
+        color: blue;
+    }
+    .b{
+        color: yellow;
+    }
+    .c-a{
+        color: green;
+    }
+</style>
+<h1>{{title}}</h1>
+<h2 [ngStyle]='{"color":"red"}'>原因：</h2>
+<h3 [ngClass]="{a:true,b:false}">姓名：{{name}}</h3>
+<h3 [ngClass]="{'c-a':true}">性别：{{sex}}</h3>
+<h3 [ngStyle]="{color: 'red'}">不明性别的男女朋友：{{pronse.name}}</h3>
+<div [style.font-size.px]="20/fontSize">1234</div>

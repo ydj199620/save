@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script src="vue.js"></script>
+    <script src="vue-router.js"></script>
+</head>
+<body>
+    <div id="box">
+        <router-link to='/home'>首页</router-link>
+        <router-link to='/use'>分页</router-link>
+        <router-view></router-view>
+    </div>
+</body>
+</html>
+<script>
+    const a = {
+        template:`
+            <div>
+                <router-link to='/home/home1'>{{msg}}</router-link>
+                <router-link to='/home/home2'>首页2。html</router-link>
+                <router-view></router-view>
+            </div>
+        `,
+        data(){
+            return{
+                msg:'首页。html'
+            }
+        }
+    }
+    const b = {
+        template:`
+            <div>
+                <h1>{{msg1}}</h1>
+            </div>
+        `,
+        data(){
+            return{
+                msg1:'分页。html'
+            }
+        }
+    }
+    const c = {
+        template:`
+            <div>
+                <h1>{{msg2}}</h1>
+            </div>
+        `,
+        data(){
+            return{
+                msg2:'首页分页。html'
+            }
+        }
+    }
+    const d = {
+        template:`
+            <div>
+                <h1>{{msg3}}</h1>
+            </div>
+        `,
+        data(){
+            return{
+                msg3:'首页分页2。html'
+            }
+        }
+    }
+    var routes = [
+        {path:'/home',component:a,
+            children:[{
+                path:'home1',component:c
+            },{
+                path:' ',component:d
+            }
+        ]
+    },
+        {path:'/use',component:b}
+    ]
+    var router = new VueRouter({
+        routes
+    })
+    new Vue({
+        el:'#box',
+        router
+    })
+</script>

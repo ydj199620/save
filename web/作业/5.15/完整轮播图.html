@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            border: 0;
+        }
+
+        .all {
+            width: 500px;
+            height: 200px;
+            padding: 7px 0px;
+            border: 1px solid #ccc;
+            margin: 50px auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .screen {
+            width: 500px;
+            height: 200px;
+            /*overflow: hidden;*/
+            position: relative;
+        }
+
+        .screen li {
+            width: 500px;
+            height: 200px;
+            overflow: hidden;
+            float: left;
+        }
+
+        .screen ul {
+            position: absolute;
+            left: 0;
+            top: 0px;
+            width: 3000px;
+        }
+        
+        .screen ul li{
+        	width: 500px;
+        	height: 200px;
+        }
+
+        .all ol {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            line-height: 20px;
+            text-align: center;
+        }
+
+        .all ol li {
+            float: left;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border: 1px solid #ccc;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .all ol li.current {
+            background: yellow;
+        }
+
+        #arr {
+            display: none;
+        }
+
+        #arr span {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            left: 5px;
+            top: 50%;
+            margin-top: -20px;
+            background: #000;
+            cursor: pointer;
+            line-height: 40px;
+            text-align: center;
+            font-weight: bold;
+            font-family: '黑体';
+            font-size: 30px;
+            color: #fff;
+            opacity: 0.3;
+            border: 1px solid #fff;
+        }
+
+        #arr #right {
+            right: 5px;
+            left: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="all" id='box'>
+    <div class="screen">
+        <ul id="imgBox">
+            <li><img src="img/1.jpg" /></li>
+            <li><img src="img/2.jpg" /></li>
+            <li><img src="img/3.jpg" /></li>
+            <li><img src="img/4.jpg" /></li>
+            <li><img src="img/5.jpg" /></li>
+        </ul>
+        <ol id="olList">
+        </ol>
+    </div>
+    <div id="arr">
+    	<span id="left">&lt;</span>
+    	<span id="right">&gt;</span>
+    </div>
+</div>
+<script>
+	var arr = document.getElementById('arr');
+	//获取左右的盒子
+	var box = document.getElementById('box');
+	//获取大盒子
+	var ollist = document.getElementById('olList');
+	//获取下标签ol
+	var imgbox = document.getElementById('imgBox');
+	//获取图片的盒子
+	var width1 = imgbox.firstElementChild.offsetWidth;
+	//获取图片的长度
+	var left = document.getElementById('left');
+	//获取左标
+	var right = document.getElementById('right');
+	//获取右标
+	var imgli = imgbox.children;
+	//获取imgbox下所有元素节点
+	var b;
+	//给第一个定时器命名b
+	var jsq=0;
+	//加个计时器1用来记录左右点击时图片移动的位置
+	var jsq2 = 0;
+	//加个计时器2记录点击左右时ol下的li高亮的位置
+	var d;
+	//给第一个定时器命名d
+	abc();//执行函数
+	box.onmouseover =function(){
+		arr.style.display = 'block'//移动到box左右标签显示
+		clearInterval(d);//并清除定时器d
+	}
+	box.onmouseout =function(){
+		arr.style.display = 'none';//离开box左右标签隐藏
+		abc();//执行定时器函数
+	}
+	for(var i = 0;i<imgli.length;i++){//图片有多少，li就有多少
+		var a = document.createElement('li');//创建一个新节点li
+		a.innerHTML = i+1;//li里面加入数字
+		ollist.appendChild(a);//在ol里面添加新节点li
+	}
+	var olli = ollist.children;//获取ol下所有子元素
+	olli[0].className = 'current';//使1的默认样式为黄色
+	for(var j = 0;j<olli.length;j++){//利用for循环排他
+		olli[j].item = j//绑定j的值
+		olli[j].onclick =function(){//点击ol下的元素
+			for(var k = 0;k<olli.length;k++){
+				olli[k].className = '';//使每一项olclass名都为空，颜色为白色
+			}
+			this.className = 'current';//使自己class名current，颜色为黄色；
+			zz(imgbox,-width1*this.item)//执行缓慢移动函数
+			jsq=this.item;//使计时器和点击下标同步
+			jsq2=this.item;//使计时器和点击下标同步
+		}
+	}
+	var newimg = imgbox.firstElementChild.cloneNode(true);//复制第一个img
+	imgbox.appendChild(newimg);//在imgbox最后添加复制的img
+	right.onclick =function(){
+		clearInterval(b);
+		cc();//执行函数cc
+	}
+	left.onclick =function(){
+		clearInterval(b);
+		if(jsq==0){//如果在最开始jsq==0时，点击左边
+			jsq = imgli.length-1;//jsq就等于长度6-1=5
+			imgbox.style.left = -width1*(imgli.length-1)+'px'//左边的图片的距离变成最后一张图所在的位置 （长度*5）
+		}
+		jsq--;//jsq执行减一
+		if(jsq2==0){//在判断jsq2的计时器为0的时候
+			jsq2=imgli.length-1;//计时器2=长度-1 6-1=5；
+		}
+		jsq2--;//jsq2在执行减一
+		for(var f=0;f<olli.length;f++){//遍历所有ol下的li
+			olli[f].className = '';//使所有liclass名为空，无样式
+		}
+		olli[jsq2].className = 'current';//使li[计时器2时]class名为current时的样式；
+		zz(imgbox,-width1*jsq);//执行缓慢移动函数（大盒子，图片长度乘以计时器1时移动的距离）
+	}
+	function zz(obj,target){//缓慢移动的函数
+		var leader = obj.offsetLeft;
+		var step = -10;
+		leader>target?step=step:step=-step;
+		clearInterval(b);
+		b = setInterval(function(){
+			if(Math.abs(target-leader)>=Math.abs(step)){
+				leader = leader +step;
+				obj.style.left = leader+'px';
+			}else{
+				obj.style.left = target+'px';
+				clearInterval(b);
+			}
+		},20)
+	}
+	function cc(){//把点击右边的的函数ng封装起来
+		if(jsq==imgli.length-1){//当jsq等于长度6-1=5时，到最后一张图片(先判断后加1)
+			jsq = 0;//jsq为0
+			imgbox.style.left = '0px'//左边距为0，返回到第一张图
+		}
+		jsq++//计时器1加1
+		jsq2++//计时器加1
+		for(var f=0;f<olli.length;f++){//遍历所有ol下的li
+			olli[f].className = '';//使所有liclass名为空，无样式
+		}
+		if(jsq2==imgli.length-1){//判断计时器2等于长度6-1=5时；(先加1后判断)
+			jsq2=0;//计时器2等于=0
+		}
+		olli[jsq2].className = 'current';//使li[计时器2时]class名为current时的样式；
+		zz(imgbox,-width1*jsq);//执行缓慢移动函数（大盒子，图片长度乘以计时器1时移动的距离）
+	}
+	function abc(){//封装一个函数
+		d = setInterval(function(){//使图片进行自动缓慢移动
+			cc();//执行cc的函数
+		},2000)
+	}
+	/*box.onmouseout =function(){
+		clearInterval(d);
+	}*/
+</script>
+</body>
+</html>

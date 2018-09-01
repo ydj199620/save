@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<img src="img/1.jpg" id="imges"/><br />
+		<input type="button" value="左" id="left"/>
+		<input type="button" value="右" id="right"/>
+		<input type="button" value="开始" id="start"/>
+		<input type="button" value="结束" id="end"/>
+	</body>
+</html>
+<script type="text/javascript">
+	var a = document.getElementById('imges');
+	var left = document.getElementById('left');
+	var right = document.getElementById('right');
+	var start = document.getElementById('start');
+	var end = document.getElementById('end');
+	var i = 1;
+	var b = null;
+	start.onclick = function(){
+		b = setInterval(function aa(){
+			i++;
+			if(i==9){
+				i=1;
+			}
+			a.src = 'img/'+i+'.jpg';
+		},1);
+	}
+	end.onclick = function(){
+		clearInterval(b);
+	}
+	left.onclick = function(){
+		i--;
+		if(i==0){
+			i=8;
+		}
+		a.src = 'img/'+i+'.jpg';
+	}
+	right.onclick = function(){
+		i++;
+		if(i==9){
+			i=1;
+		}
+		a.src = 'img/'+i+'.jpg';
+	}
+</script>

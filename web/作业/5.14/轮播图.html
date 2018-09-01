@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			#box{
+				width: 490px;
+				height: 170px;
+				margin: 0 auto;
+				border: 3px solid saddlebrown;
+				position: relative;
+				overflow: hidden;
+			}
+			#box2{
+				width: 2450px;
+				height: 170px;
+				position: relative;
+			}
+			#box2 li{
+				float: left;
+				width: 490px;
+				height: 170px;
+			}
+			#box3{
+				position: absolute;
+				right: 5px;
+				bottom: 20px;
+			}
+			#box3 li{
+				float: left;
+				margin-left: 5px;
+				width: 21px;
+				height: 21px;
+				background: white;
+				color: black;
+				text-align: center;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<ul id="box2">
+				<li><img src="img/01.jpg"/></li>
+				<li><img src="img/02.jpg"/></li>
+				<li><img src="img/03.jpg"/></li>
+				<li><img src="img/04.jpg"/></li>
+				<li><img src="img/05.jpg"/></li>
+			</ul>
+			<ul id="box3">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+			</ul>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var box = document.getElementById('box');
+	//获取大盒子
+	var box2 = box.firstElementChild.children;
+	//获取大盒子下第一个子元素的所有子元素
+	var box3 = box.lastElementChild.children;
+	//获取大盒子下最后一个子元素的所有子元素
+	var width = box2[0].offsetWidth;
+	//获取一个img图片的宽度
+	var item;
+	//设置一个全局循环计时变量
+	for(var i =0;i<box3.length;i++){//排他
+		box3[i].c=i;
+		box3[i].onclick = function(){
+			clearInterval(item);
+			for(var j =0;j<box3.length;j++){
+				box3[j].style.background = 'white';
+				box3[j].style.color = 'black';
+			}
+			this.style.background = '#ff8400';
+			this.style.color = 'white';
+			aa(box.firstElementChild,-width*this.c)//执行图片移动的函数
+			//第一个值是获取id为box2的盒子，第二个目标位置，获取的img的宽，乘上点击i索引的值
+		}
+	}
+	function aa(a,target){
+		var leader = a.offsetLeft;//现在位置box2的左边距离
+		console.log(leader)
+		var step = -10;//每50毫秒走10像素
+		leader>target?step = step:step = -step;//如果现在位置大于目标位置，step为负
+		clearInterval(item);//执行前先清除
+		item  = setInterval(function(){
+			if(leader!= target){//目标位置不等于现在位置
+				leader = leader +step;//现在位置 = 现在位置+移动距离
+				a.style.left = leader +'px';//box2的左边距= 移动距离
+			}else{
+				clearInterval(item);
+			}
+			console.log(leader)
+		},50)
+	}
+</script>

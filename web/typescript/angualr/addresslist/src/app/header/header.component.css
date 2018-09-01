@@ -1,0 +1,17 @@
+.header{
+    background: #3DD588;
+    position: relative;
+    color: white;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header>i{
+	height: 24px;
+	width: 24px;
+	background: url(../../assets/images/add.png) no-repeat;
+    position: absolute;
+    right: .8rem;
+    top: 2px;
+}

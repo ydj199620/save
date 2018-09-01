@@ -1,0 +1,28 @@
+<!--pages/music/music-detail/music-detail.wxml-->
+<import src="comment-template/comment-template.wxml"/>
+<view class='container'>
+  <image class='head_img' src='{{initData.detailimg}}'></image>
+  <view class='author'>
+    <image src='{{initData.detailhead}}'></image>
+    <text>{{initData.authorname}}</text>
+    <text class='data'>发表于</text>
+    <text class='data'>{{initData.date}}</text>
+    <image src="{{musicflag?'../../images/earphone.png':'../../images/eartag.png'}}" catchtap='playMusic'></image>
+  </view>
+  <view class='title'>时光不老，一世倾城</view>
+  <view class='tool'>
+    <image src='../../images/fx.png' catchtap='onshare'></image>
+    <image src="../../images/sc1.png" catchtap='playSc' wx:if='{{scflag}}'></image>
+    <image src='../../images/sch1.png' wx:else='{{scflag}}' catchtap='playSc'></image>
+  </view>
+  <text class='text_detail'>{{initData.detailtext}}</text>
+
+  <!-- 评论 -->
+  <view class="comment">
+    <view class="commentblock">评价</view>
+    <block wx:for="{{initData.comment}}" wx:key="key">
+      <!-- template -->
+      <template is="comment" data="{{...item}}" />
+    </block>
+  </view>
+</view>

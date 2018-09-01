@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="box">
+        {{msg}}
+        <a1 @k='b'></a1>
+        <a2 :m='msg' @j='e'></a2>
+    </div>
+
+    <template id="one">
+        <div>
+            <h1>兄</h1>
+            <input type="text" @change='a()' v-model='msg1'></input>
+        </div>
+    </template>
+    <template id="two">
+        <div>
+            <h1>弟</h1>
+            <input type="text" @change='d()' v-model='m'></input>
+        </div>
+    </template>
+</body>
+</html>
+<script>
+    new Vue({
+        el:'#box',
+        data:{
+            msg:''
+        },
+        methods:{
+            b:function(c){
+                this.msg=c
+            },
+            e:function(f){
+                this.msg=f
+            }
+        },
+        components:{
+            'a1':{
+                template:'#one',
+                data(){
+                    return{
+                        msg1:'123456'
+                    }
+                },
+                methods:{
+                    a:function(){
+                        this.$emit('k',this.msg1)
+                    }
+                }
+            },
+            'a2':{
+                template:'#two',
+                data(){
+                    return{
+
+                    }
+                },
+                props:['m'],
+                methods:{
+                    d:function(){
+                        this.$emit('j',this.m)
+                    }
+                }
+            }
+        }
+    })
+</script>

@@ -1,0 +1,37 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+body{
+	background: url(../img/timg.jpg);
+	background-size: 100%;
+}
+#top{
+	color: white;
+	font-size: 40px;
+	opacity: 0.8;
+	width: 255px;
+	margin: 0 auto;
+	font-weight: 900;
+}
+#main,#right{
+	width: 250px;
+	float: left;
+}
+#main>ul>li{
+	width: 200px;
+	color: skyblue;
+	opacity: 0.7;
+	font-weight: 700;
+	font-size: 20px;
+	cursor: pointer;
+	margin-bottom: 20px;
+	margin-left: 10px;
+}
+#main>ul>li:hover{
+	color: rgba(255,165,0,0.7);
+	background: white;
+	opacity: 1;
+}

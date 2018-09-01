@@ -1,0 +1,18 @@
+<template name='itemtemplate'>
+  <view class='articleitem'>
+    <view class='message'>
+      <image src='{{authoricon}}'></image>
+      <text class='auther'>{{authorname}}</text>
+      <text class='data'>{{date}}</text>
+    </view>
+    <text class='title'>{{title}}</text>
+    <image src='{{articleimg}}' class='articleimg'></image>
+    <text class='articletext'>{{articletext}}</text>
+    <view class='articlebottom'>
+      <image src='../images/sch.png'></image>
+      <text>{{like_sc}}</text>
+      <image src='../images/fx.png'></image>
+      <text>{{like_fx}}</text>
+    </view>
+  </view>
+</template>

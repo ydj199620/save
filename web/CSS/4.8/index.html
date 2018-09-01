@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>金立</title>
+		<style>
+			html{
+				width: 100%;
+				overflow-x: hidden;
+			}
+			#container{
+				width: 1190px;
+				margin: 28px auto;
+			}
+			.header{
+				height: 106px;
+			}
+			.header-line{
+				color:black;
+				position: relative;
+				left: 152px;
+			}
+			.img{
+				float: left;
+			}
+			.header-line ul li{
+				list-style: none;
+				display: inline-block;
+				float: left;
+				margin-left: 48px;
+				margin-top: 20px;
+			}
+			.header-line ul a{
+				text-decoration: none;
+				color: black;
+				font-family: "微软雅黑";
+			}
+			.header-line ul a:hover{
+				color: red;
+			}
+			.header-right{
+				float: right;
+				font-size: 10px;
+				color: #a19f9e;
+			}
+			.header-right-top a{
+				text-decoration: none;
+				font-family: "微软雅黑";
+				color: #a19f9e;
+			}
+			.header-right-top a:hover{
+				color: red;
+			}
+			.a{
+				background: url(img/shoppCar_03.gif);
+				width: 15px;
+				height: 14px;
+				display: inline-block;
+			}
+			.header-right-bottom{
+				background: url(img/search_17.gif);
+				width: 170px;
+				height: 30px;
+				position: relative;
+				top: 7px;
+			}
+			.header-right-bottom input{
+				border: 0;
+				width: 130px;
+				height: 28px;
+				position: relative;
+				top: -9px;
+				left: 1px;
+				outline: none;
+				text-indent: 5px;
+			}
+			.header-right-bottom span{
+				background: #a19f9e;
+				display: inline-block;
+				width: 28px;
+				height: 28px;
+				position: relative;
+				top: 1px;
+				left: 7px;
+				opacity: 0.5;
+				cursor: pointer;
+			}
+			#container-main{
+				margin: 0px auto;
+				width: 1190px;
+				background: white;
+				position: relative;
+				top: 30px;
+				height: 310px;
+			}
+			.main{
+				position: relative;
+				top: 36px;
+				left: 18px;
+			}
+			.phone-class{
+				margin-top: 36px;
+				margin-bottom: 20px;
+				margin-left: 18px;
+				color: #a19f9e;
+				font-size: 10px;
+				font-family:"微软雅黑";
+			}
+			hr{
+				width: 980px;
+				margin-left: 18px;
+			}
+			.phone-class input{
+				position: relative;
+				top: 3px;
+			}
+			#container-bottom{
+				margin: 0px auto;
+				width: 1191px;
+				background: white;
+				position: relative;
+				top: 40px;
+				overflow: hidden;
+			}
+			.container-bottom-top .phone{
+				width: 297px;
+				height: 540px;
+				text-align: center;
+				float: left;
+			}
+			.container-bottom-through .phone{
+				width: 297px;
+				height: 540px;
+				text-align: center;
+				float: left;
+			}
+			.container-bottom-bottom .phone{
+				width: 297px;
+				height: 540px;
+				text-align: center;
+				float: left;
+			}
+			.header-bottom{
+				width: 1191px;
+				height: 70px;
+				background: white;
+				margin: 0px auto;
+				position: relative;
+				top: 63px;
+				text-align: center;
+				overflow: hidden;
+			}
+			.header-bottom input{
+				color: black;
+				background: white;
+				border: 1px #A19F9E solid;
+				position:relative;
+				top: 22px;
+				right: 7px;
+				width: 24px;
+				height: 24px;
+			}
+			.header-bottom input:hover{
+				color: red;
+				cursor: pointer;
+			}
+			#footer{
+				width: 1190px;
+				margin: 0 auto;
+				height: 326px;
+			}
+			.footer-main:hover{
+				cursor: pointer;
+				color: red;
+			}
+			.footer-top{
+				list-style: none;
+				float: left;
+			}
+			.footer-top li{
+				font-size: 10px;
+				margin-top: 12px;
+			}
+			.footer-top li:hover{
+				color: red;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div class="header">
+				<div class="img"><img src="img/logo_03.gif"/></div>
+				<div class="header-line">
+					<ul>
+						<li><a href="">首页</a></li>
+						<li><a href="">手机</a></li>
+						<li><a href="">配件</a></li>
+						<li><a href="">服务</a></li>
+						<li><a href="">下载</a></li>
+						<li><a href="">社区</a></li>
+					</ul>
+				</div>
+				<div class="header-right">
+					<div class="header-right-top">
+						<a href="">您好，请登录</a>丨
+					    <a href="">注册</a>
+					    <span class="a"></span>
+					    <a href="">购物车</a>
+					</div>
+					<div class="header-right-bottom">
+						<input type="search" placeholder="输入搜索内容"/>
+						<span></span>
+					</div>
+				</div>
+			</div>
+			<div>
+				<img src="img/banner.jpg"/>
+			</div>
+		</div>
+		<div style="background: #eaeaea; height: 2086px;">
+			<div id="container-main">
+				<div class="main">
+					<div class="phone-class">
+						手机分类：<input type="checkbox" name="checkbox"/>全部
+						<input type="checkbox" name="checkbox"/>智能手机
+						<input type="checkbox" name="checkbox"/>功能手机
+					</div>
+					<hr />
+					<div class="phone-class">
+						手机外观：<input type="checkbox" name="checkbox-one"/>全部
+						<input type="checkbox" name="checkbox-one"/>触屏
+						<input type="checkbox" name="checkbox-one"/>直板
+						<input type="checkbox" name="checkbox-one"/>翻盖
+					</div>
+					<hr />
+					<div class="phone-class">
+						手机系列：<input type="checkbox" name="checkbox-two"/>全部
+						<input type="checkbox" name="checkbox-two"/>ELIFE系列
+						<input type="checkbox" name="checkbox-two"/>天鉴系列
+						<input type="checkbox" name="checkbox-two"/>风华系列
+						<input type="checkbox" name="checkbox-two"/>语音王系列
+						<input type="checkbox" name="checkbox-two"/>+能量系列
+						<input type="checkbox" name="checkbox-two"/>大屏系列
+						<input type="checkbox" name="checkbox-two"/>其他系列
+					</div>
+					<hr />
+					<div class="phone-class">
+						排列方式：<input type="checkbox" name="checkbox-three"/>上架时间
+						<input type="checkbox" name="checkbox-three"/>价格
+						<input type="checkbox" name="checkbox-three"/>销量
+					</div>
+				</div>
+			</div>
+			<div id="container-bottom">
+				<div class="container-bottom-top">
+					<div class="phone" style="border-right: 1px #A19F9E solid;">
+						<img src="img/list_one_03.gif"/>
+						<span style="font-size: 20px;font-weight: bold;">ELTFE S5.1</span><br />
+						<span style="color: #a19f9e;font-size: 10px;font-family:'微软雅黑';position: relative;top: 5px;">5.15mm超薄智能手机</span><br />
+						<span style="color: red;position: relative;top: 10px;">￥1999</span>
+					</div>
+					<div class="phone" style="border-right: 1px #A19F9E solid;">
+						<img src="img/elife_03.gif"/>
+						<span style="font-size: 20px;font-weight: bold;">ELTFE S5.5L</span><br />
+						<span style="color: #a19f9e;font-size: 10px;font-family:'微软雅黑';position: relative;top: 5px;">5.15mm超薄智能手机,至薄4G智能手机</span><br />
+						<span style="color: red;position: relative;top: 10px;">￥2299</span>
+					</div>
+					<div class="phone" style="border-right: 1px #A19F9E solid;">
+						<img src="img/gn715_03.gif"/>
+						<span style="font-size: 20px;font-weight: bold;">ELTFE E7L(16G)</span><br />
+						<span style="color: #a19f9e;font-size: 10px;font-family:'微软雅黑';position: relative;top: 5px;">1600万像素4G手机</span><br />
+						<span style="color: red;position: relative;top: 10px;">￥2699</span>
+					</div>
+					<div class="phone">
+						<img src="img/list_one_03.gif"/>
+						<span style="font-size: 20px;font-weight: bold;">GN715</span><br />
+						<span style="color: #a19f9e;font-size: 10px;font-family:'微软雅黑';position: relative;top: 5px;">多频段手机，前置500万像素+补光灯</span><br />
+						<span style="color: red;position: relative;top: 10px;">￥1699</span>
+					</div>
+				</div>
+				<div class="container-bottom-through">
+					<div class="phone" style="border-right: 1px #A19F9E solid; border-top: 1px #A19F9E solid;">
+						<img src="img/l1_03.gif"/>
+						<span style="font-size: 20px;font-weight: bold;">金立v188</span><br />
+						<span style="color: #a19f9e;font-size: 10px;font-family:'微软雅黑';position: relative;top: 5px;">5200mAh超大电量，30天超长待机</span><br />
+						<span style="color: red;position: relative;top: 10px;">￥1499</span>
+					</div>
+					<div class="phone" style="border-right: 1px #A19F9E solid; border-top: 1px #A19F9E solid;">
+						<img src="img/l2_03.gif"/>
+						<span style="font-size: 20px;font-weight: bold;">金立w800</span><br />
+						<span style="color: #a19f9e;font-size: 10px;font-family:'微软雅黑';position: relative;top: 5px;">真皮双触屏智能商务手机</span><br />
+						<span style="color: red;position: relative;top: 10px;">￥2999</span>
+					</div>
+					<div class="phone" style="border-right: 1px #A19F9E solid; border-top: 1px #A19F9E solid;">
+						<img src="img/l3_03.gif"/>
+						<span style="font-size: 20px;font-weight: bold;">金立Q1</span><br />
+						<span style="color: #a19f9e;font-size: 10px;font-family:'微软雅黑';position: relative;top: 5px;">送父母，马上就有金</span><br />
+						<span style="color: red;position: relative;top: 10px; font-size: 10px;">查看详情</span>
+					</div>
+					<div class="phone" style="border-top: 1px #A19F9E solid;">
+						<img src="img/l3_03.gif" />
+						<span style="font-size: 20px;font-weight: bold;">金立A809</span><br />
+						<span style="color: #a19f9e;font-size: 10px;font-family:'微软雅黑';position: relative;top: 5px;">经典翻盖，超长待机</span><br />
+						<span style="color: red;position: relative;top: 10px; font-size: 10px;">查看详情</span>
+					</div>
+				</div>
+				<div class="container-bottom-bottom">
+					<div class="phone" style="border-right: 1px #A19F9E solid; border-top: 1px #A19F9E solid;">
+						<img src="img/l4_03.gif"/>
+						<span style="font-size: 20px;font-weight: bold;">ElIFE S5.5</span><br />
+						<span style="color: #a19f9e;font-size: 10px;font-family:'微软雅黑';position: relative;top: 5px;">5.15mm超薄智能手机</span><br />
+						<span style="color: red;position: relative;top: 10px; font-size: 10px;">查看详情</span>
+					</div>
+					<div class="phone" style="border-right: 1px #A19F9E solid; border-top: 1px #A19F9E solid;">
+						<img src="img/l5_03.gif"/>
+						<span style="font-size: 20px;font-weight: bold;">ElIFE E7 minin</span><br />
+						<span style="color: #a19f9e;font-size: 10px;font-family:'微软雅黑';position: relative;top: 5px;">自由拍，反正都精彩</span><br />
+						<span style="color: red;position: relative;top: 10px; font-size: 10px;">查看详情</span>
+					</div>
+					<div class="phone" style="border-right: 1px #A19F9E solid; border-top: 1px #A19F9E solid;">
+						<img src="img/l6_03.gif"/>
+						<span style="font-size: 20px;font-weight: bold;">ElIFE 大眼E7（16G版）</span><br />
+						<span style="color: #a19f9e;font-size: 10px;font-family:'微软雅黑';position: relative;top: 5px;">1600万像素手机（3G RAM+32G rom）</span><br />
+						<span style="color: red;position: relative;top: 10px; font-size: 10px;">查看详情</span>
+					</div>
+					<div class="phone" style="border-top: 1px #A19F9E solid;">
+						<img src="img/l6_03.gif"/>
+						<span style="font-size: 20px;font-weight: bold;">ElIFE 大眼E7（32G版）</span><br />
+						<span style="color: #a19f9e;font-size: 10px;font-family:'微软雅黑';position: relative;top: 5px;">1600万像素手机（3G RAM+32G rom）</span><br />
+						<span style="color: red;position: relative;top: 10px; font-size: 10px;">查看详情</span>
+					</div>
+				</div>
+			</div>
+			<div class="header-bottom">
+				<input type="button" value="1"/>
+				<input type="button" value="2"/>
+				<input type="button" value="3"/>
+				<input type="button" value="4"/>
+				<input type="button" value="5"/>
+				<input type="button" value="下一页" style="width: 60px;position: relative;top: 23px;"/>
+			</div>
+		</div>
+		<div id="footer">
+			<div style="padding-top: 62px;">
+				<div class="footer-main">
+					<div style="float: left;"><img src="img/s1_03.gif"/></div>
+					<div style="float: left;">7天<br />退货保证</div>
+				</div>
+				<div style="margin-left: 280px;"class="footer-main">
+					<div style="float: left;"><img src="img/s1_03.gif"/></div>
+					<div style="float: left;">30天<br />退货保证</div>
+				</div>
+				<div style="margin-left: 560px;"class="footer-main">
+					<div style="float: left;"><img src="img/s2_03.gif"></div>
+					<div style="float: left;">99元起<br />全场免运费</div>
+				</div>
+				<div style="margin-left: 840px;"class="footer-main">
+					<div style="float: left;"><img src="img/s1_03.gif"/></div>
+					<div style="float: left;">586家<br />售后服务点</div>
+				</div>
+			</div>
+			<hr  style="color: #A19F9E;position: relative;top: 20px;right:20px;width: 1190px;"/>
+			<div style="position:relative;top: 55px;">
+				<div>
+				    <ul class="footer-top">
+				    	<li style="font-size: 20px;font-weight: bold;">关于金立</li>
+					    <li>企业荣耀</li>
+					    <li>金立体验店</li>
+					    <li>代理商专区</li>
+					    <li>加入金立</li>
+					    <li>联系我们</li>
+				    </ul>
+				</div>
+				<div style="margin-left: 210px;">
+					<ul class="footer-top">
+				    	<li style="font-size: 20px;font-weight: bold;">新闻资讯</li>
+					    <li>公司新闻</li>
+					    <li>媒体报道</li>
+					    <li>金立月刊</li>
+				    </ul>
+				</div>
+				<div style="margin-left: 420px;">
+					<ul class="footer-top">
+				    	<li style="font-size: 20px;font-weight: bold;">购物指南</li>
+					    <li>购物流程</li>
+					    <li>支付方式</li>
+					    <li>配送说明及费用</li>
+					    <li>订单管理</li>
+					    <li>常见购买问题</li>
+				    </ul>
+				</div>
+				<div style="margin-left: 630px;">
+					<ul class="footer-top">
+				    	<li style="font-size: 20px;font-weight: bold;">售后服务</li>
+					    <li>售后政策</li>
+					    <li>销售服务网点</li>
+					    <li>签收须知</li>
+					    <li>物流查阅</li>
+				    </ul>
+				</div>
+				<div style="margin-left: 840px;">
+					<ul class="footer-top">
+				    	<li style="font-size: 20px;font-weight: bold;">关注我们</li>
+					    <li>新浪微博</li>
+					    <li>腾讯微博</li>
+					    <li>QQ空间</li>
+					    <li>加入金立</li>
+				    </ul>
+				</div>
+				<div style="margin-left: 1060px; position: relative; top: 30px;">
+					<img src="img/erweima_10.gif"/>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

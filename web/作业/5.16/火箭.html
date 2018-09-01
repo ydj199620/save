@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.hj{
+				position: fixed;
+				bottom: 50px;
+				right: 50px;
+			}
+			.img1{
+				display: none;
+			}
+			.img2{
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="hj img1"><img src="img/goTop.jpg"/></div>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+		<p>老师真漂亮！</p>
+	</body>
+</html>
+<script type="text/javascript">
+	var hj = document.getElementsByClassName('hj')[0];
+	var b;
+	window.onscroll = function(){
+		if(scroll().top>200){
+			hj.className = 'hj img2'
+		}else{
+			hj.className = 'hj img1'
+		}
+	}
+	hj.onclick =function(){
+		zz(0);
+	}
+	//封装自己的scroll
+	function scroll(){
+		return  obj = {
+			'top':window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0,
+			'left':window.pageXOffset ||document.documentElement.scrollLeft || document.body.scrollLeft ||0
+		}
+	}
+	function zz(target){
+		clearInterval(b);
+		b = setInterval(function(){
+			var leader = window.scroll().top;
+			var step = 0;
+			if(target>leader){
+				step=Math.ceil((target-leader)/10)
+			}
+			if(target<leader){
+				step=Math.floor((target-leader)/10)
+			}
+			if(target!=leader){
+				leader = leader +step;
+				window.scrollTo(0,leader)
+			}else{
+				clearInterval(b);
+			}
+		},20)
+	}
+</script>

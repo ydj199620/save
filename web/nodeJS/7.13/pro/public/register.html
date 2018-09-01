@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+</head>
+<body>
+    <!-- localhost:3000/VueHandler/AdminHandler?action=add   -->
+   <!--  <form action="/VueHandler/AdminHandler" method="GET">
+        <input type="text" name="action" value="add" style="display: none">
+        姓名：<input type="text" name="user" id=""><br />
+        年龄：<input type="text" name="age" id=""><br />
+        <input type="submit">
+    </form> -->
+
+    <form action="/VueHandler/AdminHandler?action=add" method="POST">
+        姓名：<input type="text" name="user" id=""><br />
+        年龄：<input type="text" name="age" id=""><br />
+        <input type="submit">
+    </form>
+</body>
+</html>

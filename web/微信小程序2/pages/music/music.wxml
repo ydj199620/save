@@ -1,0 +1,34 @@
+<!--pages/music/music.wxml-->
+<import src='article-item-template/article-item-template.wxml' />
+<view class='container'>
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+    <block wx:for="{{imgUrls}}" wx:key='key'>
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" width="355" height="150" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='articlelist' wx:for="{{listData}}" wx:key='key'>
+    <!-- <view class='articleitem'>
+      <view class='message'>
+        <image src='../images/head1.png'></image>
+        <text class='auther'>Lion</text>
+        <text class='data'>2018/08/14 15:20</text>
+      </view>
+      <text class='title'>岁月不老，一世倾城</text>
+      <image src='../images/sub1.png' class='articleimg'></image>
+      <text class='articletext'>时光的流逝，如缓缓流过的小溪，再怎样努力也无法逆转它的方向；这个午后，我站在开满丁香花的树下目送你走远，紫色的小花散发着幽幽的暗香，我忍不住深吸一口气，连同这阳光的明艳一起咽下，又忍不住轻笑，你温情厚重的影子仿佛还在，余温尚存，这里因你目光的停留而变成一道让人心生欢快的风景！
+      </text>
+      <view class='articlebottom'>
+        <image src='../images/sch.png'></image>
+        <text>666</text>
+        <image src='../images/fx.png'></image>
+        <text>666</text>
+      </view>
+    </view> -->
+    <view catchtap='setget' data-music="{{item.newsid}}">
+    <!-- data自定义用来存储数据，“-”后面music使自定义的名字 -->
+      <template is='itemtemplate' data='{{...item}}' ></template>
+    </view>
+  </view>
+</view>

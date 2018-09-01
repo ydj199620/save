@@ -1,0 +1,12 @@
+<div class="panel panel-primary">
+	<div class="panel-heading">安全导航符号?.</div>
+	<div class="panel-body">
+		显示对象中的属性：{{p1.name}}
+		<br/>
+		对象为null,使用不合理：{{p2.name}}
+		<br/>
+		手动判断: {{p2 ? p2.name:'无此对象'}}
+		<br/>
+		安全导航符自动判断：{{p2 ?.name}}
+	</div>
+</div>

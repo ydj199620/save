@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				background: red;
+				width: 100px;
+				height: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+	</body>
+</html>
+<script type="text/javascript">
+	var box = document.getElementById('box')
+	window.onresize = function(){
+		if(client().width1<800){
+			box.style.background = 'orangered';
+		}else{
+			box.style.background = 'red';
+		}
+	}
+	function client(){
+		return obj = {
+			'width1':window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth||0,
+			'height1':window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight||0
+		}
+	}
+</script>

@@ -1,0 +1,7 @@
+<!--pages/movie/movie-list/movie-list.wxml-->
+<import src='../movie-detail/movie-item/movie-item.wxml' />
+<view class='film-item'>
+  <view wx:for="{{listData}}" wx:key='key' catchtap='goDetail' data-ids='{{item.id}}' data-name='{{item.title}}'>
+    <template is='listitem' data='{{...item}}'></template>
+  </view>
+</view>

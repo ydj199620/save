@@ -1,0 +1,13 @@
+<import src='movie-item/movie-item.wxml' />
+<template name="itemtemplate">
+  <view class='film'>
+    <text class='film-title'>{{title}}</text>
+    <image src='../images/arrow-right.png' class='film-img'></image>
+    <text class='film-more' catchtap='goMore' data-title='{{title}}'>更多</text>
+  </view>
+  <view class='film-item'>
+    <view wx:for="{{movies}}" wx:key='key' catchtap='goDetail' data-name='{{item.title}}' data-ids='{{item.id}}'>
+      <template is='listitem' data='{{...item}}'></template>
+    </view>
+  </view>
+</template>

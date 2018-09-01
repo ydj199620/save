@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#box{
+				width: 350px;
+				height: 350px;
+				border: 1px solid black;
+				position: relative;
+				top: 40px;
+				left: 40px;
+				float: left;
+			}
+			#box>img{
+				position: absolute;
+			}
+			#big{
+				position: absolute;
+				width: 153px;
+				height: 153px;
+				background: dodgerblue;
+				opacity: 0.5;
+				display: none;
+			}
+			#box2{
+				width: 350px;
+				height: 350px;
+				overflow: hidden;
+				position: relative;
+				left: 100px;
+				top: 40px;
+				display: none;
+			}
+			#box3{
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<img src="img/001.jpg" alt="">
+			<div id="big"></div>
+		</div>
+		<div id="box2"><img src="img/0001.jpg" id="box3"/></div>
+	</body>
+</html>
+<script type="text/javascript">
+	var a = document.getElementById('box');
+	var b = document.getElementById('big');
+	var e = document.getElementById('box3');
+	var k= document.getElementById('box2');
+	a.onmouseover =function(){
+		b.style.display = 'block';
+		k.style.display = 'block';
+		/*var event1 = event ||window.event;
+		b.style.left = page(event1).pageYl;
+		b.style.top = page(event1).pageX;*/
+	}
+	a.onmouseout =function(){
+		b.style.display = 'none';
+		k.style.display = 'none';
+	}
+	
+	a.onmousemove =function(){
+		var event1 = event ||window.event;
+		var c = page(event1).pageY -b.offsetWidth/2-a.offsetTop;
+		var d = page(event1).pageX -b.offsetHeight/2-a.offsetLeft;
+		//使遮罩层在盒子里不出去，出去就隐藏起来
+		if(c<=0){//如果鼠标移动的左边距离小于等于0的时候
+			c=0;//使左边距离为0
+		}else if(c>=a.offsetWidth-b.offsetWidth){//鼠标移动左边距离超出了盒子时候
+			c=a.offsetWidth-b.offsetWidth;//c的值为不超出盒子的极限距离
+		}
+		if(d<=0){
+			d=0;
+		}else if(d>=a.offsetHeight-b.offsetHeight){
+			d=a.offsetHeight-b.offsetHeight;
+		}
+		b.style.top = c+'px';
+		b.style.left = d+'px';
+	/* 	var f = c/(a.offsetWidth-b.offsetWidth);//第一种算法
+		var j = d/(a.offsetWidth-b.offsetWidth);
+		e.style.top = f*(k.offsetHeight-e.offsetHeight) +'px';
+		e.style.left = j*(k.offsetWidth-e.offsetWidth) +'px'; */
+		var j = e.offsetHeight/a.offsetHeight;//第二种算法
+		e.style.top = -c*j +'px';
+		e.style.left = -d*j +'px';
+	}
+	function page(event){
+		return	obj ={
+			'pageY' : event.pageY||event.clientY+document.documentElement.scrollTop,
+			'pageX' : event.pageX||event.clientX+document.documentElement.scrollLeft
+		}
+	}
+</script>

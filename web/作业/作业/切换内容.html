@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			span{
+				float: left;
+				height: 40px;
+				width: 120px;
+				background: black;
+				color: white;
+				text-align: center;
+				line-height: 40px;
+			}
+			#div{
+				width: 480px;
+				height: 300px;
+				background: #473D35;
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<span>全部</span>
+		<span>新闻</span>
+		<span>公告</span>
+		<span>媒体</span>
+		<div id="div">
+			<ul>
+				<li>1</li>
+				<li>12</li>
+				<li>123</li>
+				<li>1234</li>
+			</ul>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var a = document.getElementsByTagName('span');
+	var c = document.getElementById('div')
+	for(var i=0;i<a.length;i++){
+		a[i].b=i;
+		a[i].onmouseover = function(){
+			for(var j=0;j<a.length;j++){
+			 	a[j].style.background = 'black';
+			}
+			a[this.b].style.background = 'yellow';
+			c.innerHTML = '<ul><li>1'+this.b+'</li><li>12'+this.b+'</li><li>123'+this.b+'</li><li>1234'+this.b+'</li></ul>';
+		}
+	}
+</script>

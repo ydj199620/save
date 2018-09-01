@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box>div{
+				background: url(img/icon_bobo_150727-1.png) 0 0;
+				width: 22px;
+				height: 22px;
+			}
+		</style>
+		<!--<script>
+			/*var arr = Array(1,12,3,4,54,54,656,57,8,8,9,89,90,9,4,3,43,5,5);
+			var a = 0;
+			for(var i = 0;i<arr.length;i++){
+				var a = a + arr[i];
+			}
+			console.log(a/arr.length);*/
+			/*var a = document.getElementById('b');
+			for(var i = -2;i>-660;i-=21){
+				a.style.background = 'url(img/icon_bobo_150727-1.png)';
+				a.style.backgroundPosition = '0,i';
+			}*/
+		</script>-->
+	</head>
+	<body>
+		<!--<div id="b" style="width: 22px;height: 21px;"></div>-->
+		<!--<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>-->
+		<div id="box">
+			<div></div>
+		</div>
+	</body>
+</html>
+<script>
+	/*var a = document.getElementsByTagName('li');
+	for(var i = 0;i<a.length;i++){
+		if(i%2==1){
+			a[i].style.color = 'red';
+		}else{
+			a[i].style.color = 'blue';
+		}
+	}*/
+	var a = document.getElementById('box');
+	var b = a.getElementsByTagName('div');  //选择a下面所有的div，b为数组
+	for(var i = 0;i<31;i++){
+		/*a.innerHTML += '<div></div>';*/
+		a.innerHTML = a.innerHTML+"<div></div>";   //第一个div加上第二个一直到31个
+	}
+	for(j = 0;j<b.length;j++){   //j是选择b数组的索引
+		b[j].style.backgroundPositionY = j*(-22)+'px';
+	}
+</script>

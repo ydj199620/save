@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.box{
+				width: 200px;
+				height: 400px;
+				background: dodgerblue;
+				margin: 0 auto;
+				color: white;
+			}
+			#top{
+				width: 180px;
+				height: 50px;
+				line-height: 50px;
+				margin: 0 auto;
+				font-size: 15px;
+				text-align: center;
+			}
+			#main{
+				width: 20px;
+				padding: 40px 50px;
+				font-size: 30px;
+				background: orange;
+				margin: 0 auto;
+				text-align: center;
+			}
+			#bottom{
+				width: 100px;
+				height: 50px;
+				line-height: 50px;
+				margin: 0 auto;
+				font-size: 15px;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div id="top"></div>
+			<div id="main"></div>
+			<div id="bottom"></div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var a = document.getElementById('top');
+	var b = document.getElementById('main');
+	var c = document.getElementById('bottom');
+	var d = new Date();
+	var e = d.getMinutes();
+	var f = d.getSeconds();
+	var g = d.getDay();
+	var h = d.getMonth();
+	var i = d.getDate();
+	if(i<10){
+		i='0'+i;
+	}else{
+		i = i;
+	}
+	if(h<=10){
+		h='0'+(h+1);
+	}else{
+		h = h;
+	}
+	if(e<10){
+		e='0'+e;
+	}else{
+		e = e;
+	}
+	if(f<10){
+		f='0'+f;
+	}else{
+		f=f;
+	}
+	switch(g){
+		case 1:
+		g = '一';
+		break;
+		case 2:
+		g = '二';
+		break;
+		case 3:
+		g = '三';
+		break;
+		case 4:
+		g = '四';
+		break;
+		case 5:
+		g = '五';
+		break;
+		case 6:
+		g = '六';
+		break;
+		default:
+		g = '日';
+	}
+	a.innerHTML = d.getFullYear() +'-'+ h +'-'+i+'&nbsp;星期'+g; 
+	b.innerHTML = d.getDate();
+	c.innerHTML = d.getHours()+':'+e+':'+f;
+</script>
+				shiDate = date1.getHours()+fendate/60,//当前时间
+				fenDate = date1.getMinutes()+miaodate/60,//当前分钟
+				miaoDate = date1.getSeconds()+毫秒/1000,//当前秒

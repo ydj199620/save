@@ -1,0 +1,8 @@
+<div class="panel panel-primary">
+	<div class="panel-heading">ngIf，使元素直接消失不是隐藏，双向绑定</div>
+	<div class="panel-body">
+		<img *ngIf="isShow" src="../../assets/images/img1.jpg" class="img1"/>
+		<button class="btn btn-primary" [style.backgroundColor]="isShow? '#286090':'#ccc'" (click)="imgToggle()">显示/隐藏</button>
+		<input type="checkbox" [ngModel]="isShow" (ngModelChange)="isShow=$event" /> 显示/隐藏
+	</div>
+</div>

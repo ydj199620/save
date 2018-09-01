@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			 #box{
+			 	 width: 200px;
+			 	 height: 400px;
+			 	 background: skyblue;
+			 	 cursor: move;
+			 	 position: absolute;
+			 }
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+	</body>
+</html>
+<script>
+//可拖拽特效：
+//在拖动区域按下鼠标后，在文档中移动鼠标，盒子跟着鼠标坐标走。
+//鼠标在文档中弹起后，将事件清空。
+//盒子的位置要进行调整，当鼠标按下时，记录鼠标在盒子中的位置，鼠标移动计算盒子位置的时候减去。
+	var box=document.getElementById('box');
+//	获取大盒子
+	box.onmousedown=function(){
+//		鼠标按下的效果
+	   box.onmousemove=function(){
+//	   	鼠标移动
+	   	var event1=event || window.event;
+//	   	事件兼容
+	   	box.style.left=getPage(event1).pageX-box.offsetWidth/2+'px'
+	   	box.style.top=getPage(event1).pageY-box.offsetHeight/2+'px'
+	   }
+	   window.history.back();
+	}
+	box.onmouseout=function(){
+	   	box.onmousemove=null;
+	   }
+	box.onmouseup=function(){
+//		鼠标松开按钮触发的效果
+		box.onmousemove=null;
+	}
+	function getPage(event){
+//		返回事件对象相对于文档的坐标
+		return obj={
+			"pageY":event.pageY || event.clientY + document.documentElement.scrollTop,
+			"pageX":event.pageX || event.clientX + document.documentElement.scrollLeft
+		}
+	}
+
+</script>

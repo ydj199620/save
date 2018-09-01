@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.box1{
+				width: 360px;
+				height: 434px;
+				border: 1px #FF6700 solid;
+			}
+			#box{
+				width: 360px;
+				height: 360px;
+				background: url(img/01big.jpg);
+			}
+			.box2>div{
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1">
+			<div id="box"></div>
+			<div class="box2">
+				<div class="box3"><img src="img/01.jpg" onmouseover="c(1)"/></div>
+				<div class="box3"><img src="img/02.jpg" onmouseover="c(2)"/></div>
+				<div class="box3"><img src="img/03.jpg" onmouseover="c(3)"/></div>
+				<div class="box3"><img src="img/04.jpg" onmouseover="c(4)"/></div>
+				<div class="box3"><img src="img/05.jpg" onmouseover="c(5)"/></div>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var a = document.getElementById('box');
+	var b = document.getElementsByClassName('box3');
+	function c(i){
+		a.style.background = 'url(img/0'+i+'big.jpg)';
+	}
+</script>

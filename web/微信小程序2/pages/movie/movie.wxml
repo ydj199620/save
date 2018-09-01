@@ -1,0 +1,32 @@
+<!--pages/movie/movie.wxml-->
+<import src="movie-detail/movie-detail.wxml" />
+<import src='movie-detail/movie-item/movie-item.wxml' />
+<!-- 搜索框 -->
+<view class='page_row'>
+  <view class="search">
+    <view class="df search_arr">
+      <icon class="searchcion" size='20' type='search'></icon>
+      <input class="" placeholder="请输入关键字" value="{{searchValue}}" bindfocus='bindfocus' bindblur='bindblur' />
+    </view>
+  </view>
+  <view class='sousuo' catchtap='search'>搜索</view>
+</view>
+<!-- 第一个内容 -->
+<view class='wrap' wx:if='{{focus}}'>
+  <view class='filmwrap'>
+    <template is='itemtemplate' data='{{...listData00}}'></template>
+  </view>
+  <view class='filmwrap'>
+    <template is='itemtemplate' data='{{...listData01}}'></template>
+  </view>
+  <view class='filmwrap'>
+    <template is='itemtemplate' data='{{...listData02}}'></template>
+  </view>
+</view>
+
+<!-- 搜索内容 -->
+<view class='film-item1' wx:else='{{focus}}'>
+  <view wx:for="{{listData}}" wx:key='key' catchtap='goDetail' data-name='{{item.title}}'>
+    <template is='listitem' data='{{...item}}'></template>
+  </view>
+</view>

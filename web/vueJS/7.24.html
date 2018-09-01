@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="box">
+        <lol :d='met'></lol>
+    </div>
+    <template id="one">
+        <div>
+            <input type="text" value="">
+            {{msg}}
+            {{d}}
+            <lo-l :m='msg'></lo-l>
+        </div>
+    </template>
+    <template id="two">
+        <div>
+            <input type="text" value="">
+            {{msg1}}
+            {{m}}
+        </div>
+    </template>
+</body>
+</html>
+<script>
+    new Vue({
+        el:'#box',
+        data:{
+            met:'sdadsadsa'
+        },
+        components:{
+            'lol':{
+                template:'#one',
+                data(){
+                    return{
+                        msg:'1111'
+                    }
+                },
+                props:['d'],
+                components:{
+                    'loL':{
+                        template:'#two',
+                        data(){
+                            return{
+                                msg1:'2222'
+                            }
+                        },
+                        props:['m']
+                    }
+                }
+            }
+        }
+    })
+</script>

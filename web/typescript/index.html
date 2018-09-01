@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue学习</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <ul id="app1">
+        <!-- v-for循环数组 当用for来更新已被渲染的元素时，vue的“就地复用”机制 是不会改变数据项的顺序的。要想重新排序，需为每项添加key属性（也就是每项唯一的id） -->
+        <li v-for="(item,key) in items" :key="item.id">{{key}}--{{item.name}}--{{item.age}}</li>
+        <!-- 
+            0--sunling--34
+            1--tian--45
+         -->
+        <!-- 会改变原始数组的方法，为变异方法 例如push(),pop()等；  非变异方法，不会改变原始数组，但是会返回一个新数组 -->
+    </ul>
+    <script>
+        var foo = new Vue({
+            el:'#app1',
+            data:{
+                items:[                 //数组
+                    {name:'sunling',age:34},
+                    {name:'tian',age:45}
+                ]
+ 
+            }
+        });
+    </script>
+</body>
+</html>

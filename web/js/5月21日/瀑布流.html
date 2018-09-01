@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#box{
+				position: relative;
+			}
+			.imgbox{
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div class="imgbox"><img src="img/P_000.jpg"/></div>
+			<div class="imgbox"><img src="img/P_001.jpg"/></div>
+			<div class="imgbox"><img src="img/P_002.jpg"/></div>
+			<div class="imgbox"><img src="img/P_003.jpg"/></div>
+			<div class="imgbox"><img src="img/P_004.jpg"/></div>
+			<div class="imgbox"><img src="img/P_005.jpg"/></div>
+			<div class="imgbox"><img src="img/P_006.jpg"/></div>
+			<div class="imgbox"><img src="img/P_007.jpg"/></div>
+			<div class="imgbox"><img src="img/P_008.jpg"/></div>
+			<div class="imgbox"><img src="img/P_009.jpg"/></div>
+			<div class="imgbox"><img src="img/P_010.jpg"/></div>
+			<div class="imgbox"><img src="img/P_011.jpg"/></div>
+			<div class="imgbox"><img src="img/P_012.jpg"/></div>
+			<div class="imgbox"><img src="img/P_013.jpg"/></div>
+			<div class="imgbox"><img src="img/P_014.jpg"/></div>
+			<div class="imgbox"><img src="img/P_015.jpg"/></div>
+			<div class="imgbox"><img src="img/P_016.jpg"/></div>
+			<div class="imgbox"><img src="img/P_017.jpg"/></div>
+			<div class="imgbox"><img src="img/P_018.jpg"/></div>
+			<div class="imgbox"><img src="img/P_019.jpg"/></div>
+		</div>
+	</body>
+</html>
+<script>
+	window.onload = function(){
+		var box = document.getElementById('box');//获取大盒子
+		var boxs = box.children;//获取所有图片盒子
+		var imgwidth = box.children[0].offsetWidth;//获取单个图片的宽度
+		var arr = [];
+		var colum = Math.floor((getClient().width) / imgwidth);
+		//console.log(colum);
+		
+		function cc(){
+			for(var i=0;i<boxs.length;i++){
+			if(i<colum){
+				//arr.push(boxs[i].offsetHeight);
+				arr[i]=boxs[i].offsetHeight;
+				//console.log(arr);
+			}else{
+				boxs[i].style.position = 'absolute';
+				boxs[i].style.top = aa(arr).height+'px';
+				boxs[i].style.left = aa(arr).colum*imgwidth+'px';
+				arr[aa(arr).colum] = aa(arr).height+boxs[i].offsetHeight;
+				}
+			}
+		}cc();
+		function aa(arr){
+			var obj = {
+				'height':arr[0],
+				'colum':0
+			}
+			for(var k=0;k<arr.length;k++){
+				if(obj.height>arr[k]){//找出最小高度
+					obj.height=arr[k];
+					obj.colum=k;
+				}
+				
+			}
+			return obj;
+		}
+		
+        window.onscroll = function() {
+               if(chudi()){
+               		Doming();
+               }
+        }
+        function chudi(){
+        	var flag = false;
+        	if ((getScrollTop().top + getClient().height) >= aa(arr).height){
+        		flag = true;
+        	}
+        	return flag;
+        }
+	    function Doming(){
+	    	 var datas = [
+	                	{'src':'img/P_000.jpg'},
+	                   	{'src':'img/P_001.jpg'},
+	                   	{'src':'img/P_002.jpg'},
+	                   	{'src':'img/P_003.jpg'},
+	                   	{'src':'img/P_004.jpg'},
+	                   	{'src':'img/P_005.jpg'},
+	                   	{'src':'img/P_006.jpg'},
+	                   	{'src':'img/P_007.jpg'},
+	                   	{'src':'img/P_008.jpg'},
+	                   	{'src':'img/P_009.jpg'},
+	                   	{'src':'img/P_010.jpg'}	
+	                ]
+	                for (var j = 0; j < datas.length; j++) {
+	                    var divitem = document.createElement("div");
+	                    divitem.className = "imgbox";
+	                    var imgitem = document.createElement('img');
+	                    imgitem.setAttribute('src',datas[j].src);
+	                    divitem.appendChild(imgitem);
+	                    box.appendChild(divitem);
+	                }
+	            	cc();
+	    }
+    // scrollTop兼容性处理
+    function getScrollTop(){    
+		    return {    
+		        "top": window.pageYOffset || document.body.scrollTop || document.documentElement.scrollTop,    
+		        "left": window.pageXOffset || document.body.scrollLeft || document.documentElement.scrollLeft    
+		    }    
+	}    
+	//封装自己的client
+	function getClient(){
+		return  obj = {
+			'width': window.innerWidth|| document.documentElement.clientWidth|| document.body.clientWidth|| 0,
+			'height':window.innerHeight|| document.documentElement.clientHeight|| document.body.clientHeight|| 0
+		}
+	}
+		
+		
+		
+	}
+
+	
+</script>

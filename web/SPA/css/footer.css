@@ -1,0 +1,63 @@
+*{
+    list-style: none;
+}
+.footer-wrap{
+    padding: 4rem 0rem;
+    background: black;
+}
+.a1>h3,.a1>.title3{
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+}
+.a1>.title3>span{
+    font-size: 40px;
+}
+.a1>ul{
+    padding: 0;
+    margin: 0;
+    color: #999;
+}
+.a1>ul>li{
+    margin-bottom: 10px;
+}
+.a1>ul>li:hover{
+    color: white;
+    cursor: pointer;
+}
+.a1>ul>li>span{
+    display: inline-block;
+}
+@media only screen and (min-width:400px) and (max-width:480px){
+    .xxs{
+        width: 50%;
+    }
+}
+@media only screen and (max-width:400px){
+    .xxs{
+        width: 100%;
+    }
+}
+.a1>ul>li>span.one{
+    width: 30px;
+    height: 30px;
+    background: url(../img/icon-tb.png) -5px -12px no-repeat;
+}
+.a1>ul>li>span.two{
+    width: 30px;
+    height: 30px;
+    background: url(../img/icon-tb.png) -49px -12px no-repeat;
+}
+.a1>ul>li>span.three{
+    width: 30px;
+    height: 30px;
+    background: url(../img/icon-tb.png) -88px -12px no-repeat;
+}
+.a1>ul>li>span.one:hover{
+    background-position-y: -58px;
+}
+.a1>ul>li>span.two:hover{
+    background-position-y: -57px;
+}
+.a1>ul>li>span.three:hover{
+    background-position-y: -57px;
+}

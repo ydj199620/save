@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #box{
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: none;
+        }
+        #smallbox{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+            background: white;
+        }
+    </style>
+</head>
+<body>
+   <div id="box">
+       <div id="smallbox">
+            <span id="click">X</span>
+       </div>
+   </div>
+   <a href="http://www.baidu.com">登录</a>
+</body>
+</html>
+<script>
+    var smallbox = document.getElementById('smallbox');
+    var a = document.getElementsByTagName('a')[0];
+    var box = document.getElementById('box');
+    var click = document.getElementById('click');
+    a.onclick = function(){
+        var event = event||window.event;
+        //阻止点击a标签的跳转页面的事件
+        if(event.preventDefault){//非IE的主流游览器的方式
+            event.preventDefault();
+        }else(//IE游览器的方式
+            event.returnValue = false
+        )
+        box.style.display = 'block';
+        smallbox.style.display = 'block';
+    }
+    smallbox.onclick =function(){
+        smallbox.style.display = 'none';
+        //阻止事件冒泡的兼容方式
+        var event = event||window.event;
+        if(event.stopPropagation){//非IE的主流游览器的方式
+            event.stopPropagation();
+        }else{//IE游览器的方式
+            event.cancelBubble = true
+        }
+    }
+    click.onclick = function(){
+        smallbox.style.display = 'none';
+        var event = event||window.event;
+        //阻止事件冒泡的兼容方式
+        if(event.stopPropagation){//非IE的主流游览器的方式
+            event.stopPropagation();
+        }else(//IE游览器的方式
+            event.cancelBubble = true
+        )
+    }
+    box.onclick =function(){
+        box.style.display = 'none';
+    }
+</script>

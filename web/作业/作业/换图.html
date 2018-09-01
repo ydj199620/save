@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 520px;
+				height: 280px;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<input type="button" onclick="b(1);"/>
+		<input type="button" onclick="b(2);"/>
+		<input type="button" onclick="b(3);"/>
+		<input type="button" onclick="b(4);"/>
+		<input type="button" onclick="b(5);"/>
+	</body>
+</html>
+<script type="text/javascript">
+	var a = document.getElementsByTagName('div');
+	a[0].style.background = 'url(img/11.jpg)';
+	a[0].style.backgroundPosition = '100%';
+	/*var b = document.getElementsByTagName('input');*/
+	function b(i){
+		a[0].style.background = 'url(img/1'+i+'.jpg)';
+		a[0].style.backgroundPosition = '100%'
+	}
+	/*for(var i=0;i<a.length;i++){
+		b[i].onclick = function(){
+			a[0].style.background = 'url(img/1'+i+'.jpg)';
+			a[0].style.backgroundPosition = '100%';
+		}
+	}*/
+</script>

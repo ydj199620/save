@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				position: relative;
+			}
+			#box>img{
+				width: 520px;
+				height: 280px;
+				position: absolute;
+				display: none;
+			}
+			#box>img:first-child{
+				display: block;
+			}
+			input{
+				background: #ccc;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<input type="button" />
+			<input type="button" />
+			<input type="button" />
+			<input type="button" />
+			<input type="button" />
+		</div>
+		<div id="box">
+			<img src="img/11.jpg"/>
+			<img src="img/12.jpg"/>
+			<img src="img/13.jpg"/>
+			<img src="img/14.jpg"/>
+			<img src="img/15.jpg"/>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var a = document.getElementsByTagName('input');
+	var b = document.getElementsByTagName('img');
+	for(var i = 0;i<a.length;i++){
+		a[i].c = i;      
+		a[i].onclick = function(){
+			for(var j=0;j<b.length;j++){
+				b[j].style.display = 'none';
+				a[j].style.background = '#ccc';
+			}
+			b[this.c].style.display = 'block';
+			a[this.c].style.background = 'yellow';
+		}
+	}
+</script>

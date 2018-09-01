@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/idangerous.swiper.css">
+    <title>Page Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        .box{
+            padding: 30px;
+            border: 5px white;
+            box-shadow:  0 0 5px black;
+            margin: 0 auto;
+            margin-top: 30px;
+            border-radius: 10px;
+            background: black;
+            width: 640px;
+            height: 300px;
+            position: relative;
+        }
+        .left{
+            width: 17px;
+            height: 30px;
+            background: url(img/arrows.png) 0 0 no-repeat;
+            position: absolute;
+            left: 0;
+            top: 50%;
+        }
+        .right{
+            width: 17px;
+            height: 30px;
+            background: url(img/arrows.png) left bottom no-repeat;
+            position: absolute;
+            right: 0;
+            top: 50%;
+        }
+        .swiper-container{
+            width: 640px;
+            height: 300px;
+       /*      position: relative; */
+        }
+        .swiper-wrapper{
+            width: 300%;
+/*             position: absolute;
+            top: 0;
+            left: 0; */
+        }
+        .pagination>span.swiper-active-switch{
+            background: white;
+        }
+        .pagination{
+            width: 90px;
+            margin: 0 auto;
+            margin-top: 5px;
+        }
+        .pagination>span{
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            border-radius: 10px;
+            background: #999;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="left"></div>
+        <div class="right"></div>
+        <div class="swiper-container">
+           <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="img/slider1-1.png" alt=""></div>
+                <div class="swiper-slide"><img src="img/slider1-2.png" alt=""></div>
+                <div class="swiper-slide"><img src="img/slider1-1.png" alt=""></div>
+           </div>
+        </div>
+        <div class="pagination"></div>
+    </div>
+</body>
+</html>
+<script src="js/jquery-1.10.1.min.js"></script>
+<script src="js/idangerous.swiper.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container',{
+        pagination:'.pagination',//创建按钮
+        loop:true,//循环播放
+        grabCursor:true,//鼠标手掌形状
+        paginationClickable: true,//点击分页器，控制图片轮播
+        autoplay : 1000//启动自动切换
+    })
+    $('.left').click(function(){
+        swiper.swipePrev();
+    })
+    $('.right').click(function(){
+        swiper.swipeNext();
+    })
+    $('.box').hover(function(){
+       swiper.stopAutoplay()
+    },function(){
+        swiper.startAutoplay()
+    })
+
+</script>

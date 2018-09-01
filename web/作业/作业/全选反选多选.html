@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div>div{
+				width: 30px;
+				height: 20px;
+				font-size: 10px;
+				border: 1px inset black;
+				float: left;
+				margin-right: 10px;
+				text-align: center;
+				line-height: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="checkbox" id="one"/>
+		<input type="checkbox" id="one"/>
+		<input type="checkbox" id="one"/>
+		<input type="checkbox" id="one"/>
+		<input type="checkbox" id="one"/>
+		<input type="checkbox" id="one"/>
+		<input type="checkbox" id="one"/>
+		<input type="checkbox" id="one"/>
+		<input type="checkbox" id="one"/>
+		<input type="checkbox" id="one"/>
+		<input type="checkbox" id="one"/>
+		<div>
+			<input type="button" value="全选" onclick="b()"/>
+			<input type="button" value="取消" onclick="c()"/>
+			<input type="button" value="反选" onclick="d()"/>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var a = document.all('one')
+	function b(){
+		for(var i=0;i<a.length;i++){
+		/*a[i].checked = true;*/
+			a[i].checked = 'checked';
+		}
+	}
+	function c(){
+		for(var i=0;i<a.length;i++){
+		/*a[i].checked = true;*/
+			a[i].checked = false;
+		}
+	}
+	function d(){
+		for(var i=0;i<a.length;i++){
+		/*a[i].checked = true;*/
+			/*var e = a[i].checked;
+			var f = false;*/
+			if(a[i].checked==false){
+				a[i].checked = true;
+			}else{
+				a[i].checked = false;
+			}
+			//第二种写法：a[i].checked = !a[i].checked;
+		}
+	}
+</script>

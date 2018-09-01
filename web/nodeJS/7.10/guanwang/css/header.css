@@ -1,0 +1,99 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+}
+.header_wrap{
+    height: 1080px;
+}
+.header_main{
+    width: 1200px;
+    height: 184px;
+    margin: 0 auto;
+    padding-top: 41px;
+}
+.header_main>div{
+    float: left;
+    margin-right: 48px;
+    font-size: 18px;
+    font-weight: 700;
+    position: relative;
+}
+.header_main>div>a{
+    color: white;
+}
+.header_main>div:first-child{
+    margin-left: 5px;
+}
+.header_main>div:last-child{
+    margin-right: 20px;
+}
+.header_main>div>img{
+    position: relative;
+    top: -30px;
+}
+.nav{
+    position: relative;
+}
+.nav>ul{
+    position: absolute;
+    display: none;
+    width: 72px;
+    color: white;
+    text-align: center;
+}
+.nav_3.nav>ul{
+    width: 108px;
+    left: -20px;
+}
+.nav>ul>li{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 30px;
+    transition: padding-left 0.5s;
+    cursor: pointer;
+}
+.nav>ul>li:hover{
+    color: #fdda46;
+    padding-left: 10px;
+}
+.nav>ul>li:first-child{
+    margin-top: 14px;
+}
+.nav_2{
+    position: relative;
+}
+.nav_2>div{
+    background: url(../img/codeBg_da8d779.png);
+    width: 165px;
+    height: 174px;
+    position: absolute;
+    left: -100px;
+    display: none;
+}
+.nav_2>div>img{
+    width: 130px;
+    position: absolute;
+    top: 27px;
+    left: 17.5px;
+}
+.header_top{
+    margin-top: 400px;
+    margin-left: 10%;
+    position: absolute
+}
+.header_top_wrap{
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+    z-index: 99;
+}
+.background_one{
+    position: absolute;
+    width: 0;
+    height: 0;
+    background: url(../img/role_54c355e.jpg) no-repeat scroll center;
+    left:50%;
+    top: 50%;
+}

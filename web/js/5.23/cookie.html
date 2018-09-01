@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body onload="fun();">
+		<input type="button" id="btn" value="删除" />
+	</body>
+</html>
+<script type="text/javascript">
+	var btn = document.getElementById('btn');
+	btn.onclick =function(){
+		removeCookie('name');
+	}
+	function removeCookie(name2){
+		setCookie(name2,'',-1);
+	}
+	function fun(){
+		var cool = document.cookie;
+		if(cool == ''||cool == null){
+			var a = prompt('请输入用户名');
+			setCookie('name',a,30);
+		}else{
+			getCookie('name');
+		}
+	}
+	function setCookie(name1,value,time){
+		var a = new Date();
+		a.setTime(a.getTime()+time*24*60*60*1000);
+		var b = a.toGMTString();
+		document.cookie = name1+'='+value+';expires='+b;
+	}
+	function getCookie(obj){
+		var cool = document.cookie;
+		console.log(cool)
+		var d = cool.split(';');
+		var c = obj+'=';
+		for(var i = 0;i<d.length;i++){
+			if(d[i].indexOf(c)==0){
+				var e = d[i].slice(c.length);
+				console.log(e)
+				if(e == '' || e=='null'){
+					var a = prompt('请输入用户名');
+					setCookie('name',a,30);
+				}else(
+					alert('欢迎'+e+'再次光临')
+				)
+			}
+		}
+	}
+</script>

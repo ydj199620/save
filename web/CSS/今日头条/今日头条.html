@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html> 
+	<head>
+		<meta charset="UTF-8">
+		<title>今日头条</title>
+		<style type="text/css">
+			/*html{
+				width: 100%;
+				overflow-x: hidden;
+			}*/
+			*{
+				margin: 0;
+				list-style: none;
+			}
+			.header{
+				background: black;
+				height: 35px;
+				width: 100%;
+			}
+			.header .one{
+				width: 75px;
+				height: 35px;
+				border-right: #3a3a3a 1px solid;
+				color: white;
+				font-size: 15px;
+				text-align: center;
+				float: left;
+			}
+			.header .one span{
+				position: relative;
+				top: 8px;
+			}
+			.header .two{
+				color: white;
+				font-size: 15px;
+				float: left;
+				width: 1171px;
+				height: 35px;
+				border-right: #3a3a3a 1px solid;
+			}
+			.header .two .left{
+				position: relative;
+				top: 8px;
+				left: 8px;
+				float: left;
+			}
+			.header .two .right{
+				position: relative;
+				top: 8px;
+				/*left: 980px;*/
+				float: right;
+				right: 8px;
+			}
+			.header .three{
+				color:white;
+				font-size: 15px;
+				float: left;
+				width: 95px;
+				height: 35px;
+				text-align: center;
+			}
+			.header .three span{
+				position: relative;
+				top: 8px;
+			}
+			.header span:hover{
+				cursor: pointer;
+				color: red;
+			}
+			.main{
+				width: 1190px;
+				margin: 0 auto;
+				margin-top: 17px;
+			}
+			.main .one{
+				/*display: inline-block;*/
+				position: fixed;
+			}
+			/*.main .one-img{
+				margin-left: 42px;
+			}*/
+			.main  .one .one-one{
+				position: relative;
+				right: 42px;
+				top: 16px;
+			}
+			.main .one .one-one ul li:first-child{
+				background: #ed4040;
+				width: 110px;
+				height: 31px;
+			    border-radius: 5px;
+			}
+			.main .one .one-one ul li a{
+				text-decoration: none;
+				color: black;
+				font-size: 16px;
+			}
+			.main .one .one-one ul li:hover a{
+				text-decoration: none;
+				color: white;
+				font-size: 16px;
+			}
+			.main .one .one-one ul li .a-one{
+				color: white;
+			}
+			.main .one .one-one ul li{
+				list-style: none;
+				width: 110px;
+				height: 31px;
+				text-align: center;
+				padding-top: 9px;
+			}
+			.main .one .one-one ul li:hover{
+				background: #ed4040;
+				width: 110px;
+				height: 31px;
+				border-radius: 5px;
+				cursor: pointer;
+			}
+			.main .two{
+				float: left;
+				width: 660px;
+				margin-left: 128px;
+			}
+			.main .three{
+				float: right;
+				width: 350px;
+				position: relative;
+				left: -32px;
+			}
+			/*.main .three .one-first{
+				position: static;
+			}*/
+			.main .three .one-first .one-search{
+				width: 260px;
+				height: 42px;
+				border: #e8e8e8 1px solid;
+				border-right: 0px;
+				text-indent: 5px;
+			}
+			.main .three .one-first .two-botton{
+				width: 78px;
+				height: 42px;
+				border: 0;
+				background: #208eda;
+				color: white;
+				cursor: pointer;
+				position: relative;
+				left: -5px;
+				top: 1px;
+			}
+			.main .three .two-first{
+				width: 252px;
+				height: 148px;
+				border: #e8e8e8 21px solid;
+				margin: 0px;
+			    position: relative;
+			    top: 16px;
+			    padding: 23px;
+			}
+			.text{
+				font-size: 12px;
+				color: #777;
+				text-align: center;
+			}
+			.button input{
+				width: 240px;
+				height: 40px;
+				border: 0;
+				color: white;
+				background: #ed4040;
+				margin-top: 19px;
+				margin-left: 6px;
+				font-size: 14px;
+				cursor: pointer;
+				outline: none;
+			}
+			.footer{
+				width: 163px;
+				height: 55px;
+				margin: 14px auto;
+			}
+			.email{
+				display: inline-block;
+				margin-left: 10px;
+				text-align: center;
+			}
+			.email:first-child{
+				margin-left: 0px;
+			}
+			.email img,span{
+				cursor: pointer;
+			}
+			.email span{
+				font-size: 10px;
+			}
+			.none{
+				display: none;
+				position: relative;
+				top: 10px;
+				width: 300px;
+				background: white;
+				color:black;
+				font-size: 14px;
+				z-index: 999;
+			}
+			.weather img{
+				display: inline-block;
+				margin-left: 55px;
+			}
+			.weather img:first-child{
+				margin-left: 3px;
+			}
+			.left:hover .none{
+				display: block;
+			}
+			.none-one{
+				width: 80px;
+				height: 30px;
+				background: #ff9f2d;
+			}
+			.weather-one{
+				margin-top: 20px;
+			}
+			.weather-one span{
+				margin-left: 75px;
+			}
+			.weather-one span:first-child{
+				margin-left: 9px;
+			}
+			.weather-two span{
+				margin-left: 60px;
+			}
+			.weather-two span:first-child{
+				margin-left: 9px;
+			}
+			.two-one{
+				margin-top: 17px;
+				border-bottom: 1px solid #e8e8e8;
+				padding-bottom: 20px;
+			}
+			.two-one div{
+				display: inline-block;
+			}
+			.two-one .first-first{
+				position: relative;
+				bottom: 60px;
+				left: 20px;
+				font-size: 19px;
+				font-weight: bold;
+			}
+			.first-second{
+				font-size: 14px;
+				color: #999;
+				position: relative;
+				bottom: 30px;
+				left: 20px;
+			}
+			.first-three{
+				float: right;
+				position: relative;
+				bottom: 30px;
+			}
+			.first-three-one{
+				display: none;
+				background: red;
+				color: white;
+				font-size: 14px;
+				position: relative;
+				float: right;
+				right: 8px;
+				top: 3px;
+			}
+			.first-three:hover .first-three-one{
+				display: block;
+			}
+			.footer-footer{
+				width: 302px;
+				height: 252px;
+				border: #e8e8e8 21px solid;
+				bottom: 0px;
+				margin-top: 32px;
+			}
+			.second-ul{
+				width: 67px;
+				height: 307px;
+				background: black;
+				display: inline-block;
+				position: relative;
+				float: right;
+				margin: 0px;
+				padding: 0px;
+			}
+			.second-ul li:first-child{
+				color: white;
+				height: 51px;
+				width: 67px;
+				background: #c43a3a;
+				text-align: center;
+				font-size: 15px;
+				font-family: "微软雅黑";
+			}
+			.second-ul span{
+				position: relative;
+				top: 15px;
+			}
+			.second-ul li{
+				color: white;
+				height: 51px;
+				width: 67px;
+				text-align: center;
+				font-size: 15px;
+				font-family: "微软雅黑";
+			}
+			.second-ul li:hover{
+				color: white;
+				height: 51px;
+				width: 67px;
+				background: #c43a3a;
+				text-align: center;
+				font-size: 15px;
+				font-family: "微软雅黑";
+				cursor: pointer;
+			}
+			.three-three{
+				display: none;
+				color: black;
+				width: 100px;
+				height: 258px;
+				position: relative;
+				right: 6px;
+				top: 7px;
+				border-left: 1px #e8e8e8 solid;
+				border-bottom: 1px #e8e8e8 solid;
+				background: white;
+			}
+			.three-three ul{
+			    padding: 0px;
+				margin: 0px;
+			}
+			.three-three li{
+				height: 43px;
+			}
+			.three-three span{
+				text-align: center;
+			}
+			.three-three li:hover span{
+				color: black;
+			}
+			.three-three li:hover{
+				height: 43px;
+				width: 100px;
+				background: #e8e8e8;
+				margin: 0px;
+				padding: 0px;
+			}
+			.three-three-top:hover .three-three{
+				display: block;
+			}
+			.picter{
+				margin-left: -593px;
+				margin-top: -86px;
+				display: none;
+				width: 593px;
+			}
+			.second-ul-two:hover .picter{
+				display: block;
+			}
+			.picter-two{
+				margin-left: -593px;
+				margin-top: -137px;
+				display: none;
+				width: 593px;
+			}
+			.second-ul-three:hover .picter-two{
+				display: block;
+			}
+			.picter-three{
+				margin-left: -593px;
+				margin-top: -188px;
+				display: none;
+				width: 593px;
+			}
+			.second-ul-four:hover .picter-three{
+				display: block;
+			}
+			.picter-four{
+				margin-left: -593px;
+				margin-top: -239px;
+				display: none;
+				width: 593px;
+			}
+			.second-ul-five:hover .picter-four{
+				display: block;
+			}
+			.picter-five{
+				margin-left: -593px;
+				margin-top: -290px;
+				display: none;
+				width: 593px;
+			}
+			.second-ul-six:hover .picter-five{
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="header">
+			<div class="one">
+				<span>下载APP</span>
+			</div>
+			<div class="two">
+			    <span class="left">北京  多云  8° / 24° v
+				    <div class="none">
+				    	<div>北京 东风2级 <span class="none-one">轻度103</span></div>
+				    	<div class="weather-one">
+				    		<span>今天</span>
+				    		<span>明天</span>
+				    		<span>后天</span>
+				    	</div>
+				    	<div class="weather">
+				    		<img src="img/0.2491676.png"/>
+							<img src="img/1.51a147f.png"/>
+					    	<img src="img/7.88acb18.png"/>
+					    </div>
+					    <div class="weather-two">
+					    	<span>7°/22°</span>
+					    	<span>6°/11°</span>
+					    	<span>7°/19°</span>
+					    </div>
+				    </div>
+			    </span>
+				<span class="right">侵权投诉</span>
+			</div>
+			<div class="three">
+				<span class="three-three-top">头条产品
+					<div class="three-three">
+						<ul>
+							<li><span>问答</span></li>
+							<li><span>头条号</span></li>
+							<li><span>图虫</span></li>
+							<li><span>正版图库</span></li>
+							<li><span>广告投放</span></li>
+							<li><span>懂车帝</span></li>
+						</ul>
+					</div>
+				</span>
+			</div>
+		</div>
+		<div class="main">
+			<div class="one">
+				<div class="one-img"><img src="img/logo.201f80d.png" width="108px"/></div>
+				<div class="one-one">
+					<ul>
+						<li><a href="" class="a-one">推荐</a></li>
+						<li><a href="">热点</a></li>
+						<li><a href="">阳光宽屏</a></li>
+						<li><a href="">图片</a></li>
+						<li><a href="">科技</a></li>
+						<li><a href="">娱乐</a></li>
+						<li><a href="">游戏</a></li>
+						<li><a href="">体育</a></li>
+						<li><a href="">汽车</a></li>
+						<li><a href="">财经</a></li>
+						<li><a href="">搞笑</a></li>
+						<li><a href="">更多
+							<!--<div class="more">
+								<div class="more-first">
+									<li><a href="">军事</a></li>
+									<li><a href="">时尚</a></li>
+									<li><a href="">探索</a></li>
+									<li><a href="">养生</a></li>
+									<li><a href="">历史</a></li>
+								</div>
+								<div class="more-second">
+									<li><a href="">国际</a></li>
+									<li><a href="">旅游</a></li>
+									<li><a href="">育儿</a></li>
+									<li><a href="">美食</a></li>
+									<li><a href="">美文</a></li>
+								</div>
+							</div>-->
+						</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="two">
+				<div>
+					<img src="img/78be001a92d3b3f31a5a.jpg"/>
+					<ul class="second-ul">
+						<li class="second-ul-one"><span>要闻</span></li>
+						<li class="second-ul-two"><span>社会
+							<div class="picter">
+								<img src="img/78bf000ba10408d66693.jpg" width="593px" height="307px"/>
+							</div>
+						</span></li>
+						<li class="second-ul-three"><span>娱乐
+						    <div class="picter-two">
+								<img src="img/78c0000af0ebfa2f4a9c.jpg" width="593px" height="307px"/>
+							</div>
+						</span></li>
+						<li class="second-ul-four"><span>体育
+							<div class="picter-three">
+								<img src="img/78be0018063584fa2e04.jpg" width="593px" height="307px"/>
+							</div>
+						</span></li>
+						<li class="second-ul-five"><span>军事
+						    <div class="picter-four">
+								<img src="img/78bb0017c2ddded9520e.jpg" width="593px" height="307px"/>
+							</div>
+						</span></li>
+						<li class="second-ul-six"><span>明星
+						    <div class="picter-five">
+								<img src="img/78bf000bb21b1a496db3.jpg" width="593px" height="307px"/>
+							</div>
+						</span></li>
+					</ul>
+				</div>
+				<div class="two-one">
+					<div>
+						<img src="img/78af00047d006cf5eefa.jpg"/>
+					</div>
+					<div>
+						<span class="first-first">开国将星仅存18颗：1955年授衔少将尚有6人健在</span><br />
+						<span class="first-second">海外网·6670评论·1分钟前</span>
+						<span class="first-three">x
+							<span class="first-three-one">
+								不感兴趣 x
+							</span>
+						</span>
+					</div>
+				</div>
+				<div class="two-one">
+					<div>
+						<img src="img/78af00047d006cf5eefa.jpg"/>
+					</div>
+					<div>
+						<span class="first-first">开国将星仅存18颗：1955年授衔少将尚有6人健在</span><br />
+						<span class="first-second">海外网·6670评论·1分钟前</span>
+						<span class="first-three">x
+							<span class="first-three-one">
+								不感兴趣 x
+							</span>
+						</span>
+					</div>
+				</div>
+				<div class="two-one">
+					<div>
+						<img src="img/78af00047d006cf5eefa.jpg"/>
+					</div>
+					<div>
+						<span class="first-first">开国将星仅存18颗：1955年授衔少将尚有6人健在</span><br />
+						<span class="first-second">海外网·6670评论·1分钟前</span>
+						<span class="first-three">x
+							<span class="first-three-one">
+								不感兴趣 x
+							</span>
+						</span>
+					</div>
+				</div>
+				<div class="two-one">
+					<div>
+						<img src="img/78af00047d006cf5eefa.jpg"/>
+					</div>
+					<div>
+						<span class="first-first">开国将星仅存18颗：1955年授衔少将尚有6人健在</span><br />
+						<span class="first-second">海外网·6670评论·1分钟前</span>
+						<span class="first-three">x
+							<span class="first-three-one">
+								不感兴趣 x
+							</span>
+						</span>
+					</div>
+				</div>
+				<div class="two-one">
+					<div>
+						<img src="img/78af00047d006cf5eefa.jpg"/>
+					</div>
+					<div>
+						<span class="first-first">开国将星仅存18颗：1955年授衔少将尚有6人健在</span><br />
+						<span class="first-second">海外网·6670评论·1分钟前</span>
+						<span class="first-three">x
+							<span class="first-three-one">
+								不感兴趣 x
+							</span>
+						</span>
+					</div>
+				</div>
+			</div>
+			
+			<div class="three">
+				<div class="one-first">
+					<input class="one-search" type="search" placeholder="请输入要搜索的内容"/>
+					<input class="two-botton" type="button" value="搜索" />
+				</div>
+				<div class="two-first">
+					<div class="text">
+						登录后可以保存您的浏览喜好、评论、收藏，<br />并与APP同步更可以发布微头条
+					</div>
+					<div class="button">
+						<input type="button" value="登录" />
+					</div>
+					<div class="footer">
+						<div class="email">
+							<img src="img/icon_qq_pc.de846d6.png"/><br />
+							<span>QQ</span>
+						</div>
+						<div class="email">
+						    <img src="img/icon_weibo_pc.bde1e60.png"/><br />
+						    <span>微博</span>
+						</div>
+						<div class="email">
+							<img src="img/icon_weixin_pc.1d58bef.png"/><br />
+							<span>微信</span>
+						</div>
+					</div>
+				</div>
+				<div class="footer-footer">
+					<img src="img/QQ图片20180412124222.png"/>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

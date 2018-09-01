@@ -1,0 +1,12 @@
+<template name="comment">
+  <view class="line"></view>
+    <view class="comment-user">
+      <view class="comment-user-info">
+        <image src="{{commentimg}}"></image>
+        <text>{{commentname}}</text>
+      </view>
+      <text class="comment-text">
+        {{commenttext}}
+      </text>
+    </view>
+</template>
